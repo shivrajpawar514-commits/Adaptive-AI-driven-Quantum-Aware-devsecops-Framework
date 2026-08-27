@@ -1,0 +1,42 @@
+{
+  "scenario_id": "crypto_mining",
+  "name": "Crypto Mining Malware",
+  "workload_profile": "Production",
+  "telemetry": {
+    "cpu_utilization": 98.2,
+    "memory_usage_percent": 75.0,
+    "disk_usage_percent": 17.0,
+    "packet_rate_in": 12000,
+    "packet_rate_out": 15000
+  },
+  "anomaly_score": 0.99,
+  "findings": [
+    {
+      "id": "FIND-MINE-01",
+      "title": "Cryptojacking script hijacking system resources to mine Monero",
+      "severity": "high",
+      "resource": "EC2 Production",
+      "ursPenalty": 35.0
+    }
+  ],
+  "URS": 91.0,
+  "prediction_expectations": {
+    "risk_trend": "increasing",
+    "projected_urs_24h": 100.0,
+    "confidence_score": 78.5,
+    "business_impact_level": "High"
+  },
+  "policy_expectations": {
+    "decision": "Critical",
+    "recommendations": ["Kill process, Quarantine Host, Block Mining Pool"]
+  },
+  "automation_expectations": {
+    "automation_level": "Fully Automated",
+    "playbook_id": "isolate_ec2",
+    "rollback_available": true
+  },
+  "dashboard_expectations": {
+    "risk_color": "red",
+    "timeline_event": "Cryptojacking script hijacking system resources to mine Monero (XMR)."
+  }
+}

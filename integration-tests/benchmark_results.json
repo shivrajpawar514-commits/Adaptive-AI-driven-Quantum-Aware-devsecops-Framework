@@ -1,0 +1,23 @@
+{
+  "pipeline_runs": 100,
+  "metrics": {
+    "avg_telemetry_scrape_ms": 15.53,
+    "avg_ai_inference_ms": 25.03,
+    "avg_risk_evaluation_ms": 5.16,
+    "avg_pipeline_response_ms": 52.7,
+    "p95_pipeline_response_ms": 64.67
+  },
+  "system_utilization": {
+    "cpu_usage_percent": 14.5,
+    "memory_usage_mb": 256.0,
+    "service_availability": {
+      "backend": "healthy",
+      "monitoring": "healthy",
+      "ai-engine": "healthy",
+      "risk-engine": "healthy",
+      "mongodb": "healthy",
+      "prometheus": "healthy",
+      "node-exporter": "healthy"
+    }
+  }
+}

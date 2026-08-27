@@ -1,0 +1,53 @@
+{
+  "algorithms": {
+    "RSA-2048": {
+      "quantumRisk": "Very High",
+      "migrationPriority": "Immediate",
+      "readinessWeight": 15,
+      "recommendation": "Migrate to ML-KEM (Kyber) hybrid TLS.",
+      "reason": "Shor's algorithm can efficiently compromise RSA key exchange."
+    },
+    "RSA-4096": {
+      "quantumRisk": "High",
+      "migrationPriority": "Immediate",
+      "readinessWeight": 25,
+      "recommendation": "Migrate to ML-KEM (Kyber) hybrid TLS.",
+      "reason": "Larger RSA key size offers no security against Shor's algorithm."
+    },
+    "ECC P-256": {
+      "quantumRisk": "Medium",
+      "migrationPriority": "Planned",
+      "readinessWeight": 55,
+      "recommendation": "Transition to hybrid PQC key exchange.",
+      "reason": "Elliptic curves are vulnerable to Shor's algorithm, requiring transition to hybrid PQC key exchange."
+    },
+    "ECC P-384": {
+      "quantumRisk": "Medium",
+      "migrationPriority": "Planned",
+      "readinessWeight": 60,
+      "recommendation": "Transition to hybrid PQC key exchange.",
+      "reason": "Vulnerable to Shor's algorithm; transition to hybrid PQC key exchange."
+    },
+    "Ed25519": {
+      "quantumRisk": "Medium",
+      "migrationPriority": "Planned",
+      "readinessWeight": 65,
+      "recommendation": "ML-DSA (Dilithium) signatures.",
+      "reason": "Ed25519 signatures can be broken by quantum computers using Shor's algorithm."
+    },
+    "ML-KEM (Kyber)": {
+      "quantumRisk": "Low",
+      "migrationPriority": "Completed",
+      "readinessWeight": 95,
+      "recommendation": "Already PQC-ready.",
+      "reason": "Standard post-quantum lattice-based key encapsulation mechanism."
+    },
+    "Unknown": {
+      "quantumRisk": "High",
+      "migrationPriority": "Immediate",
+      "readinessWeight": 10,
+      "recommendation": "Audit asset to identify cryptosystem.",
+      "reason": "Unrecognized cryptography posture indicates unverified quantum risk."
+    }
+  }
+}

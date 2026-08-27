@@ -1,0 +1,16 @@
+Scenario,Strategy,URS Before,URS After,URS Reduction %
+low_risk,optimizer,25.0,15.0,40.0
+low_risk,fifo,25.0,15.0,40.0
+low_risk,severity,25.0,15.0,40.0
+low_risk,urs,25.0,15.0,40.0
+low_risk,recovery,25.0,15.0,40.0
+medium_risk,optimizer,60.0,42.0,30.0
+medium_risk,fifo,60.0,42.0,30.0
+medium_risk,severity,60.0,42.0,30.0
+medium_risk,urs,60.0,42.0,30.0
+medium_risk,recovery,60.0,42.0,30.0
+high_risk,optimizer,95.0,70.0,26.32
+high_risk,fifo,95.0,70.0,26.32
+high_risk,severity,95.0,70.0,26.32
+high_risk,urs,95.0,68.0,28.42
+high_risk,recovery,95.0,70.0,26.32

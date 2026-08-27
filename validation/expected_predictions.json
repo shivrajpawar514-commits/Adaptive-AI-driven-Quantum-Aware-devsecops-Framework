@@ -1,0 +1,177 @@
+{
+  "low_risk": {
+    "URS": 10.5,
+    "projected_urs": {
+      "1": 10.6,
+      "3": 10.8,
+      "6": 11.1,
+      "12": 11.8,
+      "24": 12.0
+    },
+    "confidence": {
+      "score": 95.0,
+      "level": "High"
+    },
+    "business_impact": {
+      "level": "Low"
+    },
+    "risk_trend": "stable",
+    "ctps": 1.0,
+    "policy_recommendation": {
+      "decision": "Normal"
+    },
+    "automation_recommendation": {
+      "automation_level": "None"
+    }
+  },
+  "ransomware": {
+    "URS": 95.0,
+    "projected_urs": {
+      "1": 96.0,
+      "3": 98.0,
+      "6": 100.0,
+      "12": 100.0,
+      "24": 100.0
+    },
+    "confidence": {
+      "score": 82.0,
+      "level": "High"
+    },
+    "business_impact": {
+      "level": "Critical"
+    },
+    "risk_trend": "increasing",
+    "ctps": 1.95,
+    "policy_recommendation": {
+      "decision": "Critical"
+    },
+    "automation_recommendation": {
+      "automation_level": "Fully Automated"
+    }
+  },
+  "ddos": {
+    "URS": 85.0,
+    "projected_urs": {
+      "1": 85.9,
+      "3": 87.6,
+      "6": 90.1,
+      "12": 95.2,
+      "24": 95.0
+    },
+    "confidence": {
+      "score": 85.0,
+      "level": "High"
+    },
+    "business_impact": {
+      "level": "High"
+    },
+    "risk_trend": "increasing",
+    "ctps": 1.95,
+    "policy_recommendation": {
+      "decision": "Critical"
+    },
+    "automation_recommendation": {
+      "automation_level": "Fully Automated"
+    }
+  },
+  "crypto_mining": {
+    "URS": 91.0,
+    "projected_urs": {
+      "1": 91.9,
+      "3": 93.7,
+      "6": 96.5,
+      "12": 100.0,
+      "24": 100.0
+    },
+    "confidence": {
+      "score": 78.5,
+      "level": "Medium"
+    },
+    "business_impact": {
+      "level": "High"
+    },
+    "risk_trend": "increasing",
+    "ctps": 1.62,
+    "policy_recommendation": {
+      "decision": "Critical"
+    },
+    "automation_recommendation": {
+      "automation_level": "Fully Automated"
+    }
+  },
+  "insider": {
+    "URS": 40.0,
+    "projected_urs": {
+      "1": 40.4,
+      "3": 41.2,
+      "6": 42.4,
+      "12": 44.8,
+      "24": 45.0
+    },
+    "confidence": {
+      "score": 75.0,
+      "level": "Medium"
+    },
+    "business_impact": {
+      "level": "Medium"
+    },
+    "risk_trend": "stable",
+    "ctps": 1.0,
+    "policy_recommendation": {
+      "decision": "Alert"
+    },
+    "automation_recommendation": {
+      "automation_level": "Semi-Automated"
+    }
+  },
+  "privilege_escalation": {
+    "URS": 68.0,
+    "projected_urs": {
+      "1": 68.7,
+      "3": 70.0,
+      "6": 72.1,
+      "12": 76.2,
+      "24": 85.0
+    },
+    "confidence": {
+      "score": 80.0,
+      "level": "High"
+    },
+    "business_impact": {
+      "level": "High"
+    },
+    "risk_trend": "increasing",
+    "ctps": 1.62,
+    "policy_recommendation": {
+      "decision": "Critical"
+    },
+    "automation_recommendation": {
+      "automation_level": "Fully Automated"
+    }
+  },
+  "data_exfiltration": {
+    "URS": 82.0,
+    "projected_urs": {
+      "1": 82.8,
+      "3": 84.5,
+      "6": 86.9,
+      "12": 91.8,
+      "24": 98.0
+    },
+    "confidence": {
+      "score": 88.0,
+      "level": "High"
+    },
+    "business_impact": {
+      "level": "High"
+    },
+    "risk_trend": "increasing",
+    "ctps": 1.95,
+    "policy_recommendation": {
+      "decision": "Critical"
+    },
+    "automation_recommendation": {
+      "automation_level": "Fully Automated"
+    }
+  }
+}

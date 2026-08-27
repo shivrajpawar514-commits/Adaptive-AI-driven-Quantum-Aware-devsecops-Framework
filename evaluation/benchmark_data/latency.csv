@@ -1,0 +1,7 @@
+Playbooks Count,Ranking Latency ms,Deduplication Latency ms,Conflict Resolution Latency ms,Topological Sort Latency ms,Total Latency ms
+10,2.9,1.09,1.45,1.82,7.26
+25,4.29,1.61,2.15,2.68,10.73
+50,12.65,4.74,6.33,7.91,31.63
+100,38.72,14.52,19.36,24.2,96.81
+250,176.63,66.24,88.32,110.4,441.59
+500,1140.23,427.58,570.11,712.64,2850.57

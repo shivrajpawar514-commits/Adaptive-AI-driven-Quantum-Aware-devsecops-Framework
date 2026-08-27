@@ -1,0 +1,96 @@
+{
+  "scenarios": [
+    {
+      "id": "low_risk",
+      "name": "Low Risk Scenario",
+      "riskScore": 25.0,
+      "decision": "Low",
+      "recommendations": [
+        {
+          "title": "wildcard sg open port 22",
+          "resource": "security_group",
+          "severity": "medium"
+        }
+      ]
+    },
+    {
+      "id": "medium_risk",
+      "name": "Medium Risk Scenario",
+      "riskScore": 60.0,
+      "decision": "High",
+      "recommendations": [
+        {
+          "title": "wildcard sg open port 22",
+          "resource": "security_group",
+          "severity": "medium"
+        },
+        {
+          "title": "high cpu workload pressure",
+          "resource": "ec2",
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "id": "high_risk",
+      "name": "High Risk Scenario",
+      "riskScore": 95.0,
+      "decision": "Critical",
+      "recommendations": [
+        {
+          "title": "crypto malware compromise lateral movement",
+          "resource": "ec2",
+          "severity": "critical"
+        },
+        {
+          "title": "wildcard sg open port 22",
+          "resource": "security_group",
+          "severity": "high"
+        },
+        {
+          "title": "volumetric network flood attack",
+          "resource": "waf",
+          "severity": "high"
+        }
+      ]
+    }
+  ],
+  "sensitivity_configurations": {
+    "config_a": {
+      "name": "Base Config",
+      "weights": {
+        "severity": 2.0,
+        "urs": 0.3,
+        "recovery": 2.5,
+        "policy_priority": 2.0,
+        "confidence": 5.0,
+        "disruption": -1.5,
+        "execution_time": -0.1
+      }
+    },
+    "config_b": {
+      "name": "High Recovery Preference",
+      "weights": {
+        "severity": 1.0,
+        "urs": 0.2,
+        "recovery": 6.0,
+        "policy_priority": 1.0,
+        "confidence": 3.0,
+        "disruption": -1.0,
+        "execution_time": -0.05
+      }
+    },
+    "config_c": {
+      "name": "High Disruption Penalty",
+      "weights": {
+        "severity": 2.0,
+        "urs": 0.3,
+        "recovery": 1.5,
+        "policy_priority": 1.5,
+        "confidence": 4.0,
+        "disruption": -5.0,
+        "execution_time": -0.2
+      }
+    }
+  }
+}

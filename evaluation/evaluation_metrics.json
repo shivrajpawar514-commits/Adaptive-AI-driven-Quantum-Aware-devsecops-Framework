@@ -1,0 +1,54 @@
+{
+  "metrics": {
+    "urs_score": {
+      "type": "float",
+      "range": [0.0, 100.0],
+      "unit": "Percentage URS"
+    },
+    "recovery_score": {
+      "type": "float",
+      "range": [0.0, 10.0],
+      "unit": "Score"
+    },
+    "disruption_score": {
+      "type": "float",
+      "range": [0.0, 10.0],
+      "unit": "Score"
+    },
+    "estimated_recovery": {
+      "type": "float",
+      "range": [0.0, 100.0],
+      "unit": "Percentage"
+    },
+    "optimization_gain": {
+      "type": "float",
+      "unit": "Score"
+    },
+    "latency": {
+      "type": "float",
+      "unit": "Milliseconds"
+    },
+    "memory_usage": {
+      "type": "float",
+      "unit": "Megabytes"
+    },
+    "selected_playbooks": {
+      "type": "integer"
+    },
+    "removed_playbooks": {
+      "type": "integer"
+    },
+    "execution_time": {
+      "type": "float",
+      "unit": "Seconds"
+    },
+    "parallel_opportunities": {
+      "type": "integer"
+    },
+    "explainability_completeness": {
+      "type": "float",
+      "range": [0.0, 100.0],
+      "unit": "Percentage"
+    }
+  }
+}

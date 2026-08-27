@@ -1,0 +1,17 @@
+{
+  "name": "adaptive-devsecops-integration-tests",
+  "version": "1.0.0",
+  "description": "Integration and orchestration test suite for the DevSecOps Framework",
+  "main": "integration.test.js",
+  "scripts": {
+    "test": "jest --detectOpenHandles --forceExit --runInBand"
+  },
+  "dependencies": {
+    "supertest": "^6.3.3",
+    "jest": "^29.7.0",
+    "mongoose": "^8.0.3"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}

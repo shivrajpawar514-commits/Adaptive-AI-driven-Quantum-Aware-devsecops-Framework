@@ -1,0 +1,4779 @@
+{
+  "timestamp": "2026-07-28T07:35:36.544726Z",
+  "scenarios_executed": 7,
+  "passed": 0,
+  "failed": 7,
+  "results": [
+    {
+      "scenario_id": "crypto_mining",
+      "name": "Crypto Mining Malware",
+      "status": "FAIL",
+      "expected_urs": 91.0,
+      "actual_urs": 60.0342,
+      "expected_decision": "Critical",
+      "actual_decision": "Monitor",
+      "latencies": {
+        "ai": 2072.5460052490234,
+        "risk": 5766.106367111206,
+        "prediction": 90.4,
+        "policy": 2094.0682888031006,
+        "automation": 2126.7220973968506,
+        "total_pipeline": 12059.44275856018
+      }
+    },
+    {
+      "scenario_id": "data_exfiltration",
+      "name": "Data Exfiltration to Threat Actor",
+      "status": "FAIL",
+      "expected_urs": 82.0,
+      "actual_urs": 44.550042,
+      "expected_decision": "Critical",
+      "actual_decision": "Monitor",
+      "latencies": {
+        "ai": 2043.7815189361572,
+        "risk": 6104.9909591674805,
+        "prediction": 36.29,
+        "policy": 2097.5565910339355,
+        "automation": 2062.2706413269043,
+        "total_pipeline": 12308.599710464478
+      }
+    },
+    {
+      "scenario_id": "ddos",
+      "name": "DDoS SYN Flood Saturation",
+      "status": "FAIL",
+      "expected_urs": 85.0,
+      "actual_urs": 56.16524999999999,
+      "expected_decision": "Critical",
+      "actual_decision": "Monitor",
+      "latencies": {
+        "ai": 2116.2891387939453,
+        "risk": 6693.113565444946,
+        "prediction": 24.0,
+        "policy": 2106.924533843994,
+        "automation": 2082.5140476226807,
+        "total_pipeline": 12998.841285705566
+      }
+    },
+    {
+      "scenario_id": "insider",
+      "name": "Insider Threat Action",
+      "status": "FAIL",
+      "expected_urs": 40.0,
+      "actual_urs": 44.475175,
+      "expected_decision": "Alert",
+      "actual_decision": "Monitor",
+      "latencies": {
+        "ai": 2023.2186317443848,
+        "risk": 6915.112257003784,
+        "prediction": 40.8,
+        "policy": 2102.172374725342,
+        "automation": 2109.7636222839355,
+        "total_pipeline": 13150.266885757446
+      }
+    },
+    {
+      "scenario_id": "low_risk",
+      "name": "Normal Operations / Baseline",
+      "status": "FAIL",
+      "expected_urs": 10.5,
+      "actual_urs": 42.090042,
+      "expected_decision": "Normal",
+      "actual_decision": "Monitor",
+      "latencies": {
+        "ai": 2031.5289497375488,
+        "risk": 6842.921495437622,
+        "prediction": 31.33,
+        "policy": 2110.4061603546143,
+        "automation": 2098.2396602630615,
+        "total_pipeline": 13083.096265792847
+      }
+    },
+    {
+      "scenario_id": "privilege_escalation",
+      "name": "Privilege Escalation Attack",
+      "status": "FAIL",
+      "expected_urs": 68.0,
+      "actual_urs": 51.450419999999994,
+      "expected_decision": "Critical",
+      "actual_decision": "Monitor",
+      "latencies": {
+        "ai": 2042.6084995269775,
+        "risk": 6130.88583946228,
+        "prediction": 113.4,
+        "policy": 2090.7561779022217,
+        "automation": 2611.039876937866,
+        "total_pipeline": 12875.290393829346
+      }
+    },
+    {
+      "scenario_id": "ransomware",
+      "name": "Ransomware / Volume Encryption",
+      "status": "FAIL",
+      "expected_urs": 95.0,
+      "actual_urs": 58.440419999999996,
+      "expected_decision": "Critical",
+      "actual_decision": "Monitor",
+      "latencies": {
+        "ai": 2083.81986618042,
+        "risk": 6364.597320556641,
+        "prediction": 52.45,
+        "policy": 2107.2354316711426,
+        "automation": 2092.9994583129883,
+        "total_pipeline": 12648.652076721191
+      }
+    }
+  ],
+  "runs_detailed": [
+    {
+      "scenario_id": "crypto_mining",
+      "executed_at": "2026-07-28T07:34:08.131797Z",
+      "telemetry": {
+        "cpu_utilization": 98.2,
+        "memory_usage_percent": 75.0,
+        "disk_usage_percent": 17.0,
+        "packet_rate_in": 12000,
+        "packet_rate_out": 15000
+      },
+      "ai_engine_results": {
+        "status": "success",
+        "is_anomaly": true,
+        "reconstruction_loss": 15.900921821594238,
+        "threshold": 0.5903872311115265
+      },
+      "risk_engine_results": {
+        "status": "success",
+        "urs": 60.0342,
+        "risk_score": 60.0342,
+        "decision": "Monitor",
+        "reason": "Mild deviations detected. Increasing telemetry logging resolution.",
+        "contributors": [
+          {
+            "parameter": "CPU",
+            "value": 98.2,
+            "weight": 0.15,
+            "contribution": 14.73,
+            "reason": "CPU utilization exceeded adaptive threshold. (Adaptive Weight: 0.15)"
+          },
+          {
+            "parameter": "Memory",
+            "value": 75.0,
+            "weight": 0.15,
+            "contribution": 11.25,
+            "reason": "Memory utilization above expected baseline. (Adaptive Weight: 0.15)"
+          },
+          {
+            "parameter": "Disk",
+            "value": 17.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "reason": "Disk space utilization is within normal limits. (Adaptive Weight: 0.0)"
+          },
+          {
+            "parameter": "Network",
+            "value": 0.01,
+            "weight": 0.35,
+            "contribution": 0.0,
+            "reason": "Network traffic is normal. (Adaptive Weight: 0.35)"
+          },
+          {
+            "parameter": "Anomaly Score",
+            "value": 100.0,
+            "weight": 0.2,
+            "contribution": 20.0,
+            "reason": "Highly anomalous activity signature detected by AI Engine. (Adaptive Weight: 0.2)"
+          },
+          {
+            "parameter": "Reconstruction Error",
+            "value": 100.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "reason": "Severe autoencoder reconstruction error, indicating anomalous operational states. (Adaptive Weight: 0.0)"
+          },
+          {
+            "parameter": "Historical Frequency",
+            "value": 91.0,
+            "weight": 0.05,
+            "contribution": 4.55,
+            "reason": "High historical anomaly frequency, indicating chronic instability. (Adaptive Weight: 0.05)"
+          },
+          {
+            "parameter": "Confidence",
+            "value": 95.0,
+            "weight": 0.1,
+            "contribution": 9.5,
+            "reason": "High confidence in anomaly classification accuracy. (Adaptive Weight: 0.1)"
+          },
+          {
+            "parameter": "Asset Criticality",
+            "value": 1.0,
+            "weight": 1.0,
+            "contribution": 0.0,
+            "reason": "Standard baseline asset criticality multiplier. (Adaptive Weight: 1.0)"
+          }
+        ],
+        "topContributor": "Anomaly Score",
+        "timestamp": "2026-07-28T07:34:00.609795",
+        "context": {
+          "timePeriod": "Morning",
+          "dayType": "Weekday",
+          "profile": "Business Hours"
+        },
+        "adaptiveWeights": {
+          "cpu": 0.15,
+          "memory": 0.15,
+          "disk": 0.0,
+          "network": 0.35,
+          "anomaly": 0.2,
+          "reconstruction": 0.0,
+          "confidence": 0.1,
+          "historical": 0.05
+        },
+        "comparison": {
+          "staticURS": 85.92,
+          "adaptiveURS": 60.03,
+          "difference": -25.89,
+          "improvement": "Reduced false positives during business hours workload."
+        },
+        "contextConfidence": 0.95,
+        "profileVersion": "1.0.0",
+        "adaptationReason": "Network activity receives higher importance during business hours because lateral movement attacks are more probable.",
+        "quantumReadiness": {
+          "score": 35,
+          "classification": "Moderate",
+          "migrationPriority": "Immediate",
+          "overallQuantumRisk": "Very High"
+        },
+        "cryptography": [
+          {
+            "algorithm": "RSA-2048",
+            "quantumRisk": "Very High",
+            "readinessWeight": 15,
+            "recommendation": "Migrate to ML-KEM (Kyber) hybrid TLS.",
+            "reason": "Shor's algorithm can efficiently compromise RSA key exchange."
+          },
+          {
+            "algorithm": "ECC P-256",
+            "quantumRisk": "Medium",
+            "readinessWeight": 55,
+            "recommendation": "Transition to hybrid PQC key exchange.",
+            "reason": "Elliptic curves are vulnerable to Shor's algorithm, requiring transition to hybrid PQC key exchange."
+          }
+        ],
+        "quantumExplanation": "Monitored assets have an overall quantum readiness classification of Moderate with a score of 35/100. The presence of legacy algorithms like RSA-2048 presents a Very High quantum risk, requiring immediate migration planning to post-quantum alternatives.",
+        "dashboardData": {
+          "migrationPriority": "Immediate",
+          "topRecommendation": "Migrate to ML-KEM (Kyber) hybrid TLS.",
+          "highestQuantumRiskAlgorithm": "RSA-2048",
+          "overallQuantumReadiness": "Moderate",
+          "Migration Priority": "Immediate",
+          "Top Recommendation": "Migrate to ML-KEM (Kyber) hybrid TLS.",
+          "Highest Quantum Risk Algorithm": "RSA-2048",
+          "Overall Quantum Readiness": "Moderate"
+        },
+        "recommendations": {
+          "status": "success",
+          "timestamp": "2026-07-28T07:34:03.226156Z",
+          "request_id": "29217c22-ed95-48a3-a42b-35d4168509c5",
+          "service": "Policy Recommendation Engine API",
+          "version": "0.1.0",
+          "execution_time": "72.94ms",
+          "data": [
+            {
+              "recommendationId": "REC-CRYPTO-001",
+              "title": "Migrate Legacy Cryptography to Post-Quantum Algorithms",
+              "description": "Identify systems using legacy algorithms (such as RSA-2048) and upgrade them to quantum-safe alternatives (ML-KEM/Kyber hybrid TLS key exchange or ML-DSA signature schemes).",
+              "category": "Cryptography",
+              "priority": "Critical",
+              "confidence": 0.95,
+              "estimatedRiskReduction": 75.0,
+              "automationSupported": false,
+              "reasoning": "Assets currently run legacy cryptography with Very High quantum risk. Upgrading to PQC secures authentication keys from Shor's algorithm."
+            }
+          ],
+          "errors": null
+        },
+        "prediction_summary": {
+          "status": "success",
+          "timestamp": "2026-07-28T07:34:03.783350Z",
+          "request_id": "29217c22-ed95-48a3-a42b-35d4168509c5",
+          "service": "Prediction Engine API",
+          "version": "1.1.0",
+          "execution_time": "90.40ms",
+          "data": {
+            "resource_id": "res-crypto_mining",
+            "current_urs": 60.0342,
+            "projected_urs": {
+              "1": 60.1152,
+              "3": 60.2773,
+              "6": 60.5205,
+              "12": 61.0068,
+              "24": 61.9793
+            },
+            "ctps": 0.225,
+            "factors": {
+              "severity": 0.3,
+              "exposure": 1.0,
+              "criticality": 1.0,
+              "trend": 1.0,
+              "persistence": 1.0,
+              "remediation": 0.75,
+              "age": 1.0
+            },
+            "risk_trend": "stable",
+            "timeline": [
+              {
+                "horizon_hours": 1,
+                "projected_urs": 60.1152,
+                "confidence": 97.5,
+                "business_impact_level": "Medium",
+                "events": [
+                  {
+                    "event": "Exposed services detected by external scanners",
+                    "attack_phase": "Reconnaissance",
+                    "affected_services": [
+                      "public-facing endpoints"
+                    ]
+                  },
+                  {
+                    "event": "Credential exposure risk from open management ports",
+                    "attack_phase": "Initial Access",
+                    "affected_services": [
+                      "authentication services"
+                    ]
+                  },
+                  {
+                    "event": "Credential compromise risk increases significantly",
+                    "attack_phase": "Persistence",
+                    "affected_services": [
+                      "IAM",
+                      "authentication services"
+                    ]
+                  }
+                ],
+                "explanation": "URS increases from 60.0 to 60.1 at 1h horizon. Baseline risk factors are within normal ranges"
+              },
+              {
+                "horizon_hours": 3,
+                "projected_urs": 60.2773,
+                "confidence": 92.5,
+                "business_impact_level": "Medium",
+                "events": [
+                  {
+                    "event": "Exposed services detected by external scanners",
+                    "attack_phase": "Reconnaissance",
+                    "affected_services": [
+                      "public-facing endpoints"
+                    ]
+                  },
+                  {
+                    "event": "Credential exposure risk from open management ports",
+                    "attack_phase": "Initial Access",
+                    "affected_services": [
+                      "authentication services"
+                    ]
+                  },
+                  {
+                    "event": "Credential compromise risk increases significantly",
+                    "attack_phase": "Persistence",
+                    "affected_services": [
+                      "IAM",
+                      "authentication services"
+                    ]
+                  }
+                ],
+                "explanation": "URS increases from 60.0 to 60.3 at 3h horizon. Baseline risk factors are within normal ranges"
+              },
+              {
+                "horizon_hours": 6,
+                "projected_urs": 60.5205,
+                "confidence": 85.0,
+                "business_impact_level": "Medium",
+                "events": [
+                  {
+                    "event": "Exposed services detected by external scanners",
+                    "attack_phase": "Reconnaissance",
+                    "affected_services": [
+                      "public-facing endpoints"
+                    ]
+                  },
+                  {
+                    "event": "Credential exposure risk from open management ports",
+                    "attack_phase": "Initial Access",
+                    "affected_services": [
+                      "authentication services"
+                    ]
+                  },
+                  {
+                    "event": "Credential compromise risk increases significantly",
+                    "attack_phase": "Persistence",
+                    "affected_services": [
+                      "IAM",
+                      "authentication services"
+                    ]
+                  }
+                ],
+                "explanation": "URS increases from 60.0 to 60.5 at 6h horizon. Baseline risk factors are within normal ranges"
+              },
+              {
+                "horizon_hours": 12,
+                "projected_urs": 61.0068,
+                "confidence": 70.0,
+                "business_impact_level": "Medium",
+                "events": [
+                  {
+                    "event": "Exposed services detected by external scanners",
+                    "attack_phase": "Reconnaissance",
+                    "affected_services": [
+                      "public-facing endpoints"
+                    ]
+                  },
+                  {
+                    "event": "Credential exposure risk from open management ports",
+                    "attack_phase": "Initial Access",
+                    "affected_services": [
+                      "authentication services"
+                    ]
+                  },
+                  {
+                    "event": "Credential compromise risk increases significantly",
+                    "attack_phase": "Persistence",
+                    "affected_services": [
+                      "IAM",
+                      "authentication services"
+                    ]
+                  }
+                ],
+                "explanation": "URS increases from 60.0 to 61.0 at 12h horizon. Baseline risk factors are within normal ranges"
+              },
+              {
+                "horizon_hours": 24,
+                "projected_urs": 61.9793,
+                "confidence": 40.0,
+                "business_impact_level": "Medium",
+                "events": [
+                  {
+                    "event": "Exposed services detected by external scanners",
+                    "attack_phase": "Reconnaissance",
+                    "affected_services": [
+                      "public-facing endpoints"
+                    ]
+                  },
+                  {
+                    "event": "Credential exposure risk from open management ports",
+                    "attack_phase": "Initial Access",
+                    "affected_services": [
+                      "authentication services"
+                    ]
+                  },
+                  {
+                    "event": "Credential compromise risk increases significantly",
+                    "attack_phase": "Persistence",
+                    "affected_services": [
+                      "IAM",
+                      "authentication services"
+                    ]
+                  }
+                ],
+                "explanation": "URS increases from 60.0 to 62.0 at 24h horizon. Baseline risk factors are within normal ranges"
+              }
+            ],
+            "confidence": {
+              "score": 65.0,
+              "level": "Medium",
+              "explanation": [
+                "Telemetry (30% weight): moderate \u2014 50/100",
+                "Stability (25% weight): strong \u2014 100/100",
+                "Criticality (25% weight): moderate \u2014 60/100",
+                "Historical (20% weight): moderate \u2014 50/100"
+              ]
+            },
+            "business_impact": {
+              "scores": {
+                "operational": 61.98,
+                "financial": 49.58,
+                "compliance": 55.78,
+                "availability": 52.68,
+                "reputation": 43.39
+              },
+              "overall": 52.68,
+              "level": "Medium",
+              "trend": "stable",
+              "explanation": [
+                "Highest impact category: operational (62.0/100)"
+              ]
+            },
+            "explanation": [
+              "Baseline risk factors are within normal ranges"
+            ],
+            "algorithm_version": "CTPS-v1.0",
+            "timestamp": "2026-07-28T07:34:03.708571Z"
+          },
+          "errors": null,
+          "resource_id": "res-crypto_mining",
+          "current_urs": 60.0342,
+          "projected_urs": {
+            "1": 60.1152,
+            "3": 60.2773,
+            "6": 60.5205,
+            "12": 61.0068,
+            "24": 61.9793
+          },
+          "ctps": 0.225,
+          "factors": {
+            "severity": 0.3,
+            "exposure": 1.0,
+            "criticality": 1.0,
+            "trend": 1.0,
+            "persistence": 1.0,
+            "remediation": 0.75,
+            "age": 1.0
+          },
+          "risk_trend": "stable",
+          "timeline": [
+            {
+              "horizon_hours": 1,
+              "projected_urs": 60.1152,
+              "confidence": 97.5,
+              "business_impact_level": "Medium",
+              "events": [
+                {
+                  "event": "Exposed services detected by external scanners",
+                  "attack_phase": "Reconnaissance",
+                  "affected_services": [
+                    "public-facing endpoints"
+                  ]
+                },
+                {
+                  "event": "Credential exposure risk from open management ports",
+                  "attack_phase": "Initial Access",
+                  "affected_services": [
+                    "authentication services"
+                  ]
+                },
+                {
+                  "event": "Credential compromise risk increases significantly",
+                  "attack_phase": "Persistence",
+                  "affected_services": [
+                    "IAM",
+                    "authentication services"
+                  ]
+                }
+              ],
+              "explanation": "URS increases from 60.0 to 60.1 at 1h horizon. Baseline risk factors are within normal ranges"
+            },
+            {
+              "horizon_hours": 3,
+              "projected_urs": 60.2773,
+              "confidence": 92.5,
+              "business_impact_level": "Medium",
+              "events": [
+                {
+                  "event": "Exposed services detected by external scanners",
+                  "attack_phase": "Reconnaissance",
+                  "affected_services": [
+                    "public-facing endpoints"
+                  ]
+                },
+                {
+                  "event": "Credential exposure risk from open management ports",
+                  "attack_phase": "Initial Access",
+                  "affected_services": [
+                    "authentication services"
+                  ]
+                },
+                {
+                  "event": "Credential compromise risk increases significantly",
+                  "attack_phase": "Persistence",
+                  "affected_services": [
+                    "IAM",
+                    "authentication services"
+                  ]
+                }
+              ],
+              "explanation": "URS increases from 60.0 to 60.3 at 3h horizon. Baseline risk factors are within normal ranges"
+            },
+            {
+              "horizon_hours": 6,
+              "projected_urs": 60.5205,
+              "confidence": 85.0,
+              "business_impact_level": "Medium",
+              "events": [
+                {
+                  "event": "Exposed services detected by external scanners",
+                  "attack_phase": "Reconnaissance",
+                  "affected_services": [
+                    "public-facing endpoints"
+                  ]
+                },
+                {
+                  "event": "Credential exposure risk from open management ports",
+                  "attack_phase": "Initial Access",
+                  "affected_services": [
+                    "authentication services"
+                  ]
+                },
+                {
+                  "event": "Credential compromise risk increases significantly",
+                  "attack_phase": "Persistence",
+                  "affected_services": [
+                    "IAM",
+                    "authentication services"
+                  ]
+                }
+              ],
+              "explanation": "URS increases from 60.0 to 60.5 at 6h horizon. Baseline risk factors are within normal ranges"
+            },
+            {
+              "horizon_hours": 12,
+              "projected_urs": 61.0068,
+              "confidence": 70.0,
+              "business_impact_level": "Medium",
+              "events": [
+                {
+                  "event": "Exposed services detected by external scanners",
+                  "attack_phase": "Reconnaissance",
+                  "affected_services": [
+                    "public-facing endpoints"
+                  ]
+                },
+                {
+                  "event": "Credential exposure risk from open management ports",
+                  "attack_phase": "Initial Access",
+                  "affected_services": [
+                    "authentication services"
+                  ]
+                },
+                {
+                  "event": "Credential compromise risk increases significantly",
+                  "attack_phase": "Persistence",
+                  "affected_services": [
+                    "IAM",
+                    "authentication services"
+                  ]
+                }
+              ],
+              "explanation": "URS increases from 60.0 to 61.0 at 12h horizon. Baseline risk factors are within normal ranges"
+            },
+            {
+              "horizon_hours": 24,
+              "projected_urs": 61.9793,
+              "confidence": 40.0,
+              "business_impact_level": "Medium",
+              "events": [
+                {
+                  "event": "Exposed services detected by external scanners",
+                  "attack_phase": "Reconnaissance",
+                  "affected_services": [
+                    "public-facing endpoints"
+                  ]
+                },
+                {
+                  "event": "Credential exposure risk from open management ports",
+                  "attack_phase": "Initial Access",
+                  "affected_services": [
+                    "authentication services"
+                  ]
+                },
+                {
+                  "event": "Credential compromise risk increases significantly",
+                  "attack_phase": "Persistence",
+                  "affected_services": [
+                    "IAM",
+                    "authentication services"
+                  ]
+                }
+              ],
+              "explanation": "URS increases from 60.0 to 62.0 at 24h horizon. Baseline risk factors are within normal ranges"
+            }
+          ],
+          "confidence": {
+            "score": 65.0,
+            "level": "Medium",
+            "explanation": [
+              "Telemetry (30% weight): moderate \u2014 50/100",
+              "Stability (25% weight): strong \u2014 100/100",
+              "Criticality (25% weight): moderate \u2014 60/100",
+              "Historical (20% weight): moderate \u2014 50/100"
+            ]
+          },
+          "business_impact": {
+            "scores": {
+              "operational": 61.98,
+              "financial": 49.58,
+              "compliance": 55.78,
+              "availability": 52.68,
+              "reputation": 43.39
+            },
+            "overall": 52.68,
+            "level": "Medium",
+            "trend": "stable",
+            "explanation": [
+              "Highest impact category: operational (62.0/100)"
+            ]
+          },
+          "explanation": [
+            "Baseline risk factors are within normal ranges"
+          ],
+          "algorithm_version": "CTPS-v1.0"
+        }
+      },
+      "policy_engine_results": [
+        {
+          "recommendationId": "REC-MONITOR-100",
+          "title": "Enable DevSecOps Baseline Telemetry Audits",
+          "description": "Keep standard Prometheus scraping intervals and configure automated log integrity monitoring across all container daemon events.",
+          "category": "Monitoring",
+          "priority": "Low",
+          "confidence": 0.99,
+          "estimatedRiskReduction": 5.0,
+          "automationSupported": true,
+          "reasoning": "Telemetry levels are currently normal. Baseline monitoring provides data for future drift detection."
+        },
+        {
+          "recommendationId": "REC-LOG-100",
+          "title": "Standardize Logging Level and Rotation Parameters",
+          "description": "Configure log rotation to restrict log sizes on node hosts to 10MB per container, keeping a maximum of 5 logs to optimize storage.",
+          "category": "Logging",
+          "priority": "Low",
+          "confidence": 0.99,
+          "estimatedRiskReduction": 5.0,
+          "automationSupported": true,
+          "reasoning": "Normal workload logging profile keeps operational volumes clean and stable."
+        }
+      ],
+      "automation_engine_results": {
+        "status": "success",
+        "riskScore": 60.0342,
+        "decision": "Monitor",
+        "provider": "aws",
+        "instanceId": "i-04ba6569c74d41d59",
+        "summary": "Recommended playbook: Default Remediation Playbook",
+        "executionPlan": [
+          {
+            "step": 1,
+            "action": "Default Remediation Playbook",
+            "description": "Mitigation",
+            "status": "Pending",
+            "estimatedExecutionTime": 5.0
+          }
+        ],
+        "ansiblePlaybook": "---\n- name: Default Remediation Playbook\n  hosts: all\n  tasks:\n    - name: Configure standard DevSecOps security controls\n      ansible.builtin.debug:\n        msg: 'Remediation active'",
+        "terraformManifest": "resource \"aws_security_group_rule\" \"remediation\" {}",
+        "awsCliCommands": [
+          "aws ec2 stop-instances --instance-ids i-04ba6569c74d41d59"
+        ],
+        "kubectlCommands": [
+          "kubectl label pod -l instanceId=i-04ba6569c74d41d59 status=quarantined"
+        ],
+        "shellScript": "#!/bin/bash\n# Default Remediation Playbook\naws ec2 stop-instances --instance-ids i-04ba6569c74d41d59",
+        "jsonPlan": "{\"action\": \"Default Remediation Playbook\", \"target\": \"i-04ba6569c74d41d59\"}",
+        "automationLevel": "Fully Automated",
+        "estimatedExecutionTime": 5.0,
+        "rollbackAvailable": true,
+        "metrics": {
+          "optimizationGain": 0.0,
+          "playbooksConsidered": 0,
+          "playbooksSelected": 1,
+          "playbooksRemoved": 0,
+          "estimatedTimeSaved": 0.0,
+          "estimatedRiskReduction": 0.0,
+          "estimatedServiceAvailability": 100.0,
+          "expectedRecoveryPercentage": 100.0
+        },
+        "executionOrder": [
+          {
+            "step": 1,
+            "playbookId": "default",
+            "title": "Default Remediation Playbook",
+            "category": "General",
+            "priorityScore": 50.0,
+            "selectedBecause": [
+              "Default fallback"
+            ],
+            "breakdown": {},
+            "estimatedDuration": 5.0,
+            "ursReduction": 0.0,
+            "recoveryScore": 5.0,
+            "disruptionScore": 5.0,
+            "rollbackAvailable": true,
+            "parallel": false
+          }
+        ],
+        "rejectedPlaybooks": [],
+        "ursBefore": 60.0342,
+        "ursAfter": 60.0342,
+        "ursProjection": [
+          60.0342
+        ],
+        "dependencyGraph": {},
+        "optimizationRationale": "Fallback execution mode active.",
+        "conflictResolutionExplanation": "",
+        "auditId": "AUD-AUTO-1785204248"
+      },
+      "success": false
+    },
+    {
+      "scenario_id": "data_exfiltration",
+      "executed_at": "2026-07-28T07:34:22.712818Z",
+      "telemetry": {
+        "cpu_utilization": 22.0,
+        "memory_usage_percent": 48.0,
+        "disk_usage_percent": 15.0,
+        "packet_rate_in": 120,
+        "packet_rate_out": 22000
+      },
+      "ai_engine_results": {
+        "status": "success",
+        "is_anomaly": true,
+        "reconstruction_loss": 4.856677055358887,
+        "threshold": 0.5903872311115265
+      },
+      "risk_engine_results": {
+        "status": "success",
+        "urs": 44.550042,
+        "risk_score": 44.550042,
+        "decision": "Monitor",
+        "reason": "Mild deviations detected. Increasing telemetry logging resolution.",
+        "contributors": [
+          {
+            "parameter": "CPU",
+            "value": 22.0,
+            "weight": 0.15,
+            "contribution": 3.3,
+            "reason": "CPU utilization is within normal limits. (Adaptive Weight: 0.15)"
+          },
+          {
+            "parameter": "Memory",
+            "value": 48.0,
+            "weight": 0.15,
+            "contribution": 7.2,
+            "reason": "Memory utilization is within normal limits. (Adaptive Weight: 0.15)"
+          },
+          {
+            "parameter": "Disk",
+            "value": 15.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "reason": "Disk space utilization is within normal limits. (Adaptive Weight: 0.0)"
+          },
+          {
+            "parameter": "Network",
+            "value": 0.0,
+            "weight": 0.35,
+            "contribution": 0.0,
+            "reason": "Network traffic is normal. (Adaptive Weight: 0.35)"
+          },
+          {
+            "parameter": "Anomaly Score",
+            "value": 100.0,
+            "weight": 0.2,
+            "contribution": 20.0,
+            "reason": "Highly anomalous activity signature detected by AI Engine. (Adaptive Weight: 0.2)"
+          },
+          {
+            "parameter": "Reconstruction Error",
+            "value": 100.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "reason": "Severe autoencoder reconstruction error, indicating anomalous operational states. (Adaptive Weight: 0.0)"
+          },
+          {
+            "parameter": "Historical Frequency",
+            "value": 91.0,
+            "weight": 0.05,
+            "contribution": 4.55,
+            "reason": "High historical anomaly frequency, indicating chronic instability. (Adaptive Weight: 0.05)"
+          },
+          {
+            "parameter": "Confidence",
+            "value": 95.0,
+            "weight": 0.1,
+            "contribution": 9.5,
+            "reason": "High confidence in anomaly classification accuracy. (Adaptive Weight: 0.1)"
+          },
+          {
+            "parameter": "Asset Criticality",
+            "value": 1.0,
+            "weight": 1.0,
+            "contribution": 0.0,
+            "reason": "Standard baseline asset criticality multiplier. (Adaptive Weight: 1.0)"
+          }
+        ],
+        "topContributor": "Anomaly Score",
+        "timestamp": "2026-07-28T07:34:15.429697",
+        "context": {
+          "timePeriod": "Morning",
+          "dayType": "Weekday",
+          "profile": "Business Hours"
+        },
+        "adaptiveWeights": {
+          "cpu": 0.15,
+          "memory": 0.15,
+          "disk": 0.0,
+          "network": 0.35,
+          "anomaly": 0.2,
+          "reconstruction": 0.0,
+          "confidence": 0.1,
+          "historical": 0.05
+        },
+        "comparison": {
+          "staticURS": 75.6,
+          "adaptiveURS": 44.55,
+          "difference": -31.05,
+          "improvement": "Reduced false positives during business hours workload."
+        },
+        "contextConfidence": 0.95,
+        "profileVersion": "1.0.0",
+        "adaptationReason": "Network activity receives higher importance during business hours because lateral movement attacks are more probable.",
+        "quantumReadiness": {
+          "score": 35,
+          "classification": "Moderate",
+          "migrationPriority": "Immediate",
+          "overallQuantumRisk": "Very High"
+        },
+        "cryptography": [
+          {
+            "algorithm": "RSA-2048",
+            "quantumRisk": "Very High",
+            "readinessWeight": 15,
+            "recommendation": "Migrate to ML-KEM (Kyber) hybrid TLS.",
+            "reason": "Shor's algorithm can efficiently compromise RSA key exchange."
+          },
+          {
+            "algorithm": "ECC P-256",
+            "quantumRisk": "Medium",
+            "readinessWeight": 55,
+            "recommendation": "Transition to hybrid PQC key exchange.",
+            "reason": "Elliptic curves are vulnerable to Shor's algorithm, requiring transition to hybrid PQC key exchange."
+          }
+        ],
+        "quantumExplanation": "Monitored assets have an overall quantum readiness classification of Moderate with a score of 35/100. The presence of legacy algorithms like RSA-2048 presents a Very High quantum risk, requiring immediate migration planning to post-quantum alternatives.",
+        "dashboardData": {
+          "migrationPriority": "Immediate",
+          "topRecommendation": "Migrate to ML-KEM (Kyber) hybrid TLS.",
+          "highestQuantumRiskAlgorithm": "RSA-2048",
+          "overallQuantumReadiness": "Moderate",
+          "Migration Priority": "Immediate",
+          "Top Recommendation": "Migrate to ML-KEM (Kyber) hybrid TLS.",
+          "Highest Quantum Risk Algorithm": "RSA-2048",
+          "Overall Quantum Readiness": "Moderate"
+        },
+        "recommendations": {
+          "status": "success",
+          "timestamp": "2026-07-28T07:34:17.947690Z",
+          "request_id": "4f040e9d-0fa5-444c-9cde-9b163085fcf3",
+          "service": "Policy Recommendation Engine API",
+          "version": "0.1.0",
+          "execution_time": "53.41ms",
+          "data": [
+            {
+              "recommendationId": "REC-CRYPTO-001",
+              "title": "Migrate Legacy Cryptography to Post-Quantum Algorithms",
+              "description": "Identify systems using legacy algorithms (such as RSA-2048) and upgrade them to quantum-safe alternatives (ML-KEM/Kyber hybrid TLS key exchange or ML-DSA signature schemes).",
+              "category": "Cryptography",
+              "priority": "Critical",
+              "confidence": 0.95,
+              "estimatedRiskReduction": 75.0,
+              "automationSupported": false,
+              "reasoning": "Assets currently run legacy cryptography with Very High quantum risk. Upgrading to PQC secures authentication keys from Shor's algorithm."
+            }
+          ],
+          "errors": null
+        },
+        "prediction_summary": {
+          "status": "success",
+          "timestamp": "2026-07-28T07:34:18.484521Z",
+          "request_id": "4f040e9d-0fa5-444c-9cde-9b163085fcf3",
+          "service": "Prediction Engine API",
+          "version": "1.1.0",
+          "execution_time": "36.29ms",
+          "data": {
+            "resource_id": "res-data_exfiltration",
+            "current_urs": 44.550042,
+            "projected_urs": {
+              "1": 44.6102,
+              "3": 44.7305,
+              "6": 44.9109,
+              "12": 45.2718,
+              "24": 45.9935
+            },
+            "ctps": 0.225,
+            "factors": {
+              "severity": 0.3,
+              "exposure": 1.0,
+              "criticality": 1.0,
+              "trend": 1.0,
+              "persistence": 1.0,
+              "remediation": 0.75,
+              "age": 1.0
+            },
+            "risk_trend": "stable",
+            "timeline": [
+              {
+                "horizon_hours": 1,
+                "projected_urs": 44.6102,
+                "confidence": 97.5,
+                "business_impact_level": "Low",
+                "events": [
+                  {
+                    "event": "Exposed services detected by external scanners",
+                    "attack_phase": "Reconnaissance",
+                    "affected_services": [
+                      "public-facing endpoints"
+                    ]
+                  },
+                  {
+                    "event": "Credential exposure risk from open management ports",
+                    "attack_phase": "Initial Access",
+                    "affected_services": [
+                      "authentication services"
+                    ]
+                  }
+                ],
+                "explanation": "URS increases from 44.6 to 44.6 at 1h horizon. Baseline risk factors are within normal ranges"
+              },
+              {
+                "horizon_hours": 3,
+                "projected_urs": 44.7305,
+                "confidence": 92.5,
+                "business_impact_level": "Low",
+                "events": [
+                  {
+                    "event": "Exposed services detected by external scanners",
+                    "attack_phase": "Reconnaissance",
+                    "affected_services": [
+                      "public-facing endpoints"
+                    ]
+                  },
+                  {
+                    "event": "Credential exposure risk from open management ports",
+                    "attack_phase": "Initial Access",
+                    "affected_services": [
+                      "authentication services"
+                    ]
+                  }
+                ],
+                "explanation": "URS increases from 44.6 to 44.7 at 3h horizon. Baseline risk factors are within normal ranges"
+              },
+              {
+                "horizon_hours": 6,
+                "projected_urs": 44.9109,
+                "confidence": 85.0,
+                "business_impact_level": "Low",
+                "events": [
+                  {
+                    "event": "Exposed services detected by external scanners",
+                    "attack_phase": "Reconnaissance",
+                    "affected_services": [
+                      "public-facing endpoints"
+                    ]
+                  },
+                  {
+                    "event": "Credential exposure risk from open management ports",
+                    "attack_phase": "Initial Access",
+                    "affected_services": [
+                      "authentication services"
+                    ]
+                  }
+                ],
+                "explanation": "URS increases from 44.6 to 44.9 at 6h horizon. Baseline risk factors are within normal ranges"
+              },
+              {
+                "horizon_hours": 12,
+                "projected_urs": 45.2718,
+                "confidence": 70.0,
+                "business_impact_level": "Medium",
+                "events": [
+                  {
+                    "event": "Exposed services detected by external scanners",
+                    "attack_phase": "Reconnaissance",
+                    "affected_services": [
+                      "public-facing endpoints"
+                    ]
+                  },
+                  {
+                    "event": "Credential exposure risk from open management ports",
+                    "attack_phase": "Initial Access",
+                    "affected_services": [
+                      "authentication services"
+                    ]
+                  },
+                  {
+                    "event": "Credential compromise risk increases significantly",
+                    "attack_phase": "Persistence",
+                    "affected_services": [
+                      "IAM",
+                      "authentication services"
+                    ]
+                  }
+                ],
+                "explanation": "URS increases from 44.6 to 45.3 at 12h horizon. Baseline risk factors are within normal ranges"
+              },
+              {
+                "horizon_hours": 24,
+                "projected_urs": 45.9935,
+                "confidence": 40.0,
+                "business_impact_level": "Medium",
+                "events": [
+                  {
+                    "event": "Exposed services detected by external scanners",
+                    "attack_phase": "Reconnaissance",
+                    "affected_services": [
+                      "public-facing endpoints"
+                    ]
+                  },
+                  {
+                    "event": "Credential exposure risk from open management ports",
+                    "attack_phase": "Initial Access",
+                    "affected_services": [
+                      "authentication services"
+                    ]
+                  },
+                  {
+                    "event": "Credential compromise risk increases significantly",
+                    "attack_phase": "Persistence",
+                    "affected_services": [
+                      "IAM",
+                      "authentication services"
+                    ]
+                  }
+                ],
+                "explanation": "URS increases from 44.6 to 46.0 at 24h horizon. Baseline risk factors are within normal ranges"
+              }
+            ],
+            "confidence": {
+              "score": 65.0,
+              "level": "Medium",
+              "explanation": [
+                "Telemetry (30% weight): moderate \u2014 50/100",
+                "Stability (25% weight): strong \u2014 100/100",
+                "Criticality (25% weight): moderate \u2014 60/100",
+                "Historical (20% weight): moderate \u2014 50/100"
+              ]
+            },
+            "business_impact": {
+              "scores": {
+                "operational": 45.99,
+                "financial": 36.79,
+                "compliance": 41.39,
+                "availability": 39.09,
+                "reputation": 32.2
+              },
+              "overall": 39.09,
+              "level": "Medium",
+              "trend": "stable",
+              "explanation": [
+                "Highest impact category: operational (46.0/100)"
+              ]
+            },
+            "explanation": [
+              "Baseline risk factors are within normal ranges"
+            ],
+            "algorithm_version": "CTPS-v1.0",
+            "timestamp": "2026-07-28T07:34:18.448229Z"
+          },
+          "errors": null,
+          "resource_id": "res-data_exfiltration",
+          "current_urs": 44.550042,
+          "projected_urs": {
+            "1": 44.6102,
+            "3": 44.7305,
+            "6": 44.9109,
+            "12": 45.2718,
+            "24": 45.9935
+          },
+          "ctps": 0.225,
+          "factors": {
+            "severity": 0.3,
+            "exposure": 1.0,
+            "criticality": 1.0,
+            "trend": 1.0,
+            "persistence": 1.0,
+            "remediation": 0.75,
+            "age": 1.0
+          },
+          "risk_trend": "stable",
+          "timeline": [
+            {
+              "horizon_hours": 1,
+              "projected_urs": 44.6102,
+              "confidence": 97.5,
+              "business_impact_level": "Low",
+              "events": [
+                {
+                  "event": "Exposed services detected by external scanners",
+                  "attack_phase": "Reconnaissance",
+                  "affected_services": [
+                    "public-facing endpoints"
+                  ]
+                },
+                {
+                  "event": "Credential exposure risk from open management ports",
+                  "attack_phase": "Initial Access",
+                  "affected_services": [
+                    "authentication services"
+                  ]
+                }
+              ],
+              "explanation": "URS increases from 44.6 to 44.6 at 1h horizon. Baseline risk factors are within normal ranges"
+            },
+            {
+              "horizon_hours": 3,
+              "projected_urs": 44.7305,
+              "confidence": 92.5,
+              "business_impact_level": "Low",
+              "events": [
+                {
+                  "event": "Exposed services detected by external scanners",
+                  "attack_phase": "Reconnaissance",
+                  "affected_services": [
+                    "public-facing endpoints"
+                  ]
+                },
+                {
+                  "event": "Credential exposure risk from open management ports",
+                  "attack_phase": "Initial Access",
+                  "affected_services": [
+                    "authentication services"
+                  ]
+                }
+              ],
+              "explanation": "URS increases from 44.6 to 44.7 at 3h horizon. Baseline risk factors are within normal ranges"
+            },
+            {
+              "horizon_hours": 6,
+              "projected_urs": 44.9109,
+              "confidence": 85.0,
+              "business_impact_level": "Low",
+              "events": [
+                {
+                  "event": "Exposed services detected by external scanners",
+                  "attack_phase": "Reconnaissance",
+                  "affected_services": [
+                    "public-facing endpoints"
+                  ]
+                },
+                {
+                  "event": "Credential exposure risk from open management ports",
+                  "attack_phase": "Initial Access",
+                  "affected_services": [
+                    "authentication services"
+                  ]
+                }
+              ],
+              "explanation": "URS increases from 44.6 to 44.9 at 6h horizon. Baseline risk factors are within normal ranges"
+            },
+            {
+              "horizon_hours": 12,
+              "projected_urs": 45.2718,
+              "confidence": 70.0,
+              "business_impact_level": "Medium",
+              "events": [
+                {
+                  "event": "Exposed services detected by external scanners",
+                  "attack_phase": "Reconnaissance",
+                  "affected_services": [
+                    "public-facing endpoints"
+                  ]
+                },
+                {
+                  "event": "Credential exposure risk from open management ports",
+                  "attack_phase": "Initial Access",
+                  "affected_services": [
+                    "authentication services"
+                  ]
+                },
+                {
+                  "event": "Credential compromise risk increases significantly",
+                  "attack_phase": "Persistence",
+                  "affected_services": [
+                    "IAM",
+                    "authentication services"
+                  ]
+                }
+              ],
+              "explanation": "URS increases from 44.6 to 45.3 at 12h horizon. Baseline risk factors are within normal ranges"
+            },
+            {
+              "horizon_hours": 24,
+              "projected_urs": 45.9935,
+              "confidence": 40.0,
+              "business_impact_level": "Medium",
+              "events": [
+                {
+                  "event": "Exposed services detected by external scanners",
+                  "attack_phase": "Reconnaissance",
+                  "affected_services": [
+                    "public-facing endpoints"
+                  ]
+                },
+                {
+                  "event": "Credential exposure risk from open management ports",
+                  "attack_phase": "Initial Access",
+                  "affected_services": [
+                    "authentication services"
+                  ]
+                },
+                {
+                  "event": "Credential compromise risk increases significantly",
+                  "attack_phase": "Persistence",
+                  "affected_services": [
+                    "IAM",
+                    "authentication services"
+                  ]
+                }
+              ],
+              "explanation": "URS increases from 44.6 to 46.0 at 24h horizon. Baseline risk factors are within normal ranges"
+            }
+          ],
+          "confidence": {
+            "score": 65.0,
+            "level": "Medium",
+            "explanation": [
+              "Telemetry (30% weight): moderate \u2014 50/100",
+              "Stability (25% weight): strong \u2014 100/100",
+              "Criticality (25% weight): moderate \u2014 60/100",
+              "Historical (20% weight): moderate \u2014 50/100"
+            ]
+          },
+          "business_impact": {
+            "scores": {
+              "operational": 45.99,
+              "financial": 36.79,
+              "compliance": 41.39,
+              "availability": 39.09,
+              "reputation": 32.2
+            },
+            "overall": 39.09,
+            "level": "Medium",
+            "trend": "stable",
+            "explanation": [
+              "Highest impact category: operational (46.0/100)"
+            ]
+          },
+          "explanation": [
+            "Baseline risk factors are within normal ranges"
+          ],
+          "algorithm_version": "CTPS-v1.0"
+        }
+      },
+      "policy_engine_results": [
+        {
+          "recommendationId": "REC-MONITOR-100",
+          "title": "Enable DevSecOps Baseline Telemetry Audits",
+          "description": "Keep standard Prometheus scraping intervals and configure automated log integrity monitoring across all container daemon events.",
+          "category": "Monitoring",
+          "priority": "Low",
+          "confidence": 0.99,
+          "estimatedRiskReduction": 5.0,
+          "automationSupported": true,
+          "reasoning": "Telemetry levels are currently normal. Baseline monitoring provides data for future drift detection."
+        },
+        {
+          "recommendationId": "REC-LOG-100",
+          "title": "Standardize Logging Level and Rotation Parameters",
+          "description": "Configure log rotation to restrict log sizes on node hosts to 10MB per container, keeping a maximum of 5 logs to optimize storage.",
+          "category": "Logging",
+          "priority": "Low",
+          "confidence": 0.99,
+          "estimatedRiskReduction": 5.0,
+          "automationSupported": true,
+          "reasoning": "Normal workload logging profile keeps operational volumes clean and stable."
+        }
+      ],
+      "automation_engine_results": {
+        "status": "success",
+        "riskScore": 44.550042,
+        "decision": "Monitor",
+        "provider": "aws",
+        "instanceId": "i-04ba6569c74d41d59",
+        "summary": "Recommended playbook: Default Remediation Playbook",
+        "executionPlan": [
+          {
+            "step": 1,
+            "action": "Default Remediation Playbook",
+            "description": "Mitigation",
+            "status": "Pending",
+            "estimatedExecutionTime": 5.0
+          }
+        ],
+        "ansiblePlaybook": "---\n- name: Default Remediation Playbook\n  hosts: all\n  tasks:\n    - name: Configure standard DevSecOps security controls\n      ansible.builtin.debug:\n        msg: 'Remediation active'",
+        "terraformManifest": "resource \"aws_security_group_rule\" \"remediation\" {}",
+        "awsCliCommands": [
+          "aws ec2 stop-instances --instance-ids i-04ba6569c74d41d59"
+        ],
+        "kubectlCommands": [
+          "kubectl label pod -l instanceId=i-04ba6569c74d41d59 status=quarantined"
+        ],
+        "shellScript": "#!/bin/bash\n# Default Remediation Playbook\naws ec2 stop-instances --instance-ids i-04ba6569c74d41d59",
+        "jsonPlan": "{\"action\": \"Default Remediation Playbook\", \"target\": \"i-04ba6569c74d41d59\"}",
+        "automationLevel": "Fully Automated",
+        "estimatedExecutionTime": 5.0,
+        "rollbackAvailable": true,
+        "metrics": {
+          "optimizationGain": 0.0,
+          "playbooksConsidered": 0,
+          "playbooksSelected": 1,
+          "playbooksRemoved": 0,
+          "estimatedTimeSaved": 0.0,
+          "estimatedRiskReduction": 0.0,
+          "estimatedServiceAvailability": 100.0,
+          "expectedRecoveryPercentage": 100.0
+        },
+        "executionOrder": [
+          {
+            "step": 1,
+            "playbookId": "default",
+            "title": "Default Remediation Playbook",
+            "category": "General",
+            "priorityScore": 50.0,
+            "selectedBecause": [
+              "Default fallback"
+            ],
+            "breakdown": {},
+            "estimatedDuration": 5.0,
+            "ursReduction": 0.0,
+            "recoveryScore": 5.0,
+            "disruptionScore": 5.0,
+            "rollbackAvailable": true,
+            "parallel": false
+          }
+        ],
+        "rejectedPlaybooks": [],
+        "ursBefore": 44.550042,
+        "ursAfter": 44.550042,
+        "ursProjection": [
+          44.550042
+        ],
+        "dependencyGraph": {},
+        "optimizationRationale": "Fallback execution mode active.",
+        "conflictResolutionExplanation": "",
+        "auditId": "AUD-AUTO-1785204262"
+      },
+      "success": false
+    },
+    {
+      "scenario_id": "ddos",
+      "executed_at": "2026-07-28T07:34:37.712320Z",
+      "telemetry": {
+        "cpu_utilization": 85.0,
+        "memory_usage_percent": 62.4,
+        "disk_usage_percent": 35.0,
+        "packet_rate_in": 15000,
+        "packet_rate_out": 300
+      },
+      "ai_engine_results": {
+        "status": "success",
+        "is_anomaly": true,
+        "reconstruction_loss": 11.523103713989258,
+        "threshold": 0.5903872311115265
+      },
+      "risk_engine_results": {
+        "status": "success",
+        "urs": 56.16524999999999,
+        "risk_score": 56.16524999999999,
+        "decision": "Monitor",
+        "reason": "Mild deviations detected. Increasing telemetry logging resolution.",
+        "contributors": [
+          {
+            "parameter": "CPU",
+            "value": 85.0,
+            "weight": 0.15,
+            "contribution": 12.75,
+            "reason": "CPU utilization exceeded adaptive threshold. (Adaptive Weight: 0.15)"
+          },
+          {
+            "parameter": "Memory",
+            "value": 62.4,
+            "weight": 0.15,
+            "contribution": 9.36,
+            "reason": "Memory utilization above expected baseline. (Adaptive Weight: 0.15)"
+          },
+          {
+            "parameter": "Disk",
+            "value": 35.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "reason": "Disk space utilization is within normal limits. (Adaptive Weight: 0.0)"
+          },
+          {
+            "parameter": "Network",
+            "value": 0.01,
+            "weight": 0.35,
+            "contribution": 0.01,
+            "reason": "Network traffic is normal. (Adaptive Weight: 0.35)"
+          },
+          {
+            "parameter": "Anomaly Score",
+            "value": 100.0,
+            "weight": 0.2,
+            "contribution": 20.0,
+            "reason": "Highly anomalous activity signature detected by AI Engine. (Adaptive Weight: 0.2)"
+          },
+          {
+            "parameter": "Reconstruction Error",
+            "value": 100.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "reason": "Severe autoencoder reconstruction error, indicating anomalous operational states. (Adaptive Weight: 0.0)"
+          },
+          {
+            "parameter": "Historical Frequency",
+            "value": 91.0,
+            "weight": 0.05,
+            "contribution": 4.55,
+            "reason": "High historical anomaly frequency, indicating chronic instability. (Adaptive Weight: 0.05)"
+          },
+          {
+            "parameter": "Confidence",
+            "value": 95.0,
+            "weight": 0.1,
+            "contribution": 9.5,
+            "reason": "High confidence in anomaly classification accuracy. (Adaptive Weight: 0.1)"
+          },
+          {
+            "parameter": "Asset Criticality",
+            "value": 1.0,
+            "weight": 1.0,
+            "contribution": 0.0,
+            "reason": "Standard baseline asset criticality multiplier. (Adaptive Weight: 1.0)"
+          }
+        ],
+        "topContributor": "Anomaly Score",
+        "timestamp": "2026-07-28T07:34:30.488323",
+        "context": {
+          "timePeriod": "Morning",
+          "dayType": "Weekday",
+          "profile": "Business Hours"
+        },
+        "adaptiveWeights": {
+          "cpu": 0.15,
+          "memory": 0.15,
+          "disk": 0.0,
+          "network": 0.35,
+          "anomaly": 0.2,
+          "reconstruction": 0.0,
+          "confidence": 0.1,
+          "historical": 0.05
+        },
+        "comparison": {
+          "staticURS": 83.34,
+          "adaptiveURS": 56.17,
+          "difference": -27.17,
+          "improvement": "Reduced false positives during business hours workload."
+        },
+        "contextConfidence": 0.95,
+        "profileVersion": "1.0.0",
+        "adaptationReason": "Network activity receives higher importance during business hours because lateral movement attacks are more probable.",
+        "quantumReadiness": {
+          "score": 35,
+          "classification": "Moderate",
+          "migrationPriority": "Immediate",
+          "overallQuantumRisk": "Very High"
+        },
+        "cryptography": [
+          {
+            "algorithm": "RSA-2048",
+            "quantumRisk": "Very High",
+            "readinessWeight": 15,
+            "recommendation": "Migrate to ML-KEM (Kyber) hybrid TLS.",
+            "reason": "Shor's algorithm can efficiently compromise RSA key exchange."
+          },
+          {
+            "algorithm": "ECC P-256",
+            "quantumRisk": "Medium",
+            "readinessWeight": 55,
+            "recommendation": "Transition to hybrid PQC key exchange.",
+            "reason": "Elliptic curves are vulnerable to Shor's algorithm, requiring transition to hybrid PQC key exchange."
+          }
+        ],
+        "quantumExplanation": "Monitored assets have an overall quantum readiness classification of Moderate with a score of 35/100. The presence of legacy algorithms like RSA-2048 presents a Very High quantum risk, requiring immediate migration planning to post-quantum alternatives.",
+        "dashboardData": {
+          "migrationPriority": "Immediate",
+          "topRecommendation": "Migrate to ML-KEM (Kyber) hybrid TLS.",
+          "highestQuantumRiskAlgorithm": "RSA-2048",
+          "overallQuantumReadiness": "Moderate",
+          "Migration Priority": "Immediate",
+          "Top Recommendation": "Migrate to ML-KEM (Kyber) hybrid TLS.",
+          "Highest Quantum Risk Algorithm": "RSA-2048",
+          "Overall Quantum Readiness": "Moderate"
+        },
+        "recommendations": {
+          "status": "success",
+          "timestamp": "2026-07-28T07:34:32.960551Z",
+          "request_id": "ebc429cc-e951-4bc3-b1b1-f85789e73356",
+          "service": "Policy Recommendation Engine API",
+          "version": "0.1.0",
+          "execution_time": "31.24ms",
+          "data": [
+            {
+              "recommendationId": "REC-CRYPTO-001",
+              "title": "Migrate Legacy Cryptography to Post-Quantum Algorithms",
+              "description": "Identify systems using legacy algorithms (such as RSA-2048) and upgrade them to quantum-safe alternatives (ML-KEM/Kyber hybrid TLS key exchange or ML-DSA signature schemes).",
+              "category": "Cryptography",
+              "priority": "Critical",
+              "confidence": 0.95,
+              "estimatedRiskReduction": 75.0,
+              "automationSupported": false,
+              "reasoning": "Assets currently run legacy cryptography with Very High quantum risk. Upgrading to PQC secures authentication keys from Shor's algorithm."
+            }
+          ],
+          "errors": null
+        },
+        "prediction_summary": {
+          "status": "success",
+          "timestamp": "2026-07-28T07:34:33.454164Z",
+          "request_id": "ebc429cc-e951-4bc3-b1b1-f85789e73356",
+          "service": "Prediction Engine API",
+          "version": "1.1.0",
+          "execution_time": "24.00ms",
+          "data": {
+            "resource_id": "res-ddos",
+            "current_urs": 56.16524999999999,
+            "projected_urs": {
+              "1": 56.2411,
+              "3": 56.3927,
+              "6": 56.6202,
+              "12": 57.0751,
+              "24": 57.985
+            },
+            "ctps": 0.225,
+            "factors": {
+              "severity": 0.3,
+              "exposure": 1.0,
+              "criticality": 1.0,
+              "trend": 1.0,
+              "persistence": 1.0,
+              "remediation": 0.75,
+              "age": 1.0
+            },
+            "risk_trend": "stable",
+            "timeline": [
+              {
+                "horizon_hours": 1,
+                "projected_urs": 56.2411,
+                "confidence": 97.5,
+                "business_impact_level": "Medium",
+                "events": [
+                  {
+                    "event": "Exposed services detected by external scanners",
+                    "attack_phase": "Reconnaissance",
+                    "affected_services": [
+                      "public-facing endpoints"
+                    ]
+                  },
+                  {
+                    "event": "Credential exposure risk from open management ports",
+                    "attack_phase": "Initial Access",
+                    "affected_services": [
+                      "authentication services"
+                    ]
+                  },
+                  {
+                    "event": "Credential compromise risk increases significantly",
+                    "attack_phase": "Persistence",
+                    "affected_services": [
+                      "IAM",
+                      "authentication services"
+                    ]
+                  }
+                ],
+                "explanation": "URS increases from 56.2 to 56.2 at 1h horizon. Baseline risk factors are within normal ranges"
+              },
+              {
+                "horizon_hours": 3,
+                "projected_urs": 56.3927,
+                "confidence": 92.5,
+                "business_impact_level": "Medium",
+                "events": [
+                  {
+                    "event": "Exposed services detected by external scanners",
+                    "attack_phase": "Reconnaissance",
+                    "affected_services": [
+                      "public-facing endpoints"
+                    ]
+                  },
+                  {
+                    "event": "Credential exposure risk from open management ports",
+                    "attack_phase": "Initial Access",
+                    "affected_services": [
+                      "authentication services"
+                    ]
+                  },
+                  {
+                    "event": "Credential compromise risk increases significantly",
+                    "attack_phase": "Persistence",
+                    "affected_services": [
+                      "IAM",
+                      "authentication services"
+                    ]
+                  }
+                ],
+                "explanation": "URS increases from 56.2 to 56.4 at 3h horizon. Baseline risk factors are within normal ranges"
+              },
+              {
+                "horizon_hours": 6,
+                "projected_urs": 56.6202,
+                "confidence": 85.0,
+                "business_impact_level": "Medium",
+                "events": [
+                  {
+                    "event": "Exposed services detected by external scanners",
+                    "attack_phase": "Reconnaissance",
+                    "affected_services": [
+                      "public-facing endpoints"
+                    ]
+                  },
+                  {
+                    "event": "Credential exposure risk from open management ports",
+                    "attack_phase": "Initial Access",
+                    "affected_services": [
+                      "authentication services"
+                    ]
+                  },
+                  {
+                    "event": "Credential compromise risk increases significantly",
+                    "attack_phase": "Persistence",
+                    "affected_services": [
+                      "IAM",
+                      "authentication services"
+                    ]
+                  }
+                ],
+                "explanation": "URS increases from 56.2 to 56.6 at 6h horizon. Baseline risk factors are within normal ranges"
+              },
+              {
+                "horizon_hours": 12,
+                "projected_urs": 57.0751,
+                "confidence": 70.0,
+                "business_impact_level": "Medium",
+                "events": [
+                  {
+                    "event": "Exposed services detected by external scanners",
+                    "attack_phase": "Reconnaissance",
+                    "affected_services": [
+                      "public-facing endpoints"
+                    ]
+                  },
+                  {
+                    "event": "Credential exposure risk from open management ports",
+                    "attack_phase": "Initial Access",
+                    "affected_services": [
+                      "authentication services"
+                    ]
+                  },
+                  {
+                    "event": "Credential compromise risk increases significantly",
+                    "attack_phase": "Persistence",
+                    "affected_services": [
+                      "IAM",
+                      "authentication services"
+                    ]
+                  }
+                ],
+                "explanation": "URS increases from 56.2 to 57.1 at 12h horizon. Baseline risk factors are within normal ranges"
+              },
+              {
+                "horizon_hours": 24,
+                "projected_urs": 57.985,
+                "confidence": 40.0,
+                "business_impact_level": "Medium",
+                "events": [
+                  {
+                    "event": "Exposed services detected by external scanners",
+                    "attack_phase": "Reconnaissance",
+                    "affected_services": [
+                      "public-facing endpoints"
+                    ]
+                  },
+                  {
+                    "event": "Credential exposure risk from open management ports",
+                    "attack_phase": "Initial Access",
+                    "affected_services": [
+                      "authentication services"
+                    ]
+                  },
+                  {
+                    "event": "Credential compromise risk increases significantly",
+                    "attack_phase": "Persistence",
+                    "affected_services": [
+                      "IAM",
+                      "authentication services"
+                    ]
+                  }
+                ],
+                "explanation": "URS increases from 56.2 to 58.0 at 24h horizon. Baseline risk factors are within normal ranges"
+              }
+            ],
+            "confidence": {
+              "score": 65.0,
+              "level": "Medium",
+              "explanation": [
+                "Telemetry (30% weight): moderate \u2014 50/100",
+                "Stability (25% weight): strong \u2014 100/100",
+                "Criticality (25% weight): moderate \u2014 60/100",
+                "Historical (20% weight): moderate \u2014 50/100"
+              ]
+            },
+            "business_impact": {
+              "scores": {
+                "operational": 57.98,
+                "financial": 46.39,
+                "compliance": 52.19,
+                "availability": 49.29,
+                "reputation": 40.59
+              },
+              "overall": 49.29,
+              "level": "Medium",
+              "trend": "stable",
+              "explanation": [
+                "Highest impact category: operational (58.0/100)"
+              ]
+            },
+            "explanation": [
+              "Baseline risk factors are within normal ranges"
+            ],
+            "algorithm_version": "CTPS-v1.0",
+            "timestamp": "2026-07-28T07:34:33.430167Z"
+          },
+          "errors": null,
+          "resource_id": "res-ddos",
+          "current_urs": 56.16524999999999,
+          "projected_urs": {
+            "1": 56.2411,
+            "3": 56.3927,
+            "6": 56.6202,
+            "12": 57.0751,
+            "24": 57.985
+          },
+          "ctps": 0.225,
+          "factors": {
+            "severity": 0.3,
+            "exposure": 1.0,
+            "criticality": 1.0,
+            "trend": 1.0,
+            "persistence": 1.0,
+            "remediation": 0.75,
+            "age": 1.0
+          },
+          "risk_trend": "stable",
+          "timeline": [
+            {
+              "horizon_hours": 1,
+              "projected_urs": 56.2411,
+              "confidence": 97.5,
+              "business_impact_level": "Medium",
+              "events": [
+                {
+                  "event": "Exposed services detected by external scanners",
+                  "attack_phase": "Reconnaissance",
+                  "affected_services": [
+                    "public-facing endpoints"
+                  ]
+                },
+                {
+                  "event": "Credential exposure risk from open management ports",
+                  "attack_phase": "Initial Access",
+                  "affected_services": [
+                    "authentication services"
+                  ]
+                },
+                {
+                  "event": "Credential compromise risk increases significantly",
+                  "attack_phase": "Persistence",
+                  "affected_services": [
+                    "IAM",
+                    "authentication services"
+                  ]
+                }
+              ],
+              "explanation": "URS increases from 56.2 to 56.2 at 1h horizon. Baseline risk factors are within normal ranges"
+            },
+            {
+              "horizon_hours": 3,
+              "projected_urs": 56.3927,
+              "confidence": 92.5,
+              "business_impact_level": "Medium",
+              "events": [
+                {
+                  "event": "Exposed services detected by external scanners",
+                  "attack_phase": "Reconnaissance",
+                  "affected_services": [
+                    "public-facing endpoints"
+                  ]
+                },
+                {
+                  "event": "Credential exposure risk from open management ports",
+                  "attack_phase": "Initial Access",
+                  "affected_services": [
+                    "authentication services"
+                  ]
+                },
+                {
+                  "event": "Credential compromise risk increases significantly",
+                  "attack_phase": "Persistence",
+                  "affected_services": [
+                    "IAM",
+                    "authentication services"
+                  ]
+                }
+              ],
+              "explanation": "URS increases from 56.2 to 56.4 at 3h horizon. Baseline risk factors are within normal ranges"
+            },
+            {
+              "horizon_hours": 6,
+              "projected_urs": 56.6202,
+              "confidence": 85.0,
+              "business_impact_level": "Medium",
+              "events": [
+                {
+                  "event": "Exposed services detected by external scanners",
+                  "attack_phase": "Reconnaissance",
+                  "affected_services": [
+                    "public-facing endpoints"
+                  ]
+                },
+                {
+                  "event": "Credential exposure risk from open management ports",
+                  "attack_phase": "Initial Access",
+                  "affected_services": [
+                    "authentication services"
+                  ]
+                },
+                {
+                  "event": "Credential compromise risk increases significantly",
+                  "attack_phase": "Persistence",
+                  "affected_services": [
+                    "IAM",
+                    "authentication services"
+                  ]
+                }
+              ],
+              "explanation": "URS increases from 56.2 to 56.6 at 6h horizon. Baseline risk factors are within normal ranges"
+            },
+            {
+              "horizon_hours": 12,
+              "projected_urs": 57.0751,
+              "confidence": 70.0,
+              "business_impact_level": "Medium",
+              "events": [
+                {
+                  "event": "Exposed services detected by external scanners",
+                  "attack_phase": "Reconnaissance",
+                  "affected_services": [
+                    "public-facing endpoints"
+                  ]
+                },
+                {
+                  "event": "Credential exposure risk from open management ports",
+                  "attack_phase": "Initial Access",
+                  "affected_services": [
+                    "authentication services"
+                  ]
+                },
+                {
+                  "event": "Credential compromise risk increases significantly",
+                  "attack_phase": "Persistence",
+                  "affected_services": [
+                    "IAM",
+                    "authentication services"
+                  ]
+                }
+              ],
+              "explanation": "URS increases from 56.2 to 57.1 at 12h horizon. Baseline risk factors are within normal ranges"
+            },
+            {
+              "horizon_hours": 24,
+              "projected_urs": 57.985,
+              "confidence": 40.0,
+              "business_impact_level": "Medium",
+              "events": [
+                {
+                  "event": "Exposed services detected by external scanners",
+                  "attack_phase": "Reconnaissance",
+                  "affected_services": [
+                    "public-facing endpoints"
+                  ]
+                },
+                {
+                  "event": "Credential exposure risk from open management ports",
+                  "attack_phase": "Initial Access",
+                  "affected_services": [
+                    "authentication services"
+                  ]
+                },
+                {
+                  "event": "Credential compromise risk increases significantly",
+                  "attack_phase": "Persistence",
+                  "affected_services": [
+                    "IAM",
+                    "authentication services"
+                  ]
+                }
+              ],
+              "explanation": "URS increases from 56.2 to 58.0 at 24h horizon. Baseline risk factors are within normal ranges"
+            }
+          ],
+          "confidence": {
+            "score": 65.0,
+            "level": "Medium",
+            "explanation": [
+              "Telemetry (30% weight): moderate \u2014 50/100",
+              "Stability (25% weight): strong \u2014 100/100",
+              "Criticality (25% weight): moderate \u2014 60/100",
+              "Historical (20% weight): moderate \u2014 50/100"
+            ]
+          },
+          "business_impact": {
+            "scores": {
+              "operational": 57.98,
+              "financial": 46.39,
+              "compliance": 52.19,
+              "availability": 49.29,
+              "reputation": 40.59
+            },
+            "overall": 49.29,
+            "level": "Medium",
+            "trend": "stable",
+            "explanation": [
+              "Highest impact category: operational (58.0/100)"
+            ]
+          },
+          "explanation": [
+            "Baseline risk factors are within normal ranges"
+          ],
+          "algorithm_version": "CTPS-v1.0"
+        }
+      },
+      "policy_engine_results": [
+        {
+          "recommendationId": "REC-MONITOR-100",
+          "title": "Enable DevSecOps Baseline Telemetry Audits",
+          "description": "Keep standard Prometheus scraping intervals and configure automated log integrity monitoring across all container daemon events.",
+          "category": "Monitoring",
+          "priority": "Low",
+          "confidence": 0.99,
+          "estimatedRiskReduction": 5.0,
+          "automationSupported": true,
+          "reasoning": "Telemetry levels are currently normal. Baseline monitoring provides data for future drift detection."
+        },
+        {
+          "recommendationId": "REC-LOG-100",
+          "title": "Standardize Logging Level and Rotation Parameters",
+          "description": "Configure log rotation to restrict log sizes on node hosts to 10MB per container, keeping a maximum of 5 logs to optimize storage.",
+          "category": "Logging",
+          "priority": "Low",
+          "confidence": 0.99,
+          "estimatedRiskReduction": 5.0,
+          "automationSupported": true,
+          "reasoning": "Normal workload logging profile keeps operational volumes clean and stable."
+        }
+      ],
+      "automation_engine_results": {
+        "status": "success",
+        "riskScore": 56.16524999999999,
+        "decision": "Monitor",
+        "provider": "aws",
+        "instanceId": "i-04ba6569c74d41d59",
+        "summary": "Recommended playbook: Default Remediation Playbook",
+        "executionPlan": [
+          {
+            "step": 1,
+            "action": "Default Remediation Playbook",
+            "description": "Mitigation",
+            "status": "Pending",
+            "estimatedExecutionTime": 5.0
+          }
+        ],
+        "ansiblePlaybook": "---\n- name: Default Remediation Playbook\n  hosts: all\n  tasks:\n    - name: Configure standard DevSecOps security controls\n      ansible.builtin.debug:\n        msg: 'Remediation active'",
+        "terraformManifest": "resource \"aws_security_group_rule\" \"remediation\" {}",
+        "awsCliCommands": [
+          "aws ec2 stop-instances --instance-ids i-04ba6569c74d41d59"
+        ],
+        "kubectlCommands": [
+          "kubectl label pod -l instanceId=i-04ba6569c74d41d59 status=quarantined"
+        ],
+        "shellScript": "#!/bin/bash\n# Default Remediation Playbook\naws ec2 stop-instances --instance-ids i-04ba6569c74d41d59",
+        "jsonPlan": "{\"action\": \"Default Remediation Playbook\", \"target\": \"i-04ba6569c74d41d59\"}",
+        "automationLevel": "Fully Automated",
+        "estimatedExecutionTime": 5.0,
+        "rollbackAvailable": true,
+        "metrics": {
+          "optimizationGain": 0.0,
+          "playbooksConsidered": 0,
+          "playbooksSelected": 1,
+          "playbooksRemoved": 0,
+          "estimatedTimeSaved": 0.0,
+          "estimatedRiskReduction": 0.0,
+          "estimatedServiceAvailability": 100.0,
+          "expectedRecoveryPercentage": 100.0
+        },
+        "executionOrder": [
+          {
+            "step": 1,
+            "playbookId": "default",
+            "title": "Default Remediation Playbook",
+            "category": "General",
+            "priorityScore": 50.0,
+            "selectedBecause": [
+              "Default fallback"
+            ],
+            "breakdown": {},
+            "estimatedDuration": 5.0,
+            "ursReduction": 0.0,
+            "recoveryScore": 5.0,
+            "disruptionScore": 5.0,
+            "rollbackAvailable": true,
+            "parallel": false
+          }
+        ],
+        "rejectedPlaybooks": [],
+        "ursBefore": 56.16524999999999,
+        "ursAfter": 56.16524999999999,
+        "ursProjection": [
+          56.16524999999999
+        ],
+        "dependencyGraph": {},
+        "optimizationRationale": "Fallback execution mode active.",
+        "conflictResolutionExplanation": "",
+        "auditId": "AUD-AUTO-1785204277"
+      },
+      "success": false
+    },
+    {
+      "scenario_id": "insider",
+      "executed_at": "2026-07-28T07:34:52.611021Z",
+      "telemetry": {
+        "cpu_utilization": 24.5,
+        "memory_usage_percent": 45.0,
+        "disk_usage_percent": 30.0,
+        "packet_rate_in": 500,
+        "packet_rate_out": 2500
+      },
+      "ai_engine_results": {
+        "status": "success",
+        "is_anomaly": true,
+        "reconstruction_loss": 0.920516848564148,
+        "threshold": 0.5903872311115265
+      },
+      "risk_engine_results": {
+        "status": "success",
+        "urs": 44.475175,
+        "risk_score": 44.475175,
+        "decision": "Monitor",
+        "reason": "Mild deviations detected. Increasing telemetry logging resolution.",
+        "contributors": [
+          {
+            "parameter": "CPU",
+            "value": 24.5,
+            "weight": 0.15,
+            "contribution": 3.67,
+            "reason": "CPU utilization is within normal limits. (Adaptive Weight: 0.15)"
+          },
+          {
+            "parameter": "Memory",
+            "value": 45.0,
+            "weight": 0.15,
+            "contribution": 6.75,
+            "reason": "Memory utilization is within normal limits. (Adaptive Weight: 0.15)"
+          },
+          {
+            "parameter": "Disk",
+            "value": 30.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "reason": "Disk space utilization is within normal limits. (Adaptive Weight: 0.0)"
+          },
+          {
+            "parameter": "Network",
+            "value": 0.0,
+            "weight": 0.35,
+            "contribution": 0.0,
+            "reason": "Network traffic is normal. (Adaptive Weight: 0.35)"
+          },
+          {
+            "parameter": "Anomaly Score",
+            "value": 100.0,
+            "weight": 0.2,
+            "contribution": 20.0,
+            "reason": "Highly anomalous activity signature detected by AI Engine. (Adaptive Weight: 0.2)"
+          },
+          {
+            "parameter": "Reconstruction Error",
+            "value": 92.05,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "reason": "Severe autoencoder reconstruction error, indicating anomalous operational states. (Adaptive Weight: 0.0)"
+          },
+          {
+            "parameter": "Historical Frequency",
+            "value": 91.0,
+            "weight": 0.05,
+            "contribution": 4.55,
+            "reason": "High historical anomaly frequency, indicating chronic instability. (Adaptive Weight: 0.05)"
+          },
+          {
+            "parameter": "Confidence",
+            "value": 95.0,
+            "weight": 0.1,
+            "contribution": 9.5,
+            "reason": "High confidence in anomaly classification accuracy. (Adaptive Weight: 0.1)"
+          },
+          {
+            "parameter": "Asset Criticality",
+            "value": 1.0,
+            "weight": 1.0,
+            "contribution": 0.0,
+            "reason": "Standard baseline asset criticality multiplier. (Adaptive Weight: 1.0)"
+          }
+        ],
+        "topContributor": "Anomaly Score",
+        "timestamp": "2026-07-28T07:34:45.309946",
+        "context": {
+          "timePeriod": "Morning",
+          "dayType": "Weekday",
+          "profile": "Business Hours"
+        },
+        "adaptiveWeights": {
+          "cpu": 0.15,
+          "memory": 0.15,
+          "disk": 0.0,
+          "network": 0.35,
+          "anomaly": 0.2,
+          "reconstruction": 0.0,
+          "confidence": 0.1,
+          "historical": 0.05
+        },
+        "comparison": {
+          "staticURS": 73.96,
+          "adaptiveURS": 44.48,
+          "difference": -29.48,
+          "improvement": "Reduced false positives during business hours workload."
+        },
+        "contextConfidence": 0.95,
+        "profileVersion": "1.0.0",
+        "adaptationReason": "Network activity receives higher importance during business hours because lateral movement attacks are more probable.",
+        "quantumReadiness": {
+          "score": 35,
+          "classification": "Moderate",
+          "migrationPriority": "Immediate",
+          "overallQuantumRisk": "Very High"
+        },
+        "cryptography": [
+          {
+            "algorithm": "RSA-2048",
+            "quantumRisk": "Very High",
+            "readinessWeight": 15,
+            "recommendation": "Migrate to ML-KEM (Kyber) hybrid TLS.",
+            "reason": "Shor's algorithm can efficiently compromise RSA key exchange."
+          },
+          {
+            "algorithm": "ECC P-256",
+            "quantumRisk": "Medium",
+            "readinessWeight": 55,
+            "recommendation": "Transition to hybrid PQC key exchange.",
+            "reason": "Elliptic curves are vulnerable to Shor's algorithm, requiring transition to hybrid PQC key exchange."
+          }
+        ],
+        "quantumExplanation": "Monitored assets have an overall quantum readiness classification of Moderate with a score of 35/100. The presence of legacy algorithms like RSA-2048 presents a Very High quantum risk, requiring immediate migration planning to post-quantum alternatives.",
+        "dashboardData": {
+          "migrationPriority": "Immediate",
+          "topRecommendation": "Migrate to ML-KEM (Kyber) hybrid TLS.",
+          "highestQuantumRiskAlgorithm": "RSA-2048",
+          "overallQuantumReadiness": "Moderate",
+          "Migration Priority": "Immediate",
+          "Top Recommendation": "Migrate to ML-KEM (Kyber) hybrid TLS.",
+          "Highest Quantum Risk Algorithm": "RSA-2048",
+          "Overall Quantum Readiness": "Moderate"
+        },
+        "recommendations": {
+          "status": "success",
+          "timestamp": "2026-07-28T07:34:47.759995Z",
+          "request_id": "f669feaa-e8bb-4aa3-9070-8155a9f884be",
+          "service": "Policy Recommendation Engine API",
+          "version": "0.1.0",
+          "execution_time": "40.44ms",
+          "data": [
+            {
+              "recommendationId": "REC-CRYPTO-001",
+              "title": "Migrate Legacy Cryptography to Post-Quantum Algorithms",
+              "description": "Identify systems using legacy algorithms (such as RSA-2048) and upgrade them to quantum-safe alternatives (ML-KEM/Kyber hybrid TLS key exchange or ML-DSA signature schemes).",
+              "category": "Cryptography",
+              "priority": "Critical",
+              "confidence": 0.95,
+              "estimatedRiskReduction": 75.0,
+              "automationSupported": false,
+              "reasoning": "Assets currently run legacy cryptography with Very High quantum risk. Upgrading to PQC secures authentication keys from Shor's algorithm."
+            }
+          ],
+          "errors": null
+        },
+        "prediction_summary": {
+          "status": "success",
+          "timestamp": "2026-07-28T07:34:48.331881Z",
+          "request_id": "f669feaa-e8bb-4aa3-9070-8155a9f884be",
+          "service": "Prediction Engine API",
+          "version": "1.1.0",
+          "execution_time": "40.80ms",
+          "data": {
+            "resource_id": "res-insider",
+            "current_urs": 44.475175,
+            "projected_urs": {
+              "1": 44.5352,
+              "3": 44.6553,
+              "6": 44.8354,
+              "12": 45.1957,
+              "24": 45.9162
+            },
+            "ctps": 0.225,
+            "factors": {
+              "severity": 0.3,
+              "exposure": 1.0,
+              "criticality": 1.0,
+              "trend": 1.0,
+              "persistence": 1.0,
+              "remediation": 0.75,
+              "age": 1.0
+            },
+            "risk_trend": "stable",
+            "timeline": [
+              {
+                "horizon_hours": 1,
+                "projected_urs": 44.5352,
+                "confidence": 97.5,
+                "business_impact_level": "Low",
+                "events": [
+                  {
+                    "event": "Exposed services detected by external scanners",
+                    "attack_phase": "Reconnaissance",
+                    "affected_services": [
+                      "public-facing endpoints"
+                    ]
+                  },
+                  {
+                    "event": "Credential exposure risk from open management ports",
+                    "attack_phase": "Initial Access",
+                    "affected_services": [
+                      "authentication services"
+                    ]
+                  }
+                ],
+                "explanation": "URS increases from 44.5 to 44.5 at 1h horizon. Baseline risk factors are within normal ranges"
+              },
+              {
+                "horizon_hours": 3,
+                "projected_urs": 44.6553,
+                "confidence": 92.5,
+                "business_impact_level": "Low",
+                "events": [
+                  {
+                    "event": "Exposed services detected by external scanners",
+                    "attack_phase": "Reconnaissance",
+                    "affected_services": [
+                      "public-facing endpoints"
+                    ]
+                  },
+                  {
+                    "event": "Credential exposure risk from open management ports",
+                    "attack_phase": "Initial Access",
+                    "affected_services": [
+                      "authentication services"
+                    ]
+                  }
+                ],
+                "explanation": "URS increases from 44.5 to 44.7 at 3h horizon. Baseline risk factors are within normal ranges"
+              },
+              {
+                "horizon_hours": 6,
+                "projected_urs": 44.8354,
+                "confidence": 85.0,
+                "business_impact_level": "Low",
+                "events": [
+                  {
+                    "event": "Exposed services detected by external scanners",
+                    "attack_phase": "Reconnaissance",
+                    "affected_services": [
+                      "public-facing endpoints"
+                    ]
+                  },
+                  {
+                    "event": "Credential exposure risk from open management ports",
+                    "attack_phase": "Initial Access",
+                    "affected_services": [
+                      "authentication services"
+                    ]
+                  }
+                ],
+                "explanation": "URS increases from 44.5 to 44.8 at 6h horizon. Baseline risk factors are within normal ranges"
+              },
+              {
+                "horizon_hours": 12,
+                "projected_urs": 45.1957,
+                "confidence": 70.0,
+                "business_impact_level": "Medium",
+                "events": [
+                  {
+                    "event": "Exposed services detected by external scanners",
+                    "attack_phase": "Reconnaissance",
+                    "affected_services": [
+                      "public-facing endpoints"
+                    ]
+                  },
+                  {
+                    "event": "Credential exposure risk from open management ports",
+                    "attack_phase": "Initial Access",
+                    "affected_services": [
+                      "authentication services"
+                    ]
+                  },
+                  {
+                    "event": "Credential compromise risk increases significantly",
+                    "attack_phase": "Persistence",
+                    "affected_services": [
+                      "IAM",
+                      "authentication services"
+                    ]
+                  }
+                ],
+                "explanation": "URS increases from 44.5 to 45.2 at 12h horizon. Baseline risk factors are within normal ranges"
+              },
+              {
+                "horizon_hours": 24,
+                "projected_urs": 45.9162,
+                "confidence": 40.0,
+                "business_impact_level": "Medium",
+                "events": [
+                  {
+                    "event": "Exposed services detected by external scanners",
+                    "attack_phase": "Reconnaissance",
+                    "affected_services": [
+                      "public-facing endpoints"
+                    ]
+                  },
+                  {
+                    "event": "Credential exposure risk from open management ports",
+                    "attack_phase": "Initial Access",
+                    "affected_services": [
+                      "authentication services"
+                    ]
+                  },
+                  {
+                    "event": "Credential compromise risk increases significantly",
+                    "attack_phase": "Persistence",
+                    "affected_services": [
+                      "IAM",
+                      "authentication services"
+                    ]
+                  }
+                ],
+                "explanation": "URS increases from 44.5 to 45.9 at 24h horizon. Baseline risk factors are within normal ranges"
+              }
+            ],
+            "confidence": {
+              "score": 65.0,
+              "level": "Medium",
+              "explanation": [
+                "Telemetry (30% weight): moderate \u2014 50/100",
+                "Stability (25% weight): strong \u2014 100/100",
+                "Criticality (25% weight): moderate \u2014 60/100",
+                "Historical (20% weight): moderate \u2014 50/100"
+              ]
+            },
+            "business_impact": {
+              "scores": {
+                "operational": 45.92,
+                "financial": 36.73,
+                "compliance": 41.32,
+                "availability": 39.03,
+                "reputation": 32.14
+              },
+              "overall": 39.03,
+              "level": "Medium",
+              "trend": "stable",
+              "explanation": [
+                "Highest impact category: operational (45.9/100)"
+              ]
+            },
+            "explanation": [
+              "Baseline risk factors are within normal ranges"
+            ],
+            "algorithm_version": "CTPS-v1.0",
+            "timestamp": "2026-07-28T07:34:48.292083Z"
+          },
+          "errors": null,
+          "resource_id": "res-insider",
+          "current_urs": 44.475175,
+          "projected_urs": {
+            "1": 44.5352,
+            "3": 44.6553,
+            "6": 44.8354,
+            "12": 45.1957,
+            "24": 45.9162
+          },
+          "ctps": 0.225,
+          "factors": {
+            "severity": 0.3,
+            "exposure": 1.0,
+            "criticality": 1.0,
+            "trend": 1.0,
+            "persistence": 1.0,
+            "remediation": 0.75,
+            "age": 1.0
+          },
+          "risk_trend": "stable",
+          "timeline": [
+            {
+              "horizon_hours": 1,
+              "projected_urs": 44.5352,
+              "confidence": 97.5,
+              "business_impact_level": "Low",
+              "events": [
+                {
+                  "event": "Exposed services detected by external scanners",
+                  "attack_phase": "Reconnaissance",
+                  "affected_services": [
+                    "public-facing endpoints"
+                  ]
+                },
+                {
+                  "event": "Credential exposure risk from open management ports",
+                  "attack_phase": "Initial Access",
+                  "affected_services": [
+                    "authentication services"
+                  ]
+                }
+              ],
+              "explanation": "URS increases from 44.5 to 44.5 at 1h horizon. Baseline risk factors are within normal ranges"
+            },
+            {
+              "horizon_hours": 3,
+              "projected_urs": 44.6553,
+              "confidence": 92.5,
+              "business_impact_level": "Low",
+              "events": [
+                {
+                  "event": "Exposed services detected by external scanners",
+                  "attack_phase": "Reconnaissance",
+                  "affected_services": [
+                    "public-facing endpoints"
+                  ]
+                },
+                {
+                  "event": "Credential exposure risk from open management ports",
+                  "attack_phase": "Initial Access",
+                  "affected_services": [
+                    "authentication services"
+                  ]
+                }
+              ],
+              "explanation": "URS increases from 44.5 to 44.7 at 3h horizon. Baseline risk factors are within normal ranges"
+            },
+            {
+              "horizon_hours": 6,
+              "projected_urs": 44.8354,
+              "confidence": 85.0,
+              "business_impact_level": "Low",
+              "events": [
+                {
+                  "event": "Exposed services detected by external scanners",
+                  "attack_phase": "Reconnaissance",
+                  "affected_services": [
+                    "public-facing endpoints"
+                  ]
+                },
+                {
+                  "event": "Credential exposure risk from open management ports",
+                  "attack_phase": "Initial Access",
+                  "affected_services": [
+                    "authentication services"
+                  ]
+                }
+              ],
+              "explanation": "URS increases from 44.5 to 44.8 at 6h horizon. Baseline risk factors are within normal ranges"
+            },
+            {
+              "horizon_hours": 12,
+              "projected_urs": 45.1957,
+              "confidence": 70.0,
+              "business_impact_level": "Medium",
+              "events": [
+                {
+                  "event": "Exposed services detected by external scanners",
+                  "attack_phase": "Reconnaissance",
+                  "affected_services": [
+                    "public-facing endpoints"
+                  ]
+                },
+                {
+                  "event": "Credential exposure risk from open management ports",
+                  "attack_phase": "Initial Access",
+                  "affected_services": [
+                    "authentication services"
+                  ]
+                },
+                {
+                  "event": "Credential compromise risk increases significantly",
+                  "attack_phase": "Persistence",
+                  "affected_services": [
+                    "IAM",
+                    "authentication services"
+                  ]
+                }
+              ],
+              "explanation": "URS increases from 44.5 to 45.2 at 12h horizon. Baseline risk factors are within normal ranges"
+            },
+            {
+              "horizon_hours": 24,
+              "projected_urs": 45.9162,
+              "confidence": 40.0,
+              "business_impact_level": "Medium",
+              "events": [
+                {
+                  "event": "Exposed services detected by external scanners",
+                  "attack_phase": "Reconnaissance",
+                  "affected_services": [
+                    "public-facing endpoints"
+                  ]
+                },
+                {
+                  "event": "Credential exposure risk from open management ports",
+                  "attack_phase": "Initial Access",
+                  "affected_services": [
+                    "authentication services"
+                  ]
+                },
+                {
+                  "event": "Credential compromise risk increases significantly",
+                  "attack_phase": "Persistence",
+                  "affected_services": [
+                    "IAM",
+                    "authentication services"
+                  ]
+                }
+              ],
+              "explanation": "URS increases from 44.5 to 45.9 at 24h horizon. Baseline risk factors are within normal ranges"
+            }
+          ],
+          "confidence": {
+            "score": 65.0,
+            "level": "Medium",
+            "explanation": [
+              "Telemetry (30% weight): moderate \u2014 50/100",
+              "Stability (25% weight): strong \u2014 100/100",
+              "Criticality (25% weight): moderate \u2014 60/100",
+              "Historical (20% weight): moderate \u2014 50/100"
+            ]
+          },
+          "business_impact": {
+            "scores": {
+              "operational": 45.92,
+              "financial": 36.73,
+              "compliance": 41.32,
+              "availability": 39.03,
+              "reputation": 32.14
+            },
+            "overall": 39.03,
+            "level": "Medium",
+            "trend": "stable",
+            "explanation": [
+              "Highest impact category: operational (45.9/100)"
+            ]
+          },
+          "explanation": [
+            "Baseline risk factors are within normal ranges"
+          ],
+          "algorithm_version": "CTPS-v1.0"
+        }
+      },
+      "policy_engine_results": [
+        {
+          "recommendationId": "REC-MONITOR-100",
+          "title": "Enable DevSecOps Baseline Telemetry Audits",
+          "description": "Keep standard Prometheus scraping intervals and configure automated log integrity monitoring across all container daemon events.",
+          "category": "Monitoring",
+          "priority": "Low",
+          "confidence": 0.99,
+          "estimatedRiskReduction": 5.0,
+          "automationSupported": true,
+          "reasoning": "Telemetry levels are currently normal. Baseline monitoring provides data for future drift detection."
+        },
+        {
+          "recommendationId": "REC-LOG-100",
+          "title": "Standardize Logging Level and Rotation Parameters",
+          "description": "Configure log rotation to restrict log sizes on node hosts to 10MB per container, keeping a maximum of 5 logs to optimize storage.",
+          "category": "Logging",
+          "priority": "Low",
+          "confidence": 0.99,
+          "estimatedRiskReduction": 5.0,
+          "automationSupported": true,
+          "reasoning": "Normal workload logging profile keeps operational volumes clean and stable."
+        }
+      ],
+      "automation_engine_results": {
+        "status": "success",
+        "riskScore": 44.475175,
+        "decision": "Monitor",
+        "provider": "aws",
+        "instanceId": "i-04ba6569c74d41d59",
+        "summary": "Recommended playbook: Default Remediation Playbook",
+        "executionPlan": [
+          {
+            "step": 1,
+            "action": "Default Remediation Playbook",
+            "description": "Mitigation",
+            "status": "Pending",
+            "estimatedExecutionTime": 5.0
+          }
+        ],
+        "ansiblePlaybook": "---\n- name: Default Remediation Playbook\n  hosts: all\n  tasks:\n    - name: Configure standard DevSecOps security controls\n      ansible.builtin.debug:\n        msg: 'Remediation active'",
+        "terraformManifest": "resource \"aws_security_group_rule\" \"remediation\" {}",
+        "awsCliCommands": [
+          "aws ec2 stop-instances --instance-ids i-04ba6569c74d41d59"
+        ],
+        "kubectlCommands": [
+          "kubectl label pod -l instanceId=i-04ba6569c74d41d59 status=quarantined"
+        ],
+        "shellScript": "#!/bin/bash\n# Default Remediation Playbook\naws ec2 stop-instances --instance-ids i-04ba6569c74d41d59",
+        "jsonPlan": "{\"action\": \"Default Remediation Playbook\", \"target\": \"i-04ba6569c74d41d59\"}",
+        "automationLevel": "Fully Automated",
+        "estimatedExecutionTime": 5.0,
+        "rollbackAvailable": true,
+        "metrics": {
+          "optimizationGain": 0.0,
+          "playbooksConsidered": 0,
+          "playbooksSelected": 1,
+          "playbooksRemoved": 0,
+          "estimatedTimeSaved": 0.0,
+          "estimatedRiskReduction": 0.0,
+          "estimatedServiceAvailability": 100.0,
+          "expectedRecoveryPercentage": 100.0
+        },
+        "executionOrder": [
+          {
+            "step": 1,
+            "playbookId": "default",
+            "title": "Default Remediation Playbook",
+            "category": "General",
+            "priorityScore": 50.0,
+            "selectedBecause": [
+              "Default fallback"
+            ],
+            "breakdown": {},
+            "estimatedDuration": 5.0,
+            "ursReduction": 0.0,
+            "recoveryScore": 5.0,
+            "disruptionScore": 5.0,
+            "rollbackAvailable": true,
+            "parallel": false
+          }
+        ],
+        "rejectedPlaybooks": [],
+        "ursBefore": 44.475175,
+        "ursAfter": 44.475175,
+        "ursProjection": [
+          44.475175
+        ],
+        "dependencyGraph": {},
+        "optimizationRationale": "Fallback execution mode active.",
+        "conflictResolutionExplanation": "",
+        "auditId": "AUD-AUTO-1785204292"
+      },
+      "success": false
+    },
+    {
+      "scenario_id": "low_risk",
+      "executed_at": "2026-07-28T07:35:07.716992Z",
+      "telemetry": {
+        "cpu_utilization": 15.4,
+        "memory_usage_percent": 38.2,
+        "disk_usage_percent": 42.1,
+        "packet_rate_in": 120,
+        "packet_rate_out": 95
+      },
+      "ai_engine_results": {
+        "status": "success",
+        "is_anomaly": true,
+        "reconstruction_loss": 0.809120774269104,
+        "threshold": 0.5903872311115265
+      },
+      "risk_engine_results": {
+        "status": "success",
+        "urs": 42.090042,
+        "risk_score": 42.090042,
+        "decision": "Monitor",
+        "reason": "Mild deviations detected. Increasing telemetry logging resolution.",
+        "contributors": [
+          {
+            "parameter": "CPU",
+            "value": 15.4,
+            "weight": 0.15,
+            "contribution": 2.31,
+            "reason": "CPU utilization is within normal limits. (Adaptive Weight: 0.15)"
+          },
+          {
+            "parameter": "Memory",
+            "value": 38.2,
+            "weight": 0.15,
+            "contribution": 5.73,
+            "reason": "Memory utilization is within normal limits. (Adaptive Weight: 0.15)"
+          },
+          {
+            "parameter": "Disk",
+            "value": 42.1,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "reason": "Disk space utilization is within normal limits. (Adaptive Weight: 0.0)"
+          },
+          {
+            "parameter": "Network",
+            "value": 0.0,
+            "weight": 0.35,
+            "contribution": 0.0,
+            "reason": "Network traffic is normal. (Adaptive Weight: 0.35)"
+          },
+          {
+            "parameter": "Anomaly Score",
+            "value": 100.0,
+            "weight": 0.2,
+            "contribution": 20.0,
+            "reason": "Highly anomalous activity signature detected by AI Engine. (Adaptive Weight: 0.2)"
+          },
+          {
+            "parameter": "Reconstruction Error",
+            "value": 80.91,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "reason": "Severe autoencoder reconstruction error, indicating anomalous operational states. (Adaptive Weight: 0.0)"
+          },
+          {
+            "parameter": "Historical Frequency",
+            "value": 91.0,
+            "weight": 0.05,
+            "contribution": 4.55,
+            "reason": "High historical anomaly frequency, indicating chronic instability. (Adaptive Weight: 0.05)"
+          },
+          {
+            "parameter": "Confidence",
+            "value": 95.0,
+            "weight": 0.1,
+            "contribution": 9.5,
+            "reason": "High confidence in anomaly classification accuracy. (Adaptive Weight: 0.1)"
+          },
+          {
+            "parameter": "Asset Criticality",
+            "value": 1.0,
+            "weight": 1.0,
+            "contribution": 0.0,
+            "reason": "Standard baseline asset criticality multiplier. (Adaptive Weight: 1.0)"
+          }
+        ],
+        "topContributor": "Anomaly Score",
+        "timestamp": "2026-07-28T07:35:00.429638",
+        "context": {
+          "timePeriod": "Morning",
+          "dayType": "Weekday",
+          "profile": "Business Hours"
+        },
+        "adaptiveWeights": {
+          "cpu": 0.15,
+          "memory": 0.15,
+          "disk": 0.0,
+          "network": 0.35,
+          "anomaly": 0.2,
+          "reconstruction": 0.0,
+          "confidence": 0.1,
+          "historical": 0.05
+        },
+        "comparison": {
+          "staticURS": 70.14,
+          "adaptiveURS": 42.09,
+          "difference": -28.05,
+          "improvement": "Reduced false positives during business hours workload."
+        },
+        "contextConfidence": 0.95,
+        "profileVersion": "1.0.0",
+        "adaptationReason": "Network activity receives higher importance during business hours because lateral movement attacks are more probable.",
+        "quantumReadiness": {
+          "score": 35,
+          "classification": "Moderate",
+          "migrationPriority": "Immediate",
+          "overallQuantumRisk": "Very High"
+        },
+        "cryptography": [
+          {
+            "algorithm": "RSA-2048",
+            "quantumRisk": "Very High",
+            "readinessWeight": 15,
+            "recommendation": "Migrate to ML-KEM (Kyber) hybrid TLS.",
+            "reason": "Shor's algorithm can efficiently compromise RSA key exchange."
+          },
+          {
+            "algorithm": "ECC P-256",
+            "quantumRisk": "Medium",
+            "readinessWeight": 55,
+            "recommendation": "Transition to hybrid PQC key exchange.",
+            "reason": "Elliptic curves are vulnerable to Shor's algorithm, requiring transition to hybrid PQC key exchange."
+          }
+        ],
+        "quantumExplanation": "Monitored assets have an overall quantum readiness classification of Moderate with a score of 35/100. The presence of legacy algorithms like RSA-2048 presents a Very High quantum risk, requiring immediate migration planning to post-quantum alternatives.",
+        "dashboardData": {
+          "migrationPriority": "Immediate",
+          "topRecommendation": "Migrate to ML-KEM (Kyber) hybrid TLS.",
+          "highestQuantumRiskAlgorithm": "RSA-2048",
+          "overallQuantumReadiness": "Moderate",
+          "Migration Priority": "Immediate",
+          "Top Recommendation": "Migrate to ML-KEM (Kyber) hybrid TLS.",
+          "Highest Quantum Risk Algorithm": "RSA-2048",
+          "Overall Quantum Readiness": "Moderate"
+        },
+        "recommendations": {
+          "status": "success",
+          "timestamp": "2026-07-28T07:35:02.925987Z",
+          "request_id": "f318809a-86c9-4211-95ba-fc8da055578f",
+          "service": "Policy Recommendation Engine API",
+          "version": "0.1.0",
+          "execution_time": "47.62ms",
+          "data": [
+            {
+              "recommendationId": "REC-CRYPTO-001",
+              "title": "Migrate Legacy Cryptography to Post-Quantum Algorithms",
+              "description": "Identify systems using legacy algorithms (such as RSA-2048) and upgrade them to quantum-safe alternatives (ML-KEM/Kyber hybrid TLS key exchange or ML-DSA signature schemes).",
+              "category": "Cryptography",
+              "priority": "Critical",
+              "confidence": 0.95,
+              "estimatedRiskReduction": 75.0,
+              "automationSupported": false,
+              "reasoning": "Assets currently run legacy cryptography with Very High quantum risk. Upgrading to PQC secures authentication keys from Shor's algorithm."
+            }
+          ],
+          "errors": null
+        },
+        "prediction_summary": {
+          "status": "success",
+          "timestamp": "2026-07-28T07:35:03.465511Z",
+          "request_id": "f318809a-86c9-4211-95ba-fc8da055578f",
+          "service": "Prediction Engine API",
+          "version": "1.1.0",
+          "execution_time": "31.33ms",
+          "data": {
+            "resource_id": "res-low_risk",
+            "current_urs": 42.090042,
+            "projected_urs": {
+              "1": 42.1469,
+              "3": 42.2605,
+              "6": 42.431,
+              "12": 42.7719,
+              "24": 43.4538
+            },
+            "ctps": 0.225,
+            "factors": {
+              "severity": 0.3,
+              "exposure": 1.0,
+              "criticality": 1.0,
+              "trend": 1.0,
+              "persistence": 1.0,
+              "remediation": 0.75,
+              "age": 1.0
+            },
+            "risk_trend": "stable",
+            "timeline": [
+              {
+                "horizon_hours": 1,
+                "projected_urs": 42.1469,
+                "confidence": 97.5,
+                "business_impact_level": "Low",
+                "events": [
+                  {
+                    "event": "Exposed services detected by external scanners",
+                    "attack_phase": "Reconnaissance",
+                    "affected_services": [
+                      "public-facing endpoints"
+                    ]
+                  },
+                  {
+                    "event": "Credential exposure risk from open management ports",
+                    "attack_phase": "Initial Access",
+                    "affected_services": [
+                      "authentication services"
+                    ]
+                  }
+                ],
+                "explanation": "URS increases from 42.1 to 42.1 at 1h horizon. Baseline risk factors are within normal ranges"
+              },
+              {
+                "horizon_hours": 3,
+                "projected_urs": 42.2605,
+                "confidence": 92.5,
+                "business_impact_level": "Low",
+                "events": [
+                  {
+                    "event": "Exposed services detected by external scanners",
+                    "attack_phase": "Reconnaissance",
+                    "affected_services": [
+                      "public-facing endpoints"
+                    ]
+                  },
+                  {
+                    "event": "Credential exposure risk from open management ports",
+                    "attack_phase": "Initial Access",
+                    "affected_services": [
+                      "authentication services"
+                    ]
+                  }
+                ],
+                "explanation": "URS increases from 42.1 to 42.3 at 3h horizon. Baseline risk factors are within normal ranges"
+              },
+              {
+                "horizon_hours": 6,
+                "projected_urs": 42.431,
+                "confidence": 85.0,
+                "business_impact_level": "Low",
+                "events": [
+                  {
+                    "event": "Exposed services detected by external scanners",
+                    "attack_phase": "Reconnaissance",
+                    "affected_services": [
+                      "public-facing endpoints"
+                    ]
+                  },
+                  {
+                    "event": "Credential exposure risk from open management ports",
+                    "attack_phase": "Initial Access",
+                    "affected_services": [
+                      "authentication services"
+                    ]
+                  }
+                ],
+                "explanation": "URS increases from 42.1 to 42.4 at 6h horizon. Baseline risk factors are within normal ranges"
+              },
+              {
+                "horizon_hours": 12,
+                "projected_urs": 42.7719,
+                "confidence": 70.0,
+                "business_impact_level": "Low",
+                "events": [
+                  {
+                    "event": "Exposed services detected by external scanners",
+                    "attack_phase": "Reconnaissance",
+                    "affected_services": [
+                      "public-facing endpoints"
+                    ]
+                  },
+                  {
+                    "event": "Credential exposure risk from open management ports",
+                    "attack_phase": "Initial Access",
+                    "affected_services": [
+                      "authentication services"
+                    ]
+                  }
+                ],
+                "explanation": "URS increases from 42.1 to 42.8 at 12h horizon. Baseline risk factors are within normal ranges"
+              },
+              {
+                "horizon_hours": 24,
+                "projected_urs": 43.4538,
+                "confidence": 40.0,
+                "business_impact_level": "Low",
+                "events": [
+                  {
+                    "event": "Exposed services detected by external scanners",
+                    "attack_phase": "Reconnaissance",
+                    "affected_services": [
+                      "public-facing endpoints"
+                    ]
+                  },
+                  {
+                    "event": "Credential exposure risk from open management ports",
+                    "attack_phase": "Initial Access",
+                    "affected_services": [
+                      "authentication services"
+                    ]
+                  }
+                ],
+                "explanation": "URS increases from 42.1 to 43.5 at 24h horizon. Baseline risk factors are within normal ranges"
+              }
+            ],
+            "confidence": {
+              "score": 65.0,
+              "level": "Medium",
+              "explanation": [
+                "Telemetry (30% weight): moderate \u2014 50/100",
+                "Stability (25% weight): strong \u2014 100/100",
+                "Criticality (25% weight): moderate \u2014 60/100",
+                "Historical (20% weight): moderate \u2014 50/100"
+              ]
+            },
+            "business_impact": {
+              "scores": {
+                "operational": 43.45,
+                "financial": 34.76,
+                "compliance": 39.11,
+                "availability": 36.94,
+                "reputation": 30.42
+              },
+              "overall": 36.94,
+              "level": "Medium",
+              "trend": "stable",
+              "explanation": [
+                "Highest impact category: operational (43.5/100)"
+              ]
+            },
+            "explanation": [
+              "Baseline risk factors are within normal ranges"
+            ],
+            "algorithm_version": "CTPS-v1.0",
+            "timestamp": "2026-07-28T07:35:03.434181Z"
+          },
+          "errors": null,
+          "resource_id": "res-low_risk",
+          "current_urs": 42.090042,
+          "projected_urs": {
+            "1": 42.1469,
+            "3": 42.2605,
+            "6": 42.431,
+            "12": 42.7719,
+            "24": 43.4538
+          },
+          "ctps": 0.225,
+          "factors": {
+            "severity": 0.3,
+            "exposure": 1.0,
+            "criticality": 1.0,
+            "trend": 1.0,
+            "persistence": 1.0,
+            "remediation": 0.75,
+            "age": 1.0
+          },
+          "risk_trend": "stable",
+          "timeline": [
+            {
+              "horizon_hours": 1,
+              "projected_urs": 42.1469,
+              "confidence": 97.5,
+              "business_impact_level": "Low",
+              "events": [
+                {
+                  "event": "Exposed services detected by external scanners",
+                  "attack_phase": "Reconnaissance",
+                  "affected_services": [
+                    "public-facing endpoints"
+                  ]
+                },
+                {
+                  "event": "Credential exposure risk from open management ports",
+                  "attack_phase": "Initial Access",
+                  "affected_services": [
+                    "authentication services"
+                  ]
+                }
+              ],
+              "explanation": "URS increases from 42.1 to 42.1 at 1h horizon. Baseline risk factors are within normal ranges"
+            },
+            {
+              "horizon_hours": 3,
+              "projected_urs": 42.2605,
+              "confidence": 92.5,
+              "business_impact_level": "Low",
+              "events": [
+                {
+                  "event": "Exposed services detected by external scanners",
+                  "attack_phase": "Reconnaissance",
+                  "affected_services": [
+                    "public-facing endpoints"
+                  ]
+                },
+                {
+                  "event": "Credential exposure risk from open management ports",
+                  "attack_phase": "Initial Access",
+                  "affected_services": [
+                    "authentication services"
+                  ]
+                }
+              ],
+              "explanation": "URS increases from 42.1 to 42.3 at 3h horizon. Baseline risk factors are within normal ranges"
+            },
+            {
+              "horizon_hours": 6,
+              "projected_urs": 42.431,
+              "confidence": 85.0,
+              "business_impact_level": "Low",
+              "events": [
+                {
+                  "event": "Exposed services detected by external scanners",
+                  "attack_phase": "Reconnaissance",
+                  "affected_services": [
+                    "public-facing endpoints"
+                  ]
+                },
+                {
+                  "event": "Credential exposure risk from open management ports",
+                  "attack_phase": "Initial Access",
+                  "affected_services": [
+                    "authentication services"
+                  ]
+                }
+              ],
+              "explanation": "URS increases from 42.1 to 42.4 at 6h horizon. Baseline risk factors are within normal ranges"
+            },
+            {
+              "horizon_hours": 12,
+              "projected_urs": 42.7719,
+              "confidence": 70.0,
+              "business_impact_level": "Low",
+              "events": [
+                {
+                  "event": "Exposed services detected by external scanners",
+                  "attack_phase": "Reconnaissance",
+                  "affected_services": [
+                    "public-facing endpoints"
+                  ]
+                },
+                {
+                  "event": "Credential exposure risk from open management ports",
+                  "attack_phase": "Initial Access",
+                  "affected_services": [
+                    "authentication services"
+                  ]
+                }
+              ],
+              "explanation": "URS increases from 42.1 to 42.8 at 12h horizon. Baseline risk factors are within normal ranges"
+            },
+            {
+              "horizon_hours": 24,
+              "projected_urs": 43.4538,
+              "confidence": 40.0,
+              "business_impact_level": "Low",
+              "events": [
+                {
+                  "event": "Exposed services detected by external scanners",
+                  "attack_phase": "Reconnaissance",
+                  "affected_services": [
+                    "public-facing endpoints"
+                  ]
+                },
+                {
+                  "event": "Credential exposure risk from open management ports",
+                  "attack_phase": "Initial Access",
+                  "affected_services": [
+                    "authentication services"
+                  ]
+                }
+              ],
+              "explanation": "URS increases from 42.1 to 43.5 at 24h horizon. Baseline risk factors are within normal ranges"
+            }
+          ],
+          "confidence": {
+            "score": 65.0,
+            "level": "Medium",
+            "explanation": [
+              "Telemetry (30% weight): moderate \u2014 50/100",
+              "Stability (25% weight): strong \u2014 100/100",
+              "Criticality (25% weight): moderate \u2014 60/100",
+              "Historical (20% weight): moderate \u2014 50/100"
+            ]
+          },
+          "business_impact": {
+            "scores": {
+              "operational": 43.45,
+              "financial": 34.76,
+              "compliance": 39.11,
+              "availability": 36.94,
+              "reputation": 30.42
+            },
+            "overall": 36.94,
+            "level": "Medium",
+            "trend": "stable",
+            "explanation": [
+              "Highest impact category: operational (43.5/100)"
+            ]
+          },
+          "explanation": [
+            "Baseline risk factors are within normal ranges"
+          ],
+          "algorithm_version": "CTPS-v1.0"
+        }
+      },
+      "policy_engine_results": [
+        {
+          "recommendationId": "REC-MONITOR-100",
+          "title": "Enable DevSecOps Baseline Telemetry Audits",
+          "description": "Keep standard Prometheus scraping intervals and configure automated log integrity monitoring across all container daemon events.",
+          "category": "Monitoring",
+          "priority": "Low",
+          "confidence": 0.99,
+          "estimatedRiskReduction": 5.0,
+          "automationSupported": true,
+          "reasoning": "Telemetry levels are currently normal. Baseline monitoring provides data for future drift detection."
+        },
+        {
+          "recommendationId": "REC-LOG-100",
+          "title": "Standardize Logging Level and Rotation Parameters",
+          "description": "Configure log rotation to restrict log sizes on node hosts to 10MB per container, keeping a maximum of 5 logs to optimize storage.",
+          "category": "Logging",
+          "priority": "Low",
+          "confidence": 0.99,
+          "estimatedRiskReduction": 5.0,
+          "automationSupported": true,
+          "reasoning": "Normal workload logging profile keeps operational volumes clean and stable."
+        }
+      ],
+      "automation_engine_results": {
+        "status": "success",
+        "riskScore": 42.090042,
+        "decision": "Monitor",
+        "provider": "aws",
+        "instanceId": "i-04ba6569c74d41d59",
+        "summary": "Recommended playbook: Default Remediation Playbook",
+        "executionPlan": [
+          {
+            "step": 1,
+            "action": "Default Remediation Playbook",
+            "description": "Mitigation",
+            "status": "Pending",
+            "estimatedExecutionTime": 5.0
+          }
+        ],
+        "ansiblePlaybook": "---\n- name: Default Remediation Playbook\n  hosts: all\n  tasks:\n    - name: Configure standard DevSecOps security controls\n      ansible.builtin.debug:\n        msg: 'Remediation active'",
+        "terraformManifest": "resource \"aws_security_group_rule\" \"remediation\" {}",
+        "awsCliCommands": [
+          "aws ec2 stop-instances --instance-ids i-04ba6569c74d41d59"
+        ],
+        "kubectlCommands": [
+          "kubectl label pod -l instanceId=i-04ba6569c74d41d59 status=quarantined"
+        ],
+        "shellScript": "#!/bin/bash\n# Default Remediation Playbook\naws ec2 stop-instances --instance-ids i-04ba6569c74d41d59",
+        "jsonPlan": "{\"action\": \"Default Remediation Playbook\", \"target\": \"i-04ba6569c74d41d59\"}",
+        "automationLevel": "Fully Automated",
+        "estimatedExecutionTime": 5.0,
+        "rollbackAvailable": true,
+        "metrics": {
+          "optimizationGain": 0.0,
+          "playbooksConsidered": 0,
+          "playbooksSelected": 1,
+          "playbooksRemoved": 0,
+          "estimatedTimeSaved": 0.0,
+          "estimatedRiskReduction": 0.0,
+          "estimatedServiceAvailability": 100.0,
+          "expectedRecoveryPercentage": 100.0
+        },
+        "executionOrder": [
+          {
+            "step": 1,
+            "playbookId": "default",
+            "title": "Default Remediation Playbook",
+            "category": "General",
+            "priorityScore": 50.0,
+            "selectedBecause": [
+              "Default fallback"
+            ],
+            "breakdown": {},
+            "estimatedDuration": 5.0,
+            "ursReduction": 0.0,
+            "recoveryScore": 5.0,
+            "disruptionScore": 5.0,
+            "rollbackAvailable": true,
+            "parallel": false
+          }
+        ],
+        "rejectedPlaybooks": [],
+        "ursBefore": 42.090042,
+        "ursAfter": 42.090042,
+        "ursProjection": [
+          42.090042
+        ],
+        "dependencyGraph": {},
+        "optimizationRationale": "Fallback execution mode active.",
+        "conflictResolutionExplanation": "",
+        "auditId": "AUD-AUTO-1785204307"
+      },
+      "success": false
+    },
+    {
+      "scenario_id": "privilege_escalation",
+      "executed_at": "2026-07-28T07:35:22.463475Z",
+      "telemetry": {
+        "cpu_utilization": 54.0,
+        "memory_usage_percent": 62.0,
+        "disk_usage_percent": 21.0,
+        "packet_rate_in": 1200,
+        "packet_rate_out": 800
+      },
+      "ai_engine_results": {
+        "status": "success",
+        "is_anomaly": true,
+        "reconstruction_loss": 4.159905910491943,
+        "threshold": 0.5903872311115265
+      },
+      "risk_engine_results": {
+        "status": "success",
+        "urs": 51.450419999999994,
+        "risk_score": 51.450419999999994,
+        "decision": "Monitor",
+        "reason": "Mild deviations detected. Increasing telemetry logging resolution.",
+        "contributors": [
+          {
+            "parameter": "CPU",
+            "value": 54.0,
+            "weight": 0.15,
+            "contribution": 8.1,
+            "reason": "CPU utilization above expected baseline. (Adaptive Weight: 0.15)"
+          },
+          {
+            "parameter": "Memory",
+            "value": 62.0,
+            "weight": 0.15,
+            "contribution": 9.3,
+            "reason": "Memory utilization above expected baseline. (Adaptive Weight: 0.15)"
+          },
+          {
+            "parameter": "Disk",
+            "value": 21.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "reason": "Disk space utilization is within normal limits. (Adaptive Weight: 0.0)"
+          },
+          {
+            "parameter": "Network",
+            "value": 0.0,
+            "weight": 0.35,
+            "contribution": 0.0,
+            "reason": "Network traffic is normal. (Adaptive Weight: 0.35)"
+          },
+          {
+            "parameter": "Anomaly Score",
+            "value": 100.0,
+            "weight": 0.2,
+            "contribution": 20.0,
+            "reason": "Highly anomalous activity signature detected by AI Engine. (Adaptive Weight: 0.2)"
+          },
+          {
+            "parameter": "Reconstruction Error",
+            "value": 100.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "reason": "Severe autoencoder reconstruction error, indicating anomalous operational states. (Adaptive Weight: 0.0)"
+          },
+          {
+            "parameter": "Historical Frequency",
+            "value": 91.0,
+            "weight": 0.05,
+            "contribution": 4.55,
+            "reason": "High historical anomaly frequency, indicating chronic instability. (Adaptive Weight: 0.05)"
+          },
+          {
+            "parameter": "Confidence",
+            "value": 95.0,
+            "weight": 0.1,
+            "contribution": 9.5,
+            "reason": "High confidence in anomaly classification accuracy. (Adaptive Weight: 0.1)"
+          },
+          {
+            "parameter": "Asset Criticality",
+            "value": 1.0,
+            "weight": 1.0,
+            "contribution": 0.0,
+            "reason": "Standard baseline asset criticality multiplier. (Adaptive Weight: 1.0)"
+          }
+        ],
+        "topContributor": "Anomaly Score",
+        "timestamp": "2026-07-28T07:35:14.380237",
+        "context": {
+          "timePeriod": "Morning",
+          "dayType": "Weekday",
+          "profile": "Business Hours"
+        },
+        "adaptiveWeights": {
+          "cpu": 0.15,
+          "memory": 0.15,
+          "disk": 0.0,
+          "network": 0.35,
+          "anomaly": 0.2,
+          "reconstruction": 0.0,
+          "confidence": 0.1,
+          "historical": 0.05
+        },
+        "comparison": {
+          "staticURS": 80.2,
+          "adaptiveURS": 51.45,
+          "difference": -28.75,
+          "improvement": "Reduced false positives during business hours workload."
+        },
+        "contextConfidence": 0.95,
+        "profileVersion": "1.0.0",
+        "adaptationReason": "Network activity receives higher importance during business hours because lateral movement attacks are more probable.",
+        "quantumReadiness": {
+          "score": 35,
+          "classification": "Moderate",
+          "migrationPriority": "Immediate",
+          "overallQuantumRisk": "Very High"
+        },
+        "cryptography": [
+          {
+            "algorithm": "RSA-2048",
+            "quantumRisk": "Very High",
+            "readinessWeight": 15,
+            "recommendation": "Migrate to ML-KEM (Kyber) hybrid TLS.",
+            "reason": "Shor's algorithm can efficiently compromise RSA key exchange."
+          },
+          {
+            "algorithm": "ECC P-256",
+            "quantumRisk": "Medium",
+            "readinessWeight": 55,
+            "recommendation": "Transition to hybrid PQC key exchange.",
+            "reason": "Elliptic curves are vulnerable to Shor's algorithm, requiring transition to hybrid PQC key exchange."
+          }
+        ],
+        "quantumExplanation": "Monitored assets have an overall quantum readiness classification of Moderate with a score of 35/100. The presence of legacy algorithms like RSA-2048 presents a Very High quantum risk, requiring immediate migration planning to post-quantum alternatives.",
+        "dashboardData": {
+          "migrationPriority": "Immediate",
+          "topRecommendation": "Migrate to ML-KEM (Kyber) hybrid TLS.",
+          "highestQuantumRiskAlgorithm": "RSA-2048",
+          "overallQuantumReadiness": "Moderate",
+          "Migration Priority": "Immediate",
+          "Top Recommendation": "Migrate to ML-KEM (Kyber) hybrid TLS.",
+          "Highest Quantum Risk Algorithm": "RSA-2048",
+          "Overall Quantum Readiness": "Moderate"
+        },
+        "recommendations": {
+          "status": "success",
+          "timestamp": "2026-07-28T07:35:16.992636Z",
+          "request_id": "b945d4c5-3b81-4a99-bc39-04170e08ccc0",
+          "service": "Policy Recommendation Engine API",
+          "version": "0.1.0",
+          "execution_time": "50.53ms",
+          "data": [
+            {
+              "recommendationId": "REC-CRYPTO-001",
+              "title": "Migrate Legacy Cryptography to Post-Quantum Algorithms",
+              "description": "Identify systems using legacy algorithms (such as RSA-2048) and upgrade them to quantum-safe alternatives (ML-KEM/Kyber hybrid TLS key exchange or ML-DSA signature schemes).",
+              "category": "Cryptography",
+              "priority": "Critical",
+              "confidence": 0.95,
+              "estimatedRiskReduction": 75.0,
+              "automationSupported": false,
+              "reasoning": "Assets currently run legacy cryptography with Very High quantum risk. Upgrading to PQC secures authentication keys from Shor's algorithm."
+            }
+          ],
+          "errors": null
+        },
+        "prediction_summary": {
+          "status": "success",
+          "timestamp": "2026-07-28T07:35:17.686832Z",
+          "request_id": "b945d4c5-3b81-4a99-bc39-04170e08ccc0",
+          "service": "Prediction Engine API",
+          "version": "1.1.0",
+          "execution_time": "113.40ms",
+          "data": {
+            "resource_id": "res-privilege_escalation",
+            "current_urs": 51.450419999999994,
+            "projected_urs": {
+              "1": 51.5199,
+              "3": 51.6588,
+              "6": 51.8672,
+              "12": 52.2839,
+              "24": 53.1174
+            },
+            "ctps": 0.225,
+            "factors": {
+              "severity": 0.3,
+              "exposure": 1.0,
+              "criticality": 1.0,
+              "trend": 1.0,
+              "persistence": 1.0,
+              "remediation": 0.75,
+              "age": 1.0
+            },
+            "risk_trend": "stable",
+            "timeline": [
+              {
+                "horizon_hours": 1,
+                "projected_urs": 51.5199,
+                "confidence": 97.5,
+                "business_impact_level": "Medium",
+                "events": [
+                  {
+                    "event": "Exposed services detected by external scanners",
+                    "attack_phase": "Reconnaissance",
+                    "affected_services": [
+                      "public-facing endpoints"
+                    ]
+                  },
+                  {
+                    "event": "Credential exposure risk from open management ports",
+                    "attack_phase": "Initial Access",
+                    "affected_services": [
+                      "authentication services"
+                    ]
+                  },
+                  {
+                    "event": "Credential compromise risk increases significantly",
+                    "attack_phase": "Persistence",
+                    "affected_services": [
+                      "IAM",
+                      "authentication services"
+                    ]
+                  }
+                ],
+                "explanation": "URS increases from 51.5 to 51.5 at 1h horizon. Baseline risk factors are within normal ranges"
+              },
+              {
+                "horizon_hours": 3,
+                "projected_urs": 51.6588,
+                "confidence": 92.5,
+                "business_impact_level": "Medium",
+                "events": [
+                  {
+                    "event": "Exposed services detected by external scanners",
+                    "attack_phase": "Reconnaissance",
+                    "affected_services": [
+                      "public-facing endpoints"
+                    ]
+                  },
+                  {
+                    "event": "Credential exposure risk from open management ports",
+                    "attack_phase": "Initial Access",
+                    "affected_services": [
+                      "authentication services"
+                    ]
+                  },
+                  {
+                    "event": "Credential compromise risk increases significantly",
+                    "attack_phase": "Persistence",
+                    "affected_services": [
+                      "IAM",
+                      "authentication services"
+                    ]
+                  }
+                ],
+                "explanation": "URS increases from 51.5 to 51.7 at 3h horizon. Baseline risk factors are within normal ranges"
+              },
+              {
+                "horizon_hours": 6,
+                "projected_urs": 51.8672,
+                "confidence": 85.0,
+                "business_impact_level": "Medium",
+                "events": [
+                  {
+                    "event": "Exposed services detected by external scanners",
+                    "attack_phase": "Reconnaissance",
+                    "affected_services": [
+                      "public-facing endpoints"
+                    ]
+                  },
+                  {
+                    "event": "Credential exposure risk from open management ports",
+                    "attack_phase": "Initial Access",
+                    "affected_services": [
+                      "authentication services"
+                    ]
+                  },
+                  {
+                    "event": "Credential compromise risk increases significantly",
+                    "attack_phase": "Persistence",
+                    "affected_services": [
+                      "IAM",
+                      "authentication services"
+                    ]
+                  }
+                ],
+                "explanation": "URS increases from 51.5 to 51.9 at 6h horizon. Baseline risk factors are within normal ranges"
+              },
+              {
+                "horizon_hours": 12,
+                "projected_urs": 52.2839,
+                "confidence": 70.0,
+                "business_impact_level": "Medium",
+                "events": [
+                  {
+                    "event": "Exposed services detected by external scanners",
+                    "attack_phase": "Reconnaissance",
+                    "affected_services": [
+                      "public-facing endpoints"
+                    ]
+                  },
+                  {
+                    "event": "Credential exposure risk from open management ports",
+                    "attack_phase": "Initial Access",
+                    "affected_services": [
+                      "authentication services"
+                    ]
+                  },
+                  {
+                    "event": "Credential compromise risk increases significantly",
+                    "attack_phase": "Persistence",
+                    "affected_services": [
+                      "IAM",
+                      "authentication services"
+                    ]
+                  }
+                ],
+                "explanation": "URS increases from 51.5 to 52.3 at 12h horizon. Baseline risk factors are within normal ranges"
+              },
+              {
+                "horizon_hours": 24,
+                "projected_urs": 53.1174,
+                "confidence": 40.0,
+                "business_impact_level": "Medium",
+                "events": [
+                  {
+                    "event": "Exposed services detected by external scanners",
+                    "attack_phase": "Reconnaissance",
+                    "affected_services": [
+                      "public-facing endpoints"
+                    ]
+                  },
+                  {
+                    "event": "Credential exposure risk from open management ports",
+                    "attack_phase": "Initial Access",
+                    "affected_services": [
+                      "authentication services"
+                    ]
+                  },
+                  {
+                    "event": "Credential compromise risk increases significantly",
+                    "attack_phase": "Persistence",
+                    "affected_services": [
+                      "IAM",
+                      "authentication services"
+                    ]
+                  }
+                ],
+                "explanation": "URS increases from 51.5 to 53.1 at 24h horizon. Baseline risk factors are within normal ranges"
+              }
+            ],
+            "confidence": {
+              "score": 65.0,
+              "level": "Medium",
+              "explanation": [
+                "Telemetry (30% weight): moderate \u2014 50/100",
+                "Stability (25% weight): strong \u2014 100/100",
+                "Criticality (25% weight): moderate \u2014 60/100",
+                "Historical (20% weight): moderate \u2014 50/100"
+              ]
+            },
+            "business_impact": {
+              "scores": {
+                "operational": 53.12,
+                "financial": 42.49,
+                "compliance": 47.81,
+                "availability": 45.15,
+                "reputation": 37.18
+              },
+              "overall": 45.15,
+              "level": "Medium",
+              "trend": "stable",
+              "explanation": [
+                "Highest impact category: operational (53.1/100)"
+              ]
+            },
+            "explanation": [
+              "Baseline risk factors are within normal ranges"
+            ],
+            "algorithm_version": "CTPS-v1.0",
+            "timestamp": "2026-07-28T07:35:17.572432Z"
+          },
+          "errors": null,
+          "resource_id": "res-privilege_escalation",
+          "current_urs": 51.450419999999994,
+          "projected_urs": {
+            "1": 51.5199,
+            "3": 51.6588,
+            "6": 51.8672,
+            "12": 52.2839,
+            "24": 53.1174
+          },
+          "ctps": 0.225,
+          "factors": {
+            "severity": 0.3,
+            "exposure": 1.0,
+            "criticality": 1.0,
+            "trend": 1.0,
+            "persistence": 1.0,
+            "remediation": 0.75,
+            "age": 1.0
+          },
+          "risk_trend": "stable",
+          "timeline": [
+            {
+              "horizon_hours": 1,
+              "projected_urs": 51.5199,
+              "confidence": 97.5,
+              "business_impact_level": "Medium",
+              "events": [
+                {
+                  "event": "Exposed services detected by external scanners",
+                  "attack_phase": "Reconnaissance",
+                  "affected_services": [
+                    "public-facing endpoints"
+                  ]
+                },
+                {
+                  "event": "Credential exposure risk from open management ports",
+                  "attack_phase": "Initial Access",
+                  "affected_services": [
+                    "authentication services"
+                  ]
+                },
+                {
+                  "event": "Credential compromise risk increases significantly",
+                  "attack_phase": "Persistence",
+                  "affected_services": [
+                    "IAM",
+                    "authentication services"
+                  ]
+                }
+              ],
+              "explanation": "URS increases from 51.5 to 51.5 at 1h horizon. Baseline risk factors are within normal ranges"
+            },
+            {
+              "horizon_hours": 3,
+              "projected_urs": 51.6588,
+              "confidence": 92.5,
+              "business_impact_level": "Medium",
+              "events": [
+                {
+                  "event": "Exposed services detected by external scanners",
+                  "attack_phase": "Reconnaissance",
+                  "affected_services": [
+                    "public-facing endpoints"
+                  ]
+                },
+                {
+                  "event": "Credential exposure risk from open management ports",
+                  "attack_phase": "Initial Access",
+                  "affected_services": [
+                    "authentication services"
+                  ]
+                },
+                {
+                  "event": "Credential compromise risk increases significantly",
+                  "attack_phase": "Persistence",
+                  "affected_services": [
+                    "IAM",
+                    "authentication services"
+                  ]
+                }
+              ],
+              "explanation": "URS increases from 51.5 to 51.7 at 3h horizon. Baseline risk factors are within normal ranges"
+            },
+            {
+              "horizon_hours": 6,
+              "projected_urs": 51.8672,
+              "confidence": 85.0,
+              "business_impact_level": "Medium",
+              "events": [
+                {
+                  "event": "Exposed services detected by external scanners",
+                  "attack_phase": "Reconnaissance",
+                  "affected_services": [
+                    "public-facing endpoints"
+                  ]
+                },
+                {
+                  "event": "Credential exposure risk from open management ports",
+                  "attack_phase": "Initial Access",
+                  "affected_services": [
+                    "authentication services"
+                  ]
+                },
+                {
+                  "event": "Credential compromise risk increases significantly",
+                  "attack_phase": "Persistence",
+                  "affected_services": [
+                    "IAM",
+                    "authentication services"
+                  ]
+                }
+              ],
+              "explanation": "URS increases from 51.5 to 51.9 at 6h horizon. Baseline risk factors are within normal ranges"
+            },
+            {
+              "horizon_hours": 12,
+              "projected_urs": 52.2839,
+              "confidence": 70.0,
+              "business_impact_level": "Medium",
+              "events": [
+                {
+                  "event": "Exposed services detected by external scanners",
+                  "attack_phase": "Reconnaissance",
+                  "affected_services": [
+                    "public-facing endpoints"
+                  ]
+                },
+                {
+                  "event": "Credential exposure risk from open management ports",
+                  "attack_phase": "Initial Access",
+                  "affected_services": [
+                    "authentication services"
+                  ]
+                },
+                {
+                  "event": "Credential compromise risk increases significantly",
+                  "attack_phase": "Persistence",
+                  "affected_services": [
+                    "IAM",
+                    "authentication services"
+                  ]
+                }
+              ],
+              "explanation": "URS increases from 51.5 to 52.3 at 12h horizon. Baseline risk factors are within normal ranges"
+            },
+            {
+              "horizon_hours": 24,
+              "projected_urs": 53.1174,
+              "confidence": 40.0,
+              "business_impact_level": "Medium",
+              "events": [
+                {
+                  "event": "Exposed services detected by external scanners",
+                  "attack_phase": "Reconnaissance",
+                  "affected_services": [
+                    "public-facing endpoints"
+                  ]
+                },
+                {
+                  "event": "Credential exposure risk from open management ports",
+                  "attack_phase": "Initial Access",
+                  "affected_services": [
+                    "authentication services"
+                  ]
+                },
+                {
+                  "event": "Credential compromise risk increases significantly",
+                  "attack_phase": "Persistence",
+                  "affected_services": [
+                    "IAM",
+                    "authentication services"
+                  ]
+                }
+              ],
+              "explanation": "URS increases from 51.5 to 53.1 at 24h horizon. Baseline risk factors are within normal ranges"
+            }
+          ],
+          "confidence": {
+            "score": 65.0,
+            "level": "Medium",
+            "explanation": [
+              "Telemetry (30% weight): moderate \u2014 50/100",
+              "Stability (25% weight): strong \u2014 100/100",
+              "Criticality (25% weight): moderate \u2014 60/100",
+              "Historical (20% weight): moderate \u2014 50/100"
+            ]
+          },
+          "business_impact": {
+            "scores": {
+              "operational": 53.12,
+              "financial": 42.49,
+              "compliance": 47.81,
+              "availability": 45.15,
+              "reputation": 37.18
+            },
+            "overall": 45.15,
+            "level": "Medium",
+            "trend": "stable",
+            "explanation": [
+              "Highest impact category: operational (53.1/100)"
+            ]
+          },
+          "explanation": [
+            "Baseline risk factors are within normal ranges"
+          ],
+          "algorithm_version": "CTPS-v1.0"
+        }
+      },
+      "policy_engine_results": [
+        {
+          "recommendationId": "REC-CRYPTO-001",
+          "title": "Migrate Legacy Cryptography to Post-Quantum Algorithms",
+          "description": "Identify systems using legacy algorithms (such as RSA-2048) and upgrade them to quantum-safe alternatives (ML-KEM/Kyber hybrid TLS key exchange or ML-DSA signature schemes).",
+          "category": "Cryptography",
+          "priority": "High",
+          "confidence": 0.95,
+          "estimatedRiskReduction": 75.0,
+          "automationSupported": false,
+          "reasoning": "Assets currently run legacy cryptography with High quantum risk. Upgrading to PQC secures authentication keys from Shor's algorithm."
+        }
+      ],
+      "automation_engine_results": {
+        "status": "success",
+        "riskScore": 51.450419999999994,
+        "decision": "Monitor",
+        "provider": "aws",
+        "instanceId": "i-04ba6569c74d41d59",
+        "summary": "Recommended playbook: Isolate Compromised EC2 Instance",
+        "executionPlan": [
+          {
+            "step": 1,
+            "action": "Isolate Compromised EC2 Instance",
+            "description": "Gracefully stops the target EC2 instance to prevent lateral movement.",
+            "status": "Pending",
+            "estimatedExecutionTime": 8.0
+          }
+        ],
+        "ansiblePlaybook": "---\n- name: Isolate Compromised EC2 Instance\n  hosts: all\n  tasks:\n    - name: Gracefully stops the target EC2 instance to prevent lateral movement.\n      ansible.builtin.debug:\n        msg: 'Remediation active'",
+        "terraformManifest": "resource \"aws_security_group_rule\" \"remediation\" {}",
+        "awsCliCommands": [
+          "aws ec2 stop-instances --instance-ids {instance_id} --region us-east-1"
+        ],
+        "kubectlCommands": [
+          "kubectl label pod -l instanceId=i-04ba6569c74d41d59 status=quarantined"
+        ],
+        "shellScript": "#!/bin/bash\n# Isolate Compromised EC2 Instance\naws ec2 stop-instances --instance-ids {instance_id} --region us-east-1",
+        "jsonPlan": "{\"action\": \"Isolate Compromised EC2 Instance\", \"target\": \"i-04ba6569c74d41d59\"}",
+        "automationLevel": "Fully Automated",
+        "estimatedExecutionTime": 8.0,
+        "rollbackAvailable": true,
+        "metrics": {
+          "optimizationGain": 15.5,
+          "playbooksConsidered": 1,
+          "playbooksSelected": 1,
+          "playbooksRemoved": 0,
+          "estimatedTimeSaved": 0,
+          "estimatedRiskReduction": 15.0,
+          "estimatedServiceAvailability": 65.0,
+          "expectedRecoveryPercentage": 85.0
+        },
+        "executionOrder": [
+          {
+            "step": 1,
+            "playbookId": "isolate_ec2",
+            "title": "Isolate Compromised EC2 Instance",
+            "category": "Isolation",
+            "priorityScore": 43.89,
+            "selectedBecause": [
+              "Highest recovery score",
+              "Critical severity",
+              "Supports rollback",
+              "High confidence decision"
+            ],
+            "scoreBreakdown": {
+              "severity": 8.0,
+              "urs": 15.44,
+              "recovery": 21.25,
+              "policy": 6.0,
+              "confidence": 4.5,
+              "disruptionPenalty": -10.5,
+              "executionPenalty": -0.8,
+              "finalScore": 43.89
+            },
+            "dependencies": [],
+            "estimatedDuration": 8.0,
+            "ursReduction": 15.0,
+            "recoveryScore": 8.5,
+            "disruptionScore": 7.0,
+            "rollbackAvailable": true,
+            "parallel": false
+          }
+        ],
+        "rejectedPlaybooks": [],
+        "ursBefore": 51.450419999999994,
+        "ursAfter": 36.45,
+        "ursProjection": [
+          51.450419999999994,
+          36.45
+        ],
+        "dependencyGraph": {
+          "isolate_ec2": []
+        },
+        "optimizationRationale": "Selected 1 playbook(s) to secure baseline services, mitigating medium threat severity findings. Deduplicated 0 redundant playbooks to prevent service disruption.",
+        "conflictResolutionExplanation": "Successfully filtered mutual exclusions. Active execution chain contains no overlapping components.",
+        "auditId": "AUD-AUTO-1785204321"
+      },
+      "success": false
+    },
+    {
+      "scenario_id": "ransomware",
+      "executed_at": "2026-07-28T07:35:36.544726Z",
+      "telemetry": {
+        "cpu_utilization": 78.5,
+        "memory_usage_percent": 84.1,
+        "disk_usage_percent": 98.9,
+        "packet_rate_in": 1200,
+        "packet_rate_out": 9500
+      },
+      "ai_engine_results": {
+        "status": "success",
+        "is_anomaly": true,
+        "reconstruction_loss": 20.096403121948242,
+        "threshold": 0.5903872311115265
+      },
+      "risk_engine_results": {
+        "status": "success",
+        "urs": 58.440419999999996,
+        "risk_score": 58.440419999999996,
+        "decision": "Monitor",
+        "reason": "Mild deviations detected. Increasing telemetry logging resolution.",
+        "contributors": [
+          {
+            "parameter": "CPU",
+            "value": 78.5,
+            "weight": 0.15,
+            "contribution": 11.78,
+            "reason": "CPU utilization above expected baseline. (Adaptive Weight: 0.15)"
+          },
+          {
+            "parameter": "Memory",
+            "value": 84.1,
+            "weight": 0.15,
+            "contribution": 12.61,
+            "reason": "Memory utilization critically high. (Adaptive Weight: 0.15)"
+          },
+          {
+            "parameter": "Disk",
+            "value": 98.9,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "reason": "Disk space utilization is critically high. (Adaptive Weight: 0.0)"
+          },
+          {
+            "parameter": "Network",
+            "value": 0.0,
+            "weight": 0.35,
+            "contribution": 0.0,
+            "reason": "Network traffic is normal. (Adaptive Weight: 0.35)"
+          },
+          {
+            "parameter": "Anomaly Score",
+            "value": 100.0,
+            "weight": 0.2,
+            "contribution": 20.0,
+            "reason": "Highly anomalous activity signature detected by AI Engine. (Adaptive Weight: 0.2)"
+          },
+          {
+            "parameter": "Reconstruction Error",
+            "value": 100.0,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "reason": "Severe autoencoder reconstruction error, indicating anomalous operational states. (Adaptive Weight: 0.0)"
+          },
+          {
+            "parameter": "Historical Frequency",
+            "value": 91.0,
+            "weight": 0.05,
+            "contribution": 4.55,
+            "reason": "High historical anomaly frequency, indicating chronic instability. (Adaptive Weight: 0.05)"
+          },
+          {
+            "parameter": "Confidence",
+            "value": 95.0,
+            "weight": 0.1,
+            "contribution": 9.5,
+            "reason": "High confidence in anomaly classification accuracy. (Adaptive Weight: 0.1)"
+          },
+          {
+            "parameter": "Asset Criticality",
+            "value": 1.0,
+            "weight": 1.0,
+            "contribution": 0.0,
+            "reason": "Standard baseline asset criticality multiplier. (Adaptive Weight: 1.0)"
+          }
+        ],
+        "topContributor": "Anomaly Score",
+        "timestamp": "2026-07-28T07:35:28.975595",
+        "context": {
+          "timePeriod": "Morning",
+          "dayType": "Weekday",
+          "profile": "Business Hours"
+        },
+        "adaptiveWeights": {
+          "cpu": 0.15,
+          "memory": 0.15,
+          "disk": 0.0,
+          "network": 0.35,
+          "anomaly": 0.2,
+          "reconstruction": 0.0,
+          "confidence": 0.1,
+          "historical": 0.05
+        },
+        "comparison": {
+          "staticURS": 84.86,
+          "adaptiveURS": 58.44,
+          "difference": -26.42,
+          "improvement": "Reduced false positives during business hours workload."
+        },
+        "contextConfidence": 0.95,
+        "profileVersion": "1.0.0",
+        "adaptationReason": "Network activity receives higher importance during business hours because lateral movement attacks are more probable.",
+        "quantumReadiness": {
+          "score": 35,
+          "classification": "Moderate",
+          "migrationPriority": "Immediate",
+          "overallQuantumRisk": "Very High"
+        },
+        "cryptography": [
+          {
+            "algorithm": "RSA-2048",
+            "quantumRisk": "Very High",
+            "readinessWeight": 15,
+            "recommendation": "Migrate to ML-KEM (Kyber) hybrid TLS.",
+            "reason": "Shor's algorithm can efficiently compromise RSA key exchange."
+          },
+          {
+            "algorithm": "ECC P-256",
+            "quantumRisk": "Medium",
+            "readinessWeight": 55,
+            "recommendation": "Transition to hybrid PQC key exchange.",
+            "reason": "Elliptic curves are vulnerable to Shor's algorithm, requiring transition to hybrid PQC key exchange."
+          }
+        ],
+        "quantumExplanation": "Monitored assets have an overall quantum readiness classification of Moderate with a score of 35/100. The presence of legacy algorithms like RSA-2048 presents a Very High quantum risk, requiring immediate migration planning to post-quantum alternatives.",
+        "dashboardData": {
+          "migrationPriority": "Immediate",
+          "topRecommendation": "Migrate to ML-KEM (Kyber) hybrid TLS.",
+          "highestQuantumRiskAlgorithm": "RSA-2048",
+          "overallQuantumReadiness": "Moderate",
+          "Migration Priority": "Immediate",
+          "Top Recommendation": "Migrate to ML-KEM (Kyber) hybrid TLS.",
+          "Highest Quantum Risk Algorithm": "RSA-2048",
+          "Overall Quantum Readiness": "Moderate"
+        },
+        "recommendations": {
+          "status": "success",
+          "timestamp": "2026-07-28T07:35:31.569846Z",
+          "request_id": "666e04b7-fc36-4059-b299-c8eb43efd670",
+          "service": "Policy Recommendation Engine API",
+          "version": "0.1.0",
+          "execution_time": "75.10ms",
+          "data": [
+            {
+              "recommendationId": "REC-CRYPTO-001",
+              "title": "Migrate Legacy Cryptography to Post-Quantum Algorithms",
+              "description": "Identify systems using legacy algorithms (such as RSA-2048) and upgrade them to quantum-safe alternatives (ML-KEM/Kyber hybrid TLS key exchange or ML-DSA signature schemes).",
+              "category": "Cryptography",
+              "priority": "Critical",
+              "confidence": 0.95,
+              "estimatedRiskReduction": 75.0,
+              "automationSupported": false,
+              "reasoning": "Assets currently run legacy cryptography with Very High quantum risk. Upgrading to PQC secures authentication keys from Shor's algorithm."
+            }
+          ],
+          "errors": null
+        },
+        "prediction_summary": {
+          "status": "success",
+          "timestamp": "2026-07-28T07:35:32.257304Z",
+          "request_id": "666e04b7-fc36-4059-b299-c8eb43efd670",
+          "service": "Prediction Engine API",
+          "version": "1.1.0",
+          "execution_time": "52.45ms",
+          "data": {
+            "resource_id": "res-ransomware",
+            "current_urs": 58.440419999999996,
+            "projected_urs": {
+              "1": 58.5193,
+              "3": 58.6771,
+              "6": 58.9138,
+              "12": 59.3872,
+              "24": 60.3339
+            },
+            "ctps": 0.225,
+            "factors": {
+              "severity": 0.3,
+              "exposure": 1.0,
+              "criticality": 1.0,
+              "trend": 1.0,
+              "persistence": 1.0,
+              "remediation": 0.75,
+              "age": 1.0
+            },
+            "risk_trend": "stable",
+            "timeline": [
+              {
+                "horizon_hours": 1,
+                "projected_urs": 58.5193,
+                "confidence": 97.5,
+                "business_impact_level": "Medium",
+                "events": [
+                  {
+                    "event": "Exposed services detected by external scanners",
+                    "attack_phase": "Reconnaissance",
+                    "affected_services": [
+                      "public-facing endpoints"
+                    ]
+                  },
+                  {
+                    "event": "Credential exposure risk from open management ports",
+                    "attack_phase": "Initial Access",
+                    "affected_services": [
+                      "authentication services"
+                    ]
+                  },
+                  {
+                    "event": "Credential compromise risk increases significantly",
+                    "attack_phase": "Persistence",
+                    "affected_services": [
+                      "IAM",
+                      "authentication services"
+                    ]
+                  }
+                ],
+                "explanation": "URS increases from 58.4 to 58.5 at 1h horizon. Baseline risk factors are within normal ranges"
+              },
+              {
+                "horizon_hours": 3,
+                "projected_urs": 58.6771,
+                "confidence": 92.5,
+                "business_impact_level": "Medium",
+                "events": [
+                  {
+                    "event": "Exposed services detected by external scanners",
+                    "attack_phase": "Reconnaissance",
+                    "affected_services": [
+                      "public-facing endpoints"
+                    ]
+                  },
+                  {
+                    "event": "Credential exposure risk from open management ports",
+                    "attack_phase": "Initial Access",
+                    "affected_services": [
+                      "authentication services"
+                    ]
+                  },
+                  {
+                    "event": "Credential compromise risk increases significantly",
+                    "attack_phase": "Persistence",
+                    "affected_services": [
+                      "IAM",
+                      "authentication services"
+                    ]
+                  }
+                ],
+                "explanation": "URS increases from 58.4 to 58.7 at 3h horizon. Baseline risk factors are within normal ranges"
+              },
+              {
+                "horizon_hours": 6,
+                "projected_urs": 58.9138,
+                "confidence": 85.0,
+                "business_impact_level": "Medium",
+                "events": [
+                  {
+                    "event": "Exposed services detected by external scanners",
+                    "attack_phase": "Reconnaissance",
+                    "affected_services": [
+                      "public-facing endpoints"
+                    ]
+                  },
+                  {
+                    "event": "Credential exposure risk from open management ports",
+                    "attack_phase": "Initial Access",
+                    "affected_services": [
+                      "authentication services"
+                    ]
+                  },
+                  {
+                    "event": "Credential compromise risk increases significantly",
+                    "attack_phase": "Persistence",
+                    "affected_services": [
+                      "IAM",
+                      "authentication services"
+                    ]
+                  }
+                ],
+                "explanation": "URS increases from 58.4 to 58.9 at 6h horizon. Baseline risk factors are within normal ranges"
+              },
+              {
+                "horizon_hours": 12,
+                "projected_urs": 59.3872,
+                "confidence": 70.0,
+                "business_impact_level": "Medium",
+                "events": [
+                  {
+                    "event": "Exposed services detected by external scanners",
+                    "attack_phase": "Reconnaissance",
+                    "affected_services": [
+                      "public-facing endpoints"
+                    ]
+                  },
+                  {
+                    "event": "Credential exposure risk from open management ports",
+                    "attack_phase": "Initial Access",
+                    "affected_services": [
+                      "authentication services"
+                    ]
+                  },
+                  {
+                    "event": "Credential compromise risk increases significantly",
+                    "attack_phase": "Persistence",
+                    "affected_services": [
+                      "IAM",
+                      "authentication services"
+                    ]
+                  }
+                ],
+                "explanation": "URS increases from 58.4 to 59.4 at 12h horizon. Baseline risk factors are within normal ranges"
+              },
+              {
+                "horizon_hours": 24,
+                "projected_urs": 60.3339,
+                "confidence": 40.0,
+                "business_impact_level": "Medium",
+                "events": [
+                  {
+                    "event": "Exposed services detected by external scanners",
+                    "attack_phase": "Reconnaissance",
+                    "affected_services": [
+                      "public-facing endpoints"
+                    ]
+                  },
+                  {
+                    "event": "Credential exposure risk from open management ports",
+                    "attack_phase": "Initial Access",
+                    "affected_services": [
+                      "authentication services"
+                    ]
+                  },
+                  {
+                    "event": "Credential compromise risk increases significantly",
+                    "attack_phase": "Persistence",
+                    "affected_services": [
+                      "IAM",
+                      "authentication services"
+                    ]
+                  }
+                ],
+                "explanation": "URS increases from 58.4 to 60.3 at 24h horizon. Baseline risk factors are within normal ranges"
+              }
+            ],
+            "confidence": {
+              "score": 65.0,
+              "level": "Medium",
+              "explanation": [
+                "Telemetry (30% weight): moderate \u2014 50/100",
+                "Stability (25% weight): strong \u2014 100/100",
+                "Criticality (25% weight): moderate \u2014 60/100",
+                "Historical (20% weight): moderate \u2014 50/100"
+              ]
+            },
+            "business_impact": {
+              "scores": {
+                "operational": 60.33,
+                "financial": 48.27,
+                "compliance": 54.3,
+                "availability": 51.28,
+                "reputation": 42.23
+              },
+              "overall": 51.28,
+              "level": "Medium",
+              "trend": "stable",
+              "explanation": [
+                "Highest impact category: operational (60.3/100)"
+              ]
+            },
+            "explanation": [
+              "Baseline risk factors are within normal ranges"
+            ],
+            "algorithm_version": "CTPS-v1.0",
+            "timestamp": "2026-07-28T07:35:32.204534Z"
+          },
+          "errors": null,
+          "resource_id": "res-ransomware",
+          "current_urs": 58.440419999999996,
+          "projected_urs": {
+            "1": 58.5193,
+            "3": 58.6771,
+            "6": 58.9138,
+            "12": 59.3872,
+            "24": 60.3339
+          },
+          "ctps": 0.225,
+          "factors": {
+            "severity": 0.3,
+            "exposure": 1.0,
+            "criticality": 1.0,
+            "trend": 1.0,
+            "persistence": 1.0,
+            "remediation": 0.75,
+            "age": 1.0
+          },
+          "risk_trend": "stable",
+          "timeline": [
+            {
+              "horizon_hours": 1,
+              "projected_urs": 58.5193,
+              "confidence": 97.5,
+              "business_impact_level": "Medium",
+              "events": [
+                {
+                  "event": "Exposed services detected by external scanners",
+                  "attack_phase": "Reconnaissance",
+                  "affected_services": [
+                    "public-facing endpoints"
+                  ]
+                },
+                {
+                  "event": "Credential exposure risk from open management ports",
+                  "attack_phase": "Initial Access",
+                  "affected_services": [
+                    "authentication services"
+                  ]
+                },
+                {
+                  "event": "Credential compromise risk increases significantly",
+                  "attack_phase": "Persistence",
+                  "affected_services": [
+                    "IAM",
+                    "authentication services"
+                  ]
+                }
+              ],
+              "explanation": "URS increases from 58.4 to 58.5 at 1h horizon. Baseline risk factors are within normal ranges"
+            },
+            {
+              "horizon_hours": 3,
+              "projected_urs": 58.6771,
+              "confidence": 92.5,
+              "business_impact_level": "Medium",
+              "events": [
+                {
+                  "event": "Exposed services detected by external scanners",
+                  "attack_phase": "Reconnaissance",
+                  "affected_services": [
+                    "public-facing endpoints"
+                  ]
+                },
+                {
+                  "event": "Credential exposure risk from open management ports",
+                  "attack_phase": "Initial Access",
+                  "affected_services": [
+                    "authentication services"
+                  ]
+                },
+                {
+                  "event": "Credential compromise risk increases significantly",
+                  "attack_phase": "Persistence",
+                  "affected_services": [
+                    "IAM",
+                    "authentication services"
+                  ]
+                }
+              ],
+              "explanation": "URS increases from 58.4 to 58.7 at 3h horizon. Baseline risk factors are within normal ranges"
+            },
+            {
+              "horizon_hours": 6,
+              "projected_urs": 58.9138,
+              "confidence": 85.0,
+              "business_impact_level": "Medium",
+              "events": [
+                {
+                  "event": "Exposed services detected by external scanners",
+                  "attack_phase": "Reconnaissance",
+                  "affected_services": [
+                    "public-facing endpoints"
+                  ]
+                },
+                {
+                  "event": "Credential exposure risk from open management ports",
+                  "attack_phase": "Initial Access",
+                  "affected_services": [
+                    "authentication services"
+                  ]
+                },
+                {
+                  "event": "Credential compromise risk increases significantly",
+                  "attack_phase": "Persistence",
+                  "affected_services": [
+                    "IAM",
+                    "authentication services"
+                  ]
+                }
+              ],
+              "explanation": "URS increases from 58.4 to 58.9 at 6h horizon. Baseline risk factors are within normal ranges"
+            },
+            {
+              "horizon_hours": 12,
+              "projected_urs": 59.3872,
+              "confidence": 70.0,
+              "business_impact_level": "Medium",
+              "events": [
+                {
+                  "event": "Exposed services detected by external scanners",
+                  "attack_phase": "Reconnaissance",
+                  "affected_services": [
+                    "public-facing endpoints"
+                  ]
+                },
+                {
+                  "event": "Credential exposure risk from open management ports",
+                  "attack_phase": "Initial Access",
+                  "affected_services": [
+                    "authentication services"
+                  ]
+                },
+                {
+                  "event": "Credential compromise risk increases significantly",
+                  "attack_phase": "Persistence",
+                  "affected_services": [
+                    "IAM",
+                    "authentication services"
+                  ]
+                }
+              ],
+              "explanation": "URS increases from 58.4 to 59.4 at 12h horizon. Baseline risk factors are within normal ranges"
+            },
+            {
+              "horizon_hours": 24,
+              "projected_urs": 60.3339,
+              "confidence": 40.0,
+              "business_impact_level": "Medium",
+              "events": [
+                {
+                  "event": "Exposed services detected by external scanners",
+                  "attack_phase": "Reconnaissance",
+                  "affected_services": [
+                    "public-facing endpoints"
+                  ]
+                },
+                {
+                  "event": "Credential exposure risk from open management ports",
+                  "attack_phase": "Initial Access",
+                  "affected_services": [
+                    "authentication services"
+                  ]
+                },
+                {
+                  "event": "Credential compromise risk increases significantly",
+                  "attack_phase": "Persistence",
+                  "affected_services": [
+                    "IAM",
+                    "authentication services"
+                  ]
+                }
+              ],
+              "explanation": "URS increases from 58.4 to 60.3 at 24h horizon. Baseline risk factors are within normal ranges"
+            }
+          ],
+          "confidence": {
+            "score": 65.0,
+            "level": "Medium",
+            "explanation": [
+              "Telemetry (30% weight): moderate \u2014 50/100",
+              "Stability (25% weight): strong \u2014 100/100",
+              "Criticality (25% weight): moderate \u2014 60/100",
+              "Historical (20% weight): moderate \u2014 50/100"
+            ]
+          },
+          "business_impact": {
+            "scores": {
+              "operational": 60.33,
+              "financial": 48.27,
+              "compliance": 54.3,
+              "availability": 51.28,
+              "reputation": 42.23
+            },
+            "overall": 51.28,
+            "level": "Medium",
+            "trend": "stable",
+            "explanation": [
+              "Highest impact category: operational (60.3/100)"
+            ]
+          },
+          "explanation": [
+            "Baseline risk factors are within normal ranges"
+          ],
+          "algorithm_version": "CTPS-v1.0"
+        }
+      },
+      "policy_engine_results": [
+        {
+          "recommendationId": "REC-CRYPTO-001",
+          "title": "Migrate Legacy Cryptography to Post-Quantum Algorithms",
+          "description": "Identify systems using legacy algorithms (such as RSA-2048) and upgrade them to quantum-safe alternatives (ML-KEM/Kyber hybrid TLS key exchange or ML-DSA signature schemes).",
+          "category": "Cryptography",
+          "priority": "High",
+          "confidence": 0.95,
+          "estimatedRiskReduction": 75.0,
+          "automationSupported": false,
+          "reasoning": "Assets currently run legacy cryptography with High quantum risk. Upgrading to PQC secures authentication keys from Shor's algorithm."
+        }
+      ],
+      "automation_engine_results": {
+        "status": "success",
+        "riskScore": 58.440419999999996,
+        "decision": "Monitor",
+        "provider": "aws",
+        "instanceId": "i-04ba6569c74d41d59",
+        "summary": "Recommended playbook: Isolate Compromised EC2 Instance",
+        "executionPlan": [
+          {
+            "step": 1,
+            "action": "Isolate Compromised EC2 Instance",
+            "description": "Gracefully stops the target EC2 instance to prevent lateral movement.",
+            "status": "Pending",
+            "estimatedExecutionTime": 8.0
+          }
+        ],
+        "ansiblePlaybook": "---\n- name: Isolate Compromised EC2 Instance\n  hosts: all\n  tasks:\n    - name: Gracefully stops the target EC2 instance to prevent lateral movement.\n      ansible.builtin.debug:\n        msg: 'Remediation active'",
+        "terraformManifest": "resource \"aws_security_group_rule\" \"remediation\" {}",
+        "awsCliCommands": [
+          "aws ec2 stop-instances --instance-ids {instance_id} --region us-east-1"
+        ],
+        "kubectlCommands": [
+          "kubectl label pod -l instanceId=i-04ba6569c74d41d59 status=quarantined"
+        ],
+        "shellScript": "#!/bin/bash\n# Isolate Compromised EC2 Instance\naws ec2 stop-instances --instance-ids {instance_id} --region us-east-1",
+        "jsonPlan": "{\"action\": \"Isolate Compromised EC2 Instance\", \"target\": \"i-04ba6569c74d41d59\"}",
+        "automationLevel": "Fully Automated",
+        "estimatedExecutionTime": 8.0,
+        "rollbackAvailable": true,
+        "metrics": {
+          "optimizationGain": 15.5,
+          "playbooksConsidered": 1,
+          "playbooksSelected": 1,
+          "playbooksRemoved": 0,
+          "estimatedTimeSaved": 0,
+          "estimatedRiskReduction": 15.0,
+          "estimatedServiceAvailability": 65.0,
+          "expectedRecoveryPercentage": 85.0
+        },
+        "executionOrder": [
+          {
+            "step": 1,
+            "playbookId": "isolate_ec2",
+            "title": "Isolate Compromised EC2 Instance",
+            "category": "Isolation",
+            "priorityScore": 45.98,
+            "selectedBecause": [
+              "Highest recovery score",
+              "Critical severity",
+              "Supports rollback",
+              "High confidence decision"
+            ],
+            "scoreBreakdown": {
+              "severity": 8.0,
+              "urs": 17.53,
+              "recovery": 21.25,
+              "policy": 6.0,
+              "confidence": 4.5,
+              "disruptionPenalty": -10.5,
+              "executionPenalty": -0.8,
+              "finalScore": 45.98
+            },
+            "dependencies": [],
+            "estimatedDuration": 8.0,
+            "ursReduction": 15.0,
+            "recoveryScore": 8.5,
+            "disruptionScore": 7.0,
+            "rollbackAvailable": true,
+            "parallel": false
+          }
+        ],
+        "rejectedPlaybooks": [],
+        "ursBefore": 58.440419999999996,
+        "ursAfter": 43.44,
+        "ursProjection": [
+          58.440419999999996,
+          43.44
+        ],
+        "dependencyGraph": {
+          "isolate_ec2": []
+        },
+        "optimizationRationale": "Selected 1 playbook(s) to secure baseline services, mitigating medium threat severity findings. Deduplicated 0 redundant playbooks to prevent service disruption.",
+        "conflictResolutionExplanation": "Successfully filtered mutual exclusions. Active execution chain contains no overlapping components.",
+        "auditId": "AUD-AUTO-1785204336"
+      },
+      "success": false
+    }
+  ]
+}

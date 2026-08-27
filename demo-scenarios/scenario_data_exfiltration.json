@@ -1,0 +1,42 @@
+{
+  "scenario_id": "data_exfiltration",
+  "name": "Data Exfiltration to Threat Actor",
+  "workload_profile": "Production",
+  "telemetry": {
+    "cpu_utilization": 22.0,
+    "memory_usage_percent": 48.0,
+    "disk_usage_percent": 15.0,
+    "packet_rate_in": 120,
+    "packet_rate_out": 22000
+  },
+  "anomaly_score": 0.88,
+  "findings": [
+    {
+      "id": "FIND-EXFIL-01",
+      "title": "Abnormal volume queries exfiltrating customer DB dumps to external IP",
+      "severity": "critical",
+      "resource": "Database",
+      "ursPenalty": 35.0
+    }
+  ],
+  "URS": 82.0,
+  "prediction_expectations": {
+    "risk_trend": "increasing",
+    "projected_urs_24h": 98.0,
+    "confidence_score": 88.0,
+    "business_impact_level": "High"
+  },
+  "policy_expectations": {
+    "decision": "Critical",
+    "recommendations": ["Block Security Group, Rotate Secrets, Disable IAM Role"]
+  },
+  "automation_expectations": {
+    "automation_level": "Fully Automated",
+    "playbook_id": "restrict_ssh_sg",
+    "rollback_available": true
+  },
+  "dashboard_expectations": {
+    "risk_color": "red",
+    "timeline_event": "Abnormal volume queries exfiltrating customer DB dumps to external IP."
+  }
+}

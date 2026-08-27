@@ -1,0 +1,18 @@
+{
+  "releaseDate": "2026-07-25",
+  "archiveVersion": "1.0.0",
+  "manifestFiles": [
+    "IEEE_SUBMISSION.md",
+    "DISSERTATION_APPENDIX.md",
+    "SUPPLEMENTARY_MATERIAL.md",
+    "FIGURE_INDEX.md",
+    "TABLE_INDEX.md"
+  ],
+  "hashes": {
+    "IEEE_SUBMISSION.md": "57d534db95282be2379f127ffc84e9c646727429b0bddbe51ac3be8688ee8c84",
+    "DISSERTATION_APPENDIX.md": "aea9e816542cdfa461ace152e14e14d0e537f7ca2fca9841cf0652ba3c228ac8",
+    "SUPPLEMENTARY_MATERIAL.md": "e27eae7f9abb8df2dab8059ef020cb60d59a96c25c4d9d7047c4cfe2c6f0f259",
+    "FIGURE_INDEX.md": "b051bbff6e1c625c45eaea53ffd7f7538019bc6697a0296807ad66e434460927",
+    "TABLE_INDEX.md": "784b7d1d8c6e898190db2f76719295b748bcdb1a8f2dafd622f710662ce52274"
+  }
+}

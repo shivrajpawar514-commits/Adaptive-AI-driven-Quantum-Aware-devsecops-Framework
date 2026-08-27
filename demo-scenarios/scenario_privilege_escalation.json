@@ -1,0 +1,42 @@
+{
+  "scenario_id": "privilege_escalation",
+  "name": "Privilege Escalation Attack",
+  "workload_profile": "Production",
+  "telemetry": {
+    "cpu_utilization": 54.0,
+    "memory_usage_percent": 62.0,
+    "disk_usage_percent": 21.0,
+    "packet_rate_in": 1200,
+    "packet_rate_out": 800
+  },
+  "anomaly_score": 0.82,
+  "findings": [
+    {
+      "id": "FIND-PRIV-01",
+      "title": "Brute-force account takeover resulting in administrative token staging",
+      "severity": "high",
+      "resource": "IAM",
+      "ursPenalty": 25.0
+    }
+  ],
+  "URS": 68.0,
+  "prediction_expectations": {
+    "risk_trend": "increasing",
+    "projected_urs_24h": 85.0,
+    "confidence_score": 80.0,
+    "business_impact_level": "High"
+  },
+  "policy_expectations": {
+    "decision": "Critical",
+    "recommendations": ["Disable IAM User, Rotate Keys, Invalidate Session"]
+  },
+  "automation_expectations": {
+    "automation_level": "Fully Automated",
+    "playbook_id": "restrict_ssh_sg",
+    "rollback_available": true
+  },
+  "dashboard_expectations": {
+    "risk_color": "orange",
+    "timeline_event": "Brute-force account takeover resulting in administrative token staging."
+  }
+}

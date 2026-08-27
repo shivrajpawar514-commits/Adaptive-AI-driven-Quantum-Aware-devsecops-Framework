@@ -1,0 +1,42 @@
+{
+  "scenario_id": "insider",
+  "name": "Insider Threat Action",
+  "workload_profile": "Production",
+  "telemetry": {
+    "cpu_utilization": 24.5,
+    "memory_usage_percent": 45.0,
+    "disk_usage_percent": 30.0,
+    "packet_rate_in": 500,
+    "packet_rate_out": 2500
+  },
+  "anomaly_score": 0.45,
+  "findings": [
+    {
+      "id": "FIND-INSD-01",
+      "title": "Unusual directory listing or file downloads by active IAM session",
+      "severity": "medium",
+      "resource": "Database",
+      "ursPenalty": 15.0
+    }
+  ],
+  "URS": 40.0,
+  "prediction_expectations": {
+    "risk_trend": "stable",
+    "projected_urs_24h": 45.0,
+    "confidence_score": 75.0,
+    "business_impact_level": "Medium"
+  },
+  "policy_expectations": {
+    "decision": "Alert",
+    "recommendations": ["Apply rate limiting WAF rule"]
+  },
+  "automation_expectations": {
+    "automation_level": "Semi-Automated",
+    "playbook_id": "restrict_ssh_sg",
+    "rollback_available": true
+  },
+  "dashboard_expectations": {
+    "risk_color": "yellow",
+    "timeline_event": "Unusual directory listing or file downloads by active IAM session."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "scenario_id": "low_risk",
+  "name": "Normal Operations / Baseline",
+  "workload_profile": "Production",
+  "telemetry": {
+    "cpu_utilization": 15.4,
+    "memory_usage_percent": 38.2,
+    "disk_usage_percent": 42.1,
+    "packet_rate_in": 120,
+    "packet_rate_out": 95
+  },
+  "anomaly_score": 0.02,
+  "findings": [],
+  "URS": 10.5,
+  "prediction_expectations": {
+    "risk_trend": "stable",
+    "projected_urs_24h": 12.0,
+    "confidence_score": 95.0,
+    "business_impact_level": "Low"
+  },
+  "policy_expectations": {
+    "decision": "Normal",
+    "recommendations": []
+  },
+  "automation_expectations": {
+    "automation_level": "None",
+    "playbook_id": null,
+    "rollback_available": false
+  },
+  "dashboard_expectations": {
+    "risk_color": "green",
+    "timeline_event": "System running normally under baseline Production workload."
+  }
+}

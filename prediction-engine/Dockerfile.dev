@@ -1,0 +1,17 @@
+# Dockerfile for Prediction Engine (development)
+FROM python:3.11-slim
+
+# Install build dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends gcc && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+# Copy requirements (if any). For simplicity we install directly.
+RUN pip install --no-cache-dir fastapi uvicorn motor httpx pydantic
+
+# Copy source code
+COPY ./prediction-engine/src /app
+
+EXPOSE 8005
+
+CMD ["uvicorn", "prediction_engine:app", "--host", "0.0.0.0", "--port", "8005"]

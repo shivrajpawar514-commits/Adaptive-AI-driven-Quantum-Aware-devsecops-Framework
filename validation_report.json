@@ -1,0 +1,3969 @@
+[
+  {
+    "service": "Backend Gateway",
+    "endpoint": "/health",
+    "method": "GET",
+    "statusCode": 200,
+    "latencyMs": 15,
+    "executionTimeMs": 15,
+    "expectedOutput": "OK",
+    "actualOutput": {
+      "status": "success",
+      "timestamp": "2026-08-06T11:02:52.720Z",
+      "request_id": "REQ-GATE-1786014172718",
+      "service": "Backend Gateway API",
+      "version": "1.0.0",
+      "execution_time": "2ms",
+      "data": {
+        "status": "OK",
+        "version": "1.0.0"
+      },
+      "errors": null
+    },
+    "status": "PASS"
+  },
+  {
+    "service": "Backend Gateway",
+    "endpoint": "/api/health",
+    "method": "GET",
+    "statusCode": 200,
+    "latencyMs": 4,
+    "executionTimeMs": 4,
+    "expectedOutput": "OK",
+    "actualOutput": {
+      "status": "success",
+      "timestamp": "2026-08-06T11:02:52.727Z",
+      "request_id": "REQ-GATE-1786014172727",
+      "service": "Backend Gateway API",
+      "version": "1.0.0",
+      "execution_time": "0ms",
+      "data": {
+        "status": "OK",
+        "version": "1.0.0"
+      },
+      "errors": null
+    },
+    "status": "PASS"
+  },
+  {
+    "service": "Monitoring Service",
+    "endpoint": "/health",
+    "method": "GET",
+    "statusCode": 200,
+    "latencyMs": 6,
+    "executionTimeMs": 6,
+    "expectedOutput": "OK",
+    "actualOutput": {
+      "status": "success",
+      "timestamp": "2026-08-06T11:02:52.732Z",
+      "request_id": "REQ-MON-1786014172732",
+      "service": "Monitoring Service API",
+      "version": "1.0.0",
+      "execution_time": "0ms",
+      "data": {
+        "status": "OK",
+        "version": "1.0.0"
+      },
+      "errors": null
+    },
+    "status": "PASS"
+  },
+  {
+    "service": "Monitoring Service",
+    "endpoint": "/metrics/cpu",
+    "method": "GET",
+    "statusCode": 200,
+    "latencyMs": 59,
+    "executionTimeMs": 59,
+    "expectedOutput": "cpu",
+    "actualOutput": {
+      "status": "success",
+      "timestamp": "2026-08-06T11:02:52.793Z",
+      "request_id": "REQ-MON-1786014172737",
+      "service": "Monitoring Service API",
+      "version": "1.0.0",
+      "execution_time": "56ms",
+      "data": {
+        "utilization": 16.91,
+        "cores": 10,
+        "speed": 2.4
+      },
+      "errors": null
+    },
+    "status": "PASS"
+  },
+  {
+    "service": "Monitoring Service",
+    "endpoint": "/metrics/memory",
+    "method": "GET",
+    "statusCode": 200,
+    "latencyMs": 50,
+    "executionTimeMs": 50,
+    "expectedOutput": "memory",
+    "actualOutput": {
+      "status": "success",
+      "timestamp": "2026-08-06T11:02:52.843Z",
+      "request_id": "REQ-MON-1786014172797",
+      "service": "Monitoring Service API",
+      "version": "1.0.0",
+      "execution_time": "46ms",
+      "data": {
+        "total": 17179869184,
+        "free": 143491072,
+        "used": 14216347648,
+        "usagePercent": 82.75
+      },
+      "errors": null
+    },
+    "status": "PASS"
+  },
+  {
+    "service": "Monitoring Service",
+    "endpoint": "/metrics/disk",
+    "method": "GET",
+    "statusCode": 200,
+    "latencyMs": 50,
+    "executionTimeMs": 50,
+    "expectedOutput": "disk",
+    "actualOutput": {
+      "status": "success",
+      "timestamp": "2026-08-06T11:02:52.894Z",
+      "request_id": "REQ-MON-1786014172847",
+      "service": "Monitoring Service API",
+      "version": "1.0.0",
+      "execution_time": "47ms",
+      "data": {
+        "size": 245107195904,
+        "used": 12457975808,
+        "free": 122032652288,
+        "usagePercent": 9.26
+      },
+      "errors": null
+    },
+    "status": "PASS"
+  },
+  {
+    "service": "Monitoring Service",
+    "endpoint": "/metrics/network",
+    "method": "GET",
+    "statusCode": 200,
+    "latencyMs": 48,
+    "executionTimeMs": 48,
+    "expectedOutput": "network",
+    "actualOutput": {
+      "status": "success",
+      "timestamp": "2026-08-06T11:02:52.943Z",
+      "request_id": "REQ-MON-1786014172898",
+      "service": "Monitoring Service API",
+      "version": "1.0.0",
+      "execution_time": "45ms",
+      "data": {
+        "interface": "en0",
+        "bytesRx": 107934377966,
+        "bytesTx": 12758833360,
+        "rxRate": 0,
+        "txRate": 0
+      },
+      "errors": null
+    },
+    "status": "PASS"
+  },
+  {
+    "service": "Monitoring Service",
+    "endpoint": "/metrics/system",
+    "method": "GET",
+    "statusCode": 200,
+    "latencyMs": 48,
+    "executionTimeMs": 48,
+    "expectedOutput": "system",
+    "actualOutput": {
+      "status": "success",
+      "timestamp": "2026-08-06T11:02:52.992Z",
+      "request_id": "REQ-MON-1786014172947",
+      "service": "Monitoring Service API",
+      "version": "1.0.0",
+      "execution_time": "45ms",
+      "data": {
+        "hostname": "Shivrajs-MacBook-Air-2.local",
+        "uptime": 5690708,
+        "platform": "darwin|Local Host|127.0.0.1|arm64",
+        "architecture": "arm64"
+      },
+      "errors": null
+    },
+    "status": "PASS"
+  },
+  {
+    "service": "AI Anomaly Engine",
+    "endpoint": "/health",
+    "method": "GET",
+    "statusCode": 200,
+    "latencyMs": 10,
+    "executionTimeMs": 10,
+    "expectedOutput": "OK",
+    "actualOutput": {
+      "status": "success",
+      "timestamp": "2026-08-06T11:02:53.001305Z",
+      "request_id": "REQ-UNKNOWN",
+      "service": "AI Anomaly Engine API",
+      "version": "0.1.0",
+      "execution_time": "4.43ms",
+      "data": {
+        "status": "OK",
+        "version": "1.0.0"
+      },
+      "errors": null
+    },
+    "status": "PASS"
+  },
+  {
+    "service": "AI Anomaly Engine",
+    "endpoint": "/model/info",
+    "method": "GET",
+    "statusCode": 200,
+    "latencyMs": 4,
+    "executionTimeMs": 4,
+    "expectedOutput": "active",
+    "actualOutput": {
+      "status": "success",
+      "timestamp": "2026-08-06T11:02:53.006768Z",
+      "request_id": "REQ-UNKNOWN",
+      "service": "AI Anomaly Engine API",
+      "version": "0.1.0",
+      "execution_time": "0.20ms",
+      "data": {
+        "status": "uninitialized",
+        "message": "Model not trained yet."
+      },
+      "errors": null,
+      "message": "Model not trained yet."
+    },
+    "status": "PASS"
+  },
+  {
+    "service": "AI Anomaly Engine",
+    "endpoint": "/predict",
+    "method": "POST",
+    "statusCode": 400,
+    "latencyMs": 4,
+    "executionTimeMs": 4,
+    "expectedOutput": "success",
+    "actualOutput": {
+      "status": "error",
+      "timestamp": "2026-08-06T11:02:53.011030Z",
+      "request_id": "REQ-UNKNOWN",
+      "service": "AI Anomaly Engine API",
+      "version": "0.1.0",
+      "execution_time": "0.61ms",
+      "data": null,
+      "errors": "Autoencoder model not trained yet. Call POST /train first."
+    },
+    "status": "FAIL"
+  },
+  {
+    "service": "Risk Engine",
+    "endpoint": "/health",
+    "method": "GET",
+    "statusCode": 200,
+    "latencyMs": 6,
+    "executionTimeMs": 6,
+    "expectedOutput": "OK",
+    "actualOutput": {
+      "status": "success",
+      "timestamp": "2026-08-06T11:02:53.017520Z",
+      "request_id": "REQ-UNKNOWN",
+      "service": "Adaptive Risk Engine API",
+      "version": "0.1.0",
+      "execution_time": "2.39ms",
+      "data": {
+        "status": "OK",
+        "version": "1.0.0"
+      },
+      "errors": null
+    },
+    "status": "PASS"
+  },
+  {
+    "service": "Risk Engine",
+    "endpoint": "/risk/evaluate",
+    "method": "POST",
+    "statusCode": 200,
+    "latencyMs": 104,
+    "executionTimeMs": 104,
+    "expectedOutput": "success",
+    "actualOutput": {
+      "status": "success",
+      "timestamp": "2026-08-06T11:02:53.122241Z",
+      "request_id": "REQ-UNKNOWN",
+      "service": "Adaptive Risk Engine API",
+      "version": "0.1.0",
+      "execution_time": "100.90ms",
+      "data": {
+        "status": "success",
+        "urs": 19.180024,
+        "risk_score": 19.180024,
+        "decision": "Normal",
+        "reason": "System metrics are within baseline parameters and anomaly rates are low.",
+        "contributors": [
+          {
+            "parameter": "CPU",
+            "value": 24.5,
+            "weight": 0.1,
+            "contribution": 2.45,
+            "reason": "CPU utilization is within normal limits. (Adaptive Weight: 0.1)"
+          },
+          {
+            "parameter": "Memory",
+            "value": 48.2,
+            "weight": 0.15,
+            "contribution": 7.23,
+            "reason": "Memory utilization is within normal limits. (Adaptive Weight: 0.15)"
+          },
+          {
+            "parameter": "Disk",
+            "value": 92.3,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "reason": "Disk space utilization is critically high. (Adaptive Weight: 0.0)"
+          },
+          {
+            "parameter": "Network",
+            "value": 0.0,
+            "weight": 0.2,
+            "contribution": 0.0,
+            "reason": "Network traffic is normal. (Adaptive Weight: 0.2)"
+          },
+          {
+            "parameter": "Anomaly Score",
+            "value": 0.0,
+            "weight": 0.35,
+            "contribution": 0.0,
+            "reason": "AI Engine anomaly index is within normal bounds. (Adaptive Weight: 0.35)"
+          },
+          {
+            "parameter": "Reconstruction Error",
+            "value": 0.1,
+            "weight": 0.0,
+            "contribution": 0.0,
+            "reason": "System reconstruction error is normal. (Adaptive Weight: 0.0)"
+          },
+          {
+            "parameter": "Historical Frequency",
+            "value": 0.0,
+            "weight": 0.1,
+            "contribution": 0.0,
+            "reason": "Low anomaly occurrence history. (Adaptive Weight: 0.1)"
+          },
+          {
+            "parameter": "Confidence",
+            "value": 95.0,
+            "weight": 0.1,
+            "contribution": 9.5,
+            "reason": "High confidence in anomaly classification accuracy. (Adaptive Weight: 0.1)"
+          },
+          {
+            "parameter": "Asset Criticality",
+            "value": 1.0,
+            "weight": 1.0,
+            "contribution": 0.0,
+            "reason": "Standard baseline asset criticality multiplier. (Adaptive Weight: 1.0)"
+          }
+        ],
+        "topContributor": "Confidence",
+        "timestamp": "2026-07-19T00:00:00Z",
+        "context": {
+          "timePeriod": "Night",
+          "dayType": "Weekend",
+          "profile": "Weekend"
+        },
+        "adaptiveWeights": {
+          "cpu": 0.1,
+          "memory": 0.15,
+          "disk": 0.0,
+          "network": 0.2,
+          "anomaly": 0.35,
+          "reconstruction": 0.0,
+          "confidence": 0.1,
+          "historical": 0.1
+        },
+        "comparison": {
+          "staticURS": 16.79,
+          "adaptiveURS": 19.18,
+          "difference": 2.39,
+          "improvement": "Increased sensitivity to threats during high-activity context."
+        },
+        "contextConfidence": 0.85,
+        "profileVersion": "1.0.0",
+        "adaptationReason": "AI engine anomalies are weighted higher during weekends since manual monitoring is reduced.",
+        "quantumReadiness": {
+          "score": 15,
+          "classification": "Poor",
+          "migrationPriority": "Immediate",
+          "overallQuantumRisk": "Very High"
+        },
+        "cryptography": [
+          {
+            "algorithm": "RSA-2048",
+            "quantumRisk": "Very High",
+            "readinessWeight": 15,
+            "recommendation": "Migrate to ML-KEM (Kyber) hybrid TLS.",
+            "reason": "Shor's algorithm can efficiently compromise RSA key exchange."
+          }
+        ],
+        "quantumExplanation": "Monitored assets have an overall quantum readiness classification of Poor with a score of 15/100. The presence of legacy algorithms like RSA-2048 presents a Very High quantum risk, requiring immediate migration planning to post-quantum alternatives.",
+        "dashboardData": {
+          "migrationPriority": "Immediate",
+          "topRecommendation": "Migrate to ML-KEM (Kyber) hybrid TLS.",
+          "highestQuantumRiskAlgorithm": "RSA-2048",
+          "overallQuantumReadiness": "Poor",
+          "Migration Priority": "Immediate",
+          "Top Recommendation": "Migrate to ML-KEM (Kyber) hybrid TLS.",
+          "Highest Quantum Risk Algorithm": "RSA-2048",
+          "Overall Quantum Readiness": "Poor"
+        },
+        "recommendations": {
+          "status": "success",
+          "timestamp": "2026-08-06T11:02:53.074936Z",
+          "request_id": "REQ-UNKNOWN",
+          "service": "Policy Recommendation Engine API",
+          "version": "0.1.0",
+          "execution_time": "28.16ms",
+          "data": [
+            {
+              "recommendationId": "REC-CRYPTO-001",
+              "title": "Migrate Legacy Cryptography to Post-Quantum Algorithms",
+              "description": "Identify systems using legacy algorithms (such as RSA-2048) and upgrade them to quantum-safe alternatives (ML-KEM/Kyber hybrid TLS key exchange or ML-DSA signature schemes).",
+              "category": "Cryptography",
+              "priority": "Critical",
+              "confidence": 0.95,
+              "estimatedRiskReduction": 75.0,
+              "automationSupported": false,
+              "reasoning": "Assets currently run legacy cryptography with Very High quantum risk. Upgrading to PQC secures authentication keys from Shor's algorithm."
+            },
+            {
+              "recommendationId": "REC-MONITOR-100",
+              "title": "Enable DevSecOps Baseline Telemetry Audits",
+              "description": "Keep standard Prometheus scraping intervals and configure automated log integrity monitoring across all container daemon events.",
+              "category": "Monitoring",
+              "priority": "Low",
+              "confidence": 0.99,
+              "estimatedRiskReduction": 5.0,
+              "automationSupported": true,
+              "reasoning": "Telemetry levels are currently normal. Baseline monitoring provides data for future drift detection."
+            },
+            {
+              "recommendationId": "REC-LOG-100",
+              "title": "Standardize Logging Level and Rotation Parameters",
+              "description": "Configure log rotation to restrict log sizes on node hosts to 10MB per container, keeping a maximum of 5 logs to optimize storage.",
+              "category": "Logging",
+              "priority": "Low",
+              "confidence": 0.99,
+              "estimatedRiskReduction": 5.0,
+              "automationSupported": true,
+              "reasoning": "Normal workload logging profile keeps operational volumes clean and stable."
+            }
+          ],
+          "errors": null
+        },
+        "prediction_summary": {
+          "status": "success",
+          "timestamp": "2026-08-06T11:02:53.104143Z",
+          "request_id": "REQ-UNKNOWN",
+          "service": "Prediction Engine API",
+          "version": "1.1.0",
+          "execution_time": "19.92ms",
+          "data": {
+            "resource_id": "Production-2026-07-19T00:00:00Z",
+            "current_urs": 19.180024,
+            "projected_urs": {
+              "1": 19.2059,
+              "3": 19.2577,
+              "6": 19.3354,
+              "12": 19.4907,
+              "24": 19.8015
+            },
+            "ctps": 0.225,
+            "factors": {
+              "severity": 0.3,
+              "exposure": 1.0,
+              "criticality": 1.0,
+              "trend": 1.0,
+              "persistence": 1.0,
+              "remediation": 0.75,
+              "age": 1.0
+            },
+            "risk_trend": "stable",
+            "timeline": [
+              {
+                "horizon_hours": 1,
+                "projected_urs": 19.2059,
+                "confidence": 97.5,
+                "business_impact_level": "Informational",
+                "events": [
+                  {
+                    "event": "Exposed services detected by external scanners",
+                    "attack_phase": "Reconnaissance",
+                    "affected_services": [
+                      "public-facing endpoints"
+                    ]
+                  }
+                ],
+                "explanation": "URS increases from 19.2 to 19.2 at 1h horizon. Baseline risk factors are within normal ranges"
+              },
+              {
+                "horizon_hours": 3,
+                "projected_urs": 19.2577,
+                "confidence": 92.5,
+                "business_impact_level": "Informational",
+                "events": [
+                  {
+                    "event": "Exposed services detected by external scanners",
+                    "attack_phase": "Reconnaissance",
+                    "affected_services": [
+                      "public-facing endpoints"
+                    ]
+                  }
+                ],
+                "explanation": "URS increases from 19.2 to 19.3 at 3h horizon. Baseline risk factors are within normal ranges"
+              },
+              {
+                "horizon_hours": 6,
+                "projected_urs": 19.3354,
+                "confidence": 85.0,
+                "business_impact_level": "Informational",
+                "events": [
+                  {
+                    "event": "Exposed services detected by external scanners",
+                    "attack_phase": "Reconnaissance",
+                    "affected_services": [
+                      "public-facing endpoints"
+                    ]
+                  }
+                ],
+                "explanation": "URS increases from 19.2 to 19.3 at 6h horizon. Baseline risk factors are within normal ranges"
+              },
+              {
+                "horizon_hours": 12,
+                "projected_urs": 19.4907,
+                "confidence": 70.0,
+                "business_impact_level": "Informational",
+                "events": [
+                  {
+                    "event": "Exposed services detected by external scanners",
+                    "attack_phase": "Reconnaissance",
+                    "affected_services": [
+                      "public-facing endpoints"
+                    ]
+                  }
+                ],
+                "explanation": "URS increases from 19.2 to 19.5 at 12h horizon. Baseline risk factors are within normal ranges"
+              },
+              {
+                "horizon_hours": 24,
+                "projected_urs": 19.8015,
+                "confidence": 40.0,
+                "business_impact_level": "Informational",
+                "events": [
+                  {
+                    "event": "Exposed services detected by external scanners",
+                    "attack_phase": "Reconnaissance",
+                    "affected_services": [
+                      "public-facing endpoints"
+                    ]
+                  }
+                ],
+                "explanation": "URS increases from 19.2 to 19.8 at 24h horizon. Baseline risk factors are within normal ranges"
+              }
+            ],
+            "confidence": {
+              "score": 65.0,
+              "level": "Medium",
+              "explanation": [
+                "Telemetry (30% weight): moderate \u2014 50/100",
+                "Stability (25% weight): strong \u2014 100/100",
+                "Criticality (25% weight): moderate \u2014 60/100",
+                "Historical (20% weight): moderate \u2014 50/100"
+              ]
+            },
+            "business_impact": {
+              "scores": {
+                "operational": 19.8,
+                "financial": 15.84,
+                "compliance": 17.82,
+                "availability": 16.83,
+                "reputation": 13.86
+              },
+              "overall": 16.83,
+              "level": "Low",
+              "trend": "stable",
+              "explanation": [
+                "Highest impact category: operational (19.8/100)"
+              ]
+            },
+            "explanation": [
+              "Baseline risk factors are within normal ranges"
+            ],
+            "algorithm_version": "CTPS-v1.0",
+            "timestamp": "2026-08-06T11:02:53.084559Z"
+          },
+          "errors": null,
+          "resource_id": "Production-2026-07-19T00:00:00Z",
+          "current_urs": 19.180024,
+          "projected_urs": {
+            "1": 19.2059,
+            "3": 19.2577,
+            "6": 19.3354,
+            "12": 19.4907,
+            "24": 19.8015
+          },
+          "ctps": 0.225,
+          "factors": {
+            "severity": 0.3,
+            "exposure": 1.0,
+            "criticality": 1.0,
+            "trend": 1.0,
+            "persistence": 1.0,
+            "remediation": 0.75,
+            "age": 1.0
+          },
+          "risk_trend": "stable",
+          "timeline": [
+            {
+              "horizon_hours": 1,
+              "projected_urs": 19.2059,
+              "confidence": 97.5,
+              "business_impact_level": "Informational",
+              "events": [
+                {
+                  "event": "Exposed services detected by external scanners",
+                  "attack_phase": "Reconnaissance",
+                  "affected_services": [
+                    "public-facing endpoints"
+                  ]
+                }
+              ],
+              "explanation": "URS increases from 19.2 to 19.2 at 1h horizon. Baseline risk factors are within normal ranges"
+            },
+            {
+              "horizon_hours": 3,
+              "projected_urs": 19.2577,
+              "confidence": 92.5,
+              "business_impact_level": "Informational",
+              "events": [
+                {
+                  "event": "Exposed services detected by external scanners",
+                  "attack_phase": "Reconnaissance",
+                  "affected_services": [
+                    "public-facing endpoints"
+                  ]
+                }
+              ],
+              "explanation": "URS increases from 19.2 to 19.3 at 3h horizon. Baseline risk factors are within normal ranges"
+            },
+            {
+              "horizon_hours": 6,
+              "projected_urs": 19.3354,
+              "confidence": 85.0,
+              "business_impact_level": "Informational",
+              "events": [
+                {
+                  "event": "Exposed services detected by external scanners",
+                  "attack_phase": "Reconnaissance",
+                  "affected_services": [
+                    "public-facing endpoints"
+                  ]
+                }
+              ],
+              "explanation": "URS increases from 19.2 to 19.3 at 6h horizon. Baseline risk factors are within normal ranges"
+            },
+            {
+              "horizon_hours": 12,
+              "projected_urs": 19.4907,
+              "confidence": 70.0,
+              "business_impact_level": "Informational",
+              "events": [
+                {
+                  "event": "Exposed services detected by external scanners",
+                  "attack_phase": "Reconnaissance",
+                  "affected_services": [
+                    "public-facing endpoints"
+                  ]
+                }
+              ],
+              "explanation": "URS increases from 19.2 to 19.5 at 12h horizon. Baseline risk factors are within normal ranges"
+            },
+            {
+              "horizon_hours": 24,
+              "projected_urs": 19.8015,
+              "confidence": 40.0,
+              "business_impact_level": "Informational",
+              "events": [
+                {
+                  "event": "Exposed services detected by external scanners",
+                  "attack_phase": "Reconnaissance",
+                  "affected_services": [
+                    "public-facing endpoints"
+                  ]
+                }
+              ],
+              "explanation": "URS increases from 19.2 to 19.8 at 24h horizon. Baseline risk factors are within normal ranges"
+            }
+          ],
+          "confidence": {
+            "score": 65.0,
+            "level": "Medium",
+            "explanation": [
+              "Telemetry (30% weight): moderate \u2014 50/100",
+              "Stability (25% weight): strong \u2014 100/100",
+              "Criticality (25% weight): moderate \u2014 60/100",
+              "Historical (20% weight): moderate \u2014 50/100"
+            ]
+          },
+          "business_impact": {
+            "scores": {
+              "operational": 19.8,
+              "financial": 15.84,
+              "compliance": 17.82,
+              "availability": 16.83,
+              "reputation": 13.86
+            },
+            "overall": 16.83,
+            "level": "Low",
+            "trend": "stable",
+            "explanation": [
+              "Highest impact category: operational (19.8/100)"
+            ]
+          },
+          "explanation": [
+            "Baseline risk factors are within normal ranges"
+          ],
+          "algorithm_version": "CTPS-v1.0"
+        }
+      },
+      "errors": null,
+      "urs": 19.180024,
+      "risk_score": 19.180024,
+      "decision": "Normal",
+      "reason": "System metrics are within baseline parameters and anomaly rates are low.",
+      "contributors": [
+        {
+          "parameter": "CPU",
+          "value": 24.5,
+          "weight": 0.1,
+          "contribution": 2.45,
+          "reason": "CPU utilization is within normal limits. (Adaptive Weight: 0.1)"
+        },
+        {
+          "parameter": "Memory",
+          "value": 48.2,
+          "weight": 0.15,
+          "contribution": 7.23,
+          "reason": "Memory utilization is within normal limits. (Adaptive Weight: 0.15)"
+        },
+        {
+          "parameter": "Disk",
+          "value": 92.3,
+          "weight": 0.0,
+          "contribution": 0.0,
+          "reason": "Disk space utilization is critically high. (Adaptive Weight: 0.0)"
+        },
+        {
+          "parameter": "Network",
+          "value": 0.0,
+          "weight": 0.2,
+          "contribution": 0.0,
+          "reason": "Network traffic is normal. (Adaptive Weight: 0.2)"
+        },
+        {
+          "parameter": "Anomaly Score",
+          "value": 0.0,
+          "weight": 0.35,
+          "contribution": 0.0,
+          "reason": "AI Engine anomaly index is within normal bounds. (Adaptive Weight: 0.35)"
+        },
+        {
+          "parameter": "Reconstruction Error",
+          "value": 0.1,
+          "weight": 0.0,
+          "contribution": 0.0,
+          "reason": "System reconstruction error is normal. (Adaptive Weight: 0.0)"
+        },
+        {
+          "parameter": "Historical Frequency",
+          "value": 0.0,
+          "weight": 0.1,
+          "contribution": 0.0,
+          "reason": "Low anomaly occurrence history. (Adaptive Weight: 0.1)"
+        },
+        {
+          "parameter": "Confidence",
+          "value": 95.0,
+          "weight": 0.1,
+          "contribution": 9.5,
+          "reason": "High confidence in anomaly classification accuracy. (Adaptive Weight: 0.1)"
+        },
+        {
+          "parameter": "Asset Criticality",
+          "value": 1.0,
+          "weight": 1.0,
+          "contribution": 0.0,
+          "reason": "Standard baseline asset criticality multiplier. (Adaptive Weight: 1.0)"
+        }
+      ],
+      "topContributor": "Confidence",
+      "context": {
+        "timePeriod": "Night",
+        "dayType": "Weekend",
+        "profile": "Weekend"
+      },
+      "adaptiveWeights": {
+        "cpu": 0.1,
+        "memory": 0.15,
+        "disk": 0.0,
+        "network": 0.2,
+        "anomaly": 0.35,
+        "reconstruction": 0.0,
+        "confidence": 0.1,
+        "historical": 0.1
+      },
+      "comparison": {
+        "staticURS": 16.79,
+        "adaptiveURS": 19.18,
+        "difference": 2.39,
+        "improvement": "Increased sensitivity to threats during high-activity context."
+      },
+      "contextConfidence": 0.85,
+      "profileVersion": "1.0.0",
+      "adaptationReason": "AI engine anomalies are weighted higher during weekends since manual monitoring is reduced.",
+      "quantumReadiness": {
+        "score": 15,
+        "classification": "Poor",
+        "migrationPriority": "Immediate",
+        "overallQuantumRisk": "Very High"
+      },
+      "cryptography": [
+        {
+          "algorithm": "RSA-2048",
+          "quantumRisk": "Very High",
+          "readinessWeight": 15,
+          "recommendation": "Migrate to ML-KEM (Kyber) hybrid TLS.",
+          "reason": "Shor's algorithm can efficiently compromise RSA key exchange."
+        }
+      ],
+      "quantumExplanation": "Monitored assets have an overall quantum readiness classification of Poor with a score of 15/100. The presence of legacy algorithms like RSA-2048 presents a Very High quantum risk, requiring immediate migration planning to post-quantum alternatives.",
+      "dashboardData": {
+        "migrationPriority": "Immediate",
+        "topRecommendation": "Migrate to ML-KEM (Kyber) hybrid TLS.",
+        "highestQuantumRiskAlgorithm": "RSA-2048",
+        "overallQuantumReadiness": "Poor",
+        "Migration Priority": "Immediate",
+        "Top Recommendation": "Migrate to ML-KEM (Kyber) hybrid TLS.",
+        "Highest Quantum Risk Algorithm": "RSA-2048",
+        "Overall Quantum Readiness": "Poor"
+      },
+      "recommendations": {
+        "status": "success",
+        "timestamp": "2026-08-06T11:02:53.074936Z",
+        "request_id": "REQ-UNKNOWN",
+        "service": "Policy Recommendation Engine API",
+        "version": "0.1.0",
+        "execution_time": "28.16ms",
+        "data": [
+          {
+            "recommendationId": "REC-CRYPTO-001",
+            "title": "Migrate Legacy Cryptography to Post-Quantum Algorithms",
+            "description": "Identify systems using legacy algorithms (such as RSA-2048) and upgrade them to quantum-safe alternatives (ML-KEM/Kyber hybrid TLS key exchange or ML-DSA signature schemes).",
+            "category": "Cryptography",
+            "priority": "Critical",
+            "confidence": 0.95,
+            "estimatedRiskReduction": 75.0,
+            "automationSupported": false,
+            "reasoning": "Assets currently run legacy cryptography with Very High quantum risk. Upgrading to PQC secures authentication keys from Shor's algorithm."
+          },
+          {
+            "recommendationId": "REC-MONITOR-100",
+            "title": "Enable DevSecOps Baseline Telemetry Audits",
+            "description": "Keep standard Prometheus scraping intervals and configure automated log integrity monitoring across all container daemon events.",
+            "category": "Monitoring",
+            "priority": "Low",
+            "confidence": 0.99,
+            "estimatedRiskReduction": 5.0,
+            "automationSupported": true,
+            "reasoning": "Telemetry levels are currently normal. Baseline monitoring provides data for future drift detection."
+          },
+          {
+            "recommendationId": "REC-LOG-100",
+            "title": "Standardize Logging Level and Rotation Parameters",
+            "description": "Configure log rotation to restrict log sizes on node hosts to 10MB per container, keeping a maximum of 5 logs to optimize storage.",
+            "category": "Logging",
+            "priority": "Low",
+            "confidence": 0.99,
+            "estimatedRiskReduction": 5.0,
+            "automationSupported": true,
+            "reasoning": "Normal workload logging profile keeps operational volumes clean and stable."
+          }
+        ],
+        "errors": null
+      },
+      "prediction_summary": {
+        "status": "success",
+        "timestamp": "2026-08-06T11:02:53.104143Z",
+        "request_id": "REQ-UNKNOWN",
+        "service": "Prediction Engine API",
+        "version": "1.1.0",
+        "execution_time": "19.92ms",
+        "data": {
+          "resource_id": "Production-2026-07-19T00:00:00Z",
+          "current_urs": 19.180024,
+          "projected_urs": {
+            "1": 19.2059,
+            "3": 19.2577,
+            "6": 19.3354,
+            "12": 19.4907,
+            "24": 19.8015
+          },
+          "ctps": 0.225,
+          "factors": {
+            "severity": 0.3,
+            "exposure": 1.0,
+            "criticality": 1.0,
+            "trend": 1.0,
+            "persistence": 1.0,
+            "remediation": 0.75,
+            "age": 1.0
+          },
+          "risk_trend": "stable",
+          "timeline": [
+            {
+              "horizon_hours": 1,
+              "projected_urs": 19.2059,
+              "confidence": 97.5,
+              "business_impact_level": "Informational",
+              "events": [
+                {
+                  "event": "Exposed services detected by external scanners",
+                  "attack_phase": "Reconnaissance",
+                  "affected_services": [
+                    "public-facing endpoints"
+                  ]
+                }
+              ],
+              "explanation": "URS increases from 19.2 to 19.2 at 1h horizon. Baseline risk factors are within normal ranges"
+            },
+            {
+              "horizon_hours": 3,
+              "projected_urs": 19.2577,
+              "confidence": 92.5,
+              "business_impact_level": "Informational",
+              "events": [
+                {
+                  "event": "Exposed services detected by external scanners",
+                  "attack_phase": "Reconnaissance",
+                  "affected_services": [
+                    "public-facing endpoints"
+                  ]
+                }
+              ],
+              "explanation": "URS increases from 19.2 to 19.3 at 3h horizon. Baseline risk factors are within normal ranges"
+            },
+            {
+              "horizon_hours": 6,
+              "projected_urs": 19.3354,
+              "confidence": 85.0,
+              "business_impact_level": "Informational",
+              "events": [
+                {
+                  "event": "Exposed services detected by external scanners",
+                  "attack_phase": "Reconnaissance",
+                  "affected_services": [
+                    "public-facing endpoints"
+                  ]
+                }
+              ],
+              "explanation": "URS increases from 19.2 to 19.3 at 6h horizon. Baseline risk factors are within normal ranges"
+            },
+            {
+              "horizon_hours": 12,
+              "projected_urs": 19.4907,
+              "confidence": 70.0,
+              "business_impact_level": "Informational",
+              "events": [
+                {
+                  "event": "Exposed services detected by external scanners",
+                  "attack_phase": "Reconnaissance",
+                  "affected_services": [
+                    "public-facing endpoints"
+                  ]
+                }
+              ],
+              "explanation": "URS increases from 19.2 to 19.5 at 12h horizon. Baseline risk factors are within normal ranges"
+            },
+            {
+              "horizon_hours": 24,
+              "projected_urs": 19.8015,
+              "confidence": 40.0,
+              "business_impact_level": "Informational",
+              "events": [
+                {
+                  "event": "Exposed services detected by external scanners",
+                  "attack_phase": "Reconnaissance",
+                  "affected_services": [
+                    "public-facing endpoints"
+                  ]
+                }
+              ],
+              "explanation": "URS increases from 19.2 to 19.8 at 24h horizon. Baseline risk factors are within normal ranges"
+            }
+          ],
+          "confidence": {
+            "score": 65.0,
+            "level": "Medium",
+            "explanation": [
+              "Telemetry (30% weight): moderate \u2014 50/100",
+              "Stability (25% weight): strong \u2014 100/100",
+              "Criticality (25% weight): moderate \u2014 60/100",
+              "Historical (20% weight): moderate \u2014 50/100"
+            ]
+          },
+          "business_impact": {
+            "scores": {
+              "operational": 19.8,
+              "financial": 15.84,
+              "compliance": 17.82,
+              "availability": 16.83,
+              "reputation": 13.86
+            },
+            "overall": 16.83,
+            "level": "Low",
+            "trend": "stable",
+            "explanation": [
+              "Highest impact category: operational (19.8/100)"
+            ]
+          },
+          "explanation": [
+            "Baseline risk factors are within normal ranges"
+          ],
+          "algorithm_version": "CTPS-v1.0",
+          "timestamp": "2026-08-06T11:02:53.084559Z"
+        },
+        "errors": null,
+        "resource_id": "Production-2026-07-19T00:00:00Z",
+        "current_urs": 19.180024,
+        "projected_urs": {
+          "1": 19.2059,
+          "3": 19.2577,
+          "6": 19.3354,
+          "12": 19.4907,
+          "24": 19.8015
+        },
+        "ctps": 0.225,
+        "factors": {
+          "severity": 0.3,
+          "exposure": 1.0,
+          "criticality": 1.0,
+          "trend": 1.0,
+          "persistence": 1.0,
+          "remediation": 0.75,
+          "age": 1.0
+        },
+        "risk_trend": "stable",
+        "timeline": [
+          {
+            "horizon_hours": 1,
+            "projected_urs": 19.2059,
+            "confidence": 97.5,
+            "business_impact_level": "Informational",
+            "events": [
+              {
+                "event": "Exposed services detected by external scanners",
+                "attack_phase": "Reconnaissance",
+                "affected_services": [
+                  "public-facing endpoints"
+                ]
+              }
+            ],
+            "explanation": "URS increases from 19.2 to 19.2 at 1h horizon. Baseline risk factors are within normal ranges"
+          },
+          {
+            "horizon_hours": 3,
+            "projected_urs": 19.2577,
+            "confidence": 92.5,
+            "business_impact_level": "Informational",
+            "events": [
+              {
+                "event": "Exposed services detected by external scanners",
+                "attack_phase": "Reconnaissance",
+                "affected_services": [
+                  "public-facing endpoints"
+                ]
+              }
+            ],
+            "explanation": "URS increases from 19.2 to 19.3 at 3h horizon. Baseline risk factors are within normal ranges"
+          },
+          {
+            "horizon_hours": 6,
+            "projected_urs": 19.3354,
+            "confidence": 85.0,
+            "business_impact_level": "Informational",
+            "events": [
+              {
+                "event": "Exposed services detected by external scanners",
+                "attack_phase": "Reconnaissance",
+                "affected_services": [
+                  "public-facing endpoints"
+                ]
+              }
+            ],
+            "explanation": "URS increases from 19.2 to 19.3 at 6h horizon. Baseline risk factors are within normal ranges"
+          },
+          {
+            "horizon_hours": 12,
+            "projected_urs": 19.4907,
+            "confidence": 70.0,
+            "business_impact_level": "Informational",
+            "events": [
+              {
+                "event": "Exposed services detected by external scanners",
+                "attack_phase": "Reconnaissance",
+                "affected_services": [
+                  "public-facing endpoints"
+                ]
+              }
+            ],
+            "explanation": "URS increases from 19.2 to 19.5 at 12h horizon. Baseline risk factors are within normal ranges"
+          },
+          {
+            "horizon_hours": 24,
+            "projected_urs": 19.8015,
+            "confidence": 40.0,
+            "business_impact_level": "Informational",
+            "events": [
+              {
+                "event": "Exposed services detected by external scanners",
+                "attack_phase": "Reconnaissance",
+                "affected_services": [
+                  "public-facing endpoints"
+                ]
+              }
+            ],
+            "explanation": "URS increases from 19.2 to 19.8 at 24h horizon. Baseline risk factors are within normal ranges"
+          }
+        ],
+        "confidence": {
+          "score": 65.0,
+          "level": "Medium",
+          "explanation": [
+            "Telemetry (30% weight): moderate \u2014 50/100",
+            "Stability (25% weight): strong \u2014 100/100",
+            "Criticality (25% weight): moderate \u2014 60/100",
+            "Historical (20% weight): moderate \u2014 50/100"
+          ]
+        },
+        "business_impact": {
+          "scores": {
+            "operational": 19.8,
+            "financial": 15.84,
+            "compliance": 17.82,
+            "availability": 16.83,
+            "reputation": 13.86
+          },
+          "overall": 16.83,
+          "level": "Low",
+          "trend": "stable",
+          "explanation": [
+            "Highest impact category: operational (19.8/100)"
+          ]
+        },
+        "explanation": [
+          "Baseline risk factors are within normal ranges"
+        ],
+        "algorithm_version": "CTPS-v1.0"
+      }
+    },
+    "status": "PASS"
+  },
+  {
+    "service": "Cloud Adapter",
+    "endpoint": "/health",
+    "method": "GET",
+    "statusCode": 200,
+    "latencyMs": 14,
+    "executionTimeMs": 14,
+    "expectedOutput": "OK",
+    "actualOutput": {
+      "status": "OK",
+      "service": "Cloud Adapter Layer"
+    },
+    "status": "PASS"
+  },
+  {
+    "service": "Cloud Adapter",
+    "endpoint": "/cloud/providers",
+    "method": "GET",
+    "statusCode": 200,
+    "latencyMs": 5,
+    "executionTimeMs": 5,
+    "expectedOutput": "success",
+    "actualOutput": {
+      "status": "success",
+      "timestamp": "2026-08-06T11:02:53.142611Z",
+      "request_id": "REQ-UNKNOWN",
+      "service": "Cloud Adapter Microservice API",
+      "version": "0.1.0",
+      "execution_time": "0.22ms",
+      "data": {
+        "status": "success",
+        "providers": [
+          {
+            "name": "aws",
+            "supported": true,
+            "adapter": "AWSAdapter"
+          },
+          {
+            "name": "azure",
+            "supported": false,
+            "adapter": "AzureAdapter"
+          },
+          {
+            "name": "gcp",
+            "supported": false,
+            "adapter": "GCPAdapter"
+          }
+        ]
+      },
+      "errors": null,
+      "providers": [
+        {
+          "name": "aws",
+          "supported": true,
+          "adapter": "AWSAdapter"
+        },
+        {
+          "name": "azure",
+          "supported": false,
+          "adapter": "AzureAdapter"
+        },
+        {
+          "name": "gcp",
+          "supported": false,
+          "adapter": "GCPAdapter"
+        }
+      ]
+    },
+    "status": "PASS"
+  },
+  {
+    "service": "Cloud Adapter",
+    "endpoint": "/cloud/assets",
+    "method": "GET",
+    "statusCode": 200,
+    "latencyMs": 3239,
+    "executionTimeMs": 3239,
+    "expectedOutput": "success",
+    "actualOutput": {
+      "status": "success",
+      "timestamp": "2026-08-06T11:02:56.380650Z",
+      "request_id": "REQ-UNKNOWN",
+      "service": "Cloud Adapter Microservice API",
+      "version": "0.1.0",
+      "execution_time": "3234.41ms",
+      "data": [],
+      "errors": null,
+      "instances": [],
+      "count": 0
+    },
+    "status": "PASS"
+  },
+  {
+    "service": "Cloud Adapter",
+    "endpoint": "/cloud/aws/discover",
+    "method": "GET",
+    "statusCode": 200,
+    "latencyMs": 334,
+    "executionTimeMs": 334,
+    "expectedOutput": "success",
+    "actualOutput": {
+      "status": "success",
+      "timestamp": "2026-08-06T11:02:56.715123Z",
+      "request_id": "REQ-UNKNOWN",
+      "service": "Cloud Adapter Microservice API",
+      "version": "0.1.0",
+      "execution_time": "324.23ms",
+      "data": [],
+      "errors": null,
+      "instances": [],
+      "count": 0
+    },
+    "status": "PASS"
+  },
+  {
+    "service": "Cloud Adapter",
+    "endpoint": "/cloud/aws/metrics",
+    "method": "GET",
+    "statusCode": 500,
+    "latencyMs": 305,
+    "executionTimeMs": 305,
+    "expectedOutput": "success",
+    "actualOutput": {
+      "status": "error",
+      "timestamp": "2026-08-06T11:02:57.020903Z",
+      "request_id": "REQ-UNKNOWN",
+      "service": "Cloud Adapter Microservice API",
+      "version": "0.1.0",
+      "execution_time": "295.62ms",
+      "data": null,
+      "errors": "Metrics retrieval failed: 404: No AWS EC2 instance found or registered for metrics."
+    },
+    "status": "FAIL"
+  },
+  {
+    "service": "Cloud Adapter",
+    "endpoint": "/cloud/security-posture",
+    "method": "GET",
+    "statusCode": 200,
+    "latencyMs": 338,
+    "executionTimeMs": 338,
+    "expectedOutput": "success",
+    "actualOutput": {
+      "status": "success",
+      "timestamp": "2026-08-06T11:02:57.359851Z",
+      "request_id": "REQ-UNKNOWN",
+      "service": "Cloud Adapter Microservice API",
+      "version": "0.1.0",
+      "execution_time": "328.01ms",
+      "data": [],
+      "errors": null
+    },
+    "status": "PASS"
+  },
+  {
+    "service": "Cloud Adapter",
+    "endpoint": "/cloud/aws/register",
+    "method": "POST",
+    "statusCode": 200,
+    "latencyMs": 1181,
+    "executionTimeMs": 1181,
+    "expectedOutput": "success",
+    "actualOutput": {
+      "status": "success",
+      "timestamp": "2026-08-06T11:02:58.541091Z",
+      "request_id": "REQ-UNKNOWN",
+      "service": "Cloud Adapter Microservice API",
+      "version": "0.1.0",
+      "execution_time": "1168.77ms",
+      "data": {
+        "status": "success",
+        "message": "Successfully registered AWS instance i-09f1a238b7e456cde for active pipeline telemetry."
+      },
+      "errors": null,
+      "message": "Successfully registered AWS instance i-09f1a238b7e456cde for active pipeline telemetry."
+    },
+    "status": "PASS"
+  },
+  {
+    "service": "Attack Simulator",
+    "endpoint": "/health",
+    "method": "GET",
+    "statusCode": 200,
+    "latencyMs": 21,
+    "executionTimeMs": 21,
+    "expectedOutput": "OK",
+    "actualOutput": {
+      "status": "OK",
+      "service": "Attack Simulation Engine"
+    },
+    "status": "PASS"
+  },
+  {
+    "service": "Attack Simulator",
+    "endpoint": "/simulation/run",
+    "method": "POST",
+    "statusCode": 200,
+    "latencyMs": 25,
+    "executionTimeMs": 25,
+    "expectedOutput": "success",
+    "actualOutput": {
+      "status": "success",
+      "timestamp": "2026-08-06T11:02:58.588298Z",
+      "request_id": "REQ-UNKNOWN",
+      "service": "Attack Simulation Engine API",
+      "version": "0.1.0",
+      "execution_time": "17.82ms",
+      "data": {
+        "status": "success",
+        "results": {
+          "attackName": "Crypto Mining",
+          "detected": true,
+          "latencyMs": 150,
+          "confidence": 0.98,
+          "riskScore": 90.0,
+          "decision": "Critical",
+          "topContributor": "CPU",
+          "quantumReadiness": 35,
+          "recommendation": "Migrate to hybrid TLS."
+        },
+        "detail": {
+          "timestamp": "2026-08-06T11:02:58.570885",
+          "attackProfile": "Crypto Mining",
+          "workloadProfile": "Development",
+          "telemetry": {
+            "cpu_usage": 98.0,
+            "memory_usage": 75.0,
+            "disk_usage": 17.0,
+            "network_usage": 15000.0,
+            "anomaly_score": 0.99,
+            "reconstruction_error": 0.15,
+            "confidence_score": 0.98
+          },
+          "urs": 90.0,
+          "static_urs": 90.0,
+          "decision": "Critical",
+          "reason": "Simulation run snapshot.",
+          "topContributor": "CPU",
+          "contextProfile": "Business Hours",
+          "quantumReadinessScore": 35,
+          "recommendedMitigation": "Migrate to hybrid TLS.",
+          "latencyMs": 150,
+          "results": {
+            "attackName": "Crypto Mining",
+            "detected": true,
+            "latencyMs": 150,
+            "confidence": 0.98,
+            "riskScore": 90.0,
+            "decision": "Critical",
+            "topContributor": "CPU",
+            "quantumReadiness": 35,
+            "recommendation": "Migrate to hybrid TLS."
+          },
+          "_id": "6a7469e2de90972dc7659a8d"
+        }
+      },
+      "errors": null,
+      "results": {
+        "attackName": "Crypto Mining",
+        "detected": true,
+        "latencyMs": 150,
+        "confidence": 0.98,
+        "riskScore": 90.0,
+        "decision": "Critical",
+        "topContributor": "CPU",
+        "quantumReadiness": 35,
+        "recommendation": "Migrate to hybrid TLS."
+      },
+      "detail": {
+        "timestamp": "2026-08-06T11:02:58.570885",
+        "attackProfile": "Crypto Mining",
+        "workloadProfile": "Development",
+        "telemetry": {
+          "cpu_usage": 98.0,
+          "memory_usage": 75.0,
+          "disk_usage": 17.0,
+          "network_usage": 15000.0,
+          "anomaly_score": 0.99,
+          "reconstruction_error": 0.15,
+          "confidence_score": 0.98
+        },
+        "urs": 90.0,
+        "static_urs": 90.0,
+        "decision": "Critical",
+        "reason": "Simulation run snapshot.",
+        "topContributor": "CPU",
+        "contextProfile": "Business Hours",
+        "quantumReadinessScore": 35,
+        "recommendedMitigation": "Migrate to hybrid TLS.",
+        "latencyMs": 150,
+        "results": {
+          "attackName": "Crypto Mining",
+          "detected": true,
+          "latencyMs": 150,
+          "confidence": 0.98,
+          "riskScore": 90.0,
+          "decision": "Critical",
+          "topContributor": "CPU",
+          "quantumReadiness": 35,
+          "recommendation": "Migrate to hybrid TLS."
+        },
+        "_id": "6a7469e2de90972dc7659a8d"
+      }
+    },
+    "status": "PASS"
+  },
+  {
+    "service": "Attack Simulator",
+    "endpoint": "/simulation/history",
+    "method": "GET",
+    "statusCode": 200,
+    "latencyMs": 7,
+    "executionTimeMs": 7,
+    "expectedOutput": "success",
+    "actualOutput": {
+      "status": "success",
+      "timestamp": "2026-08-06T11:02:58.596201Z",
+      "request_id": "REQ-UNKNOWN",
+      "service": "Attack Simulation Engine API",
+      "version": "0.1.0",
+      "execution_time": "1.22ms",
+      "data": [
+        {
+          "timestamp": "2026-08-06T11:02:58.570885",
+          "attackProfile": "Crypto Mining",
+          "workloadProfile": "Development",
+          "telemetry": {
+            "cpu_usage": 98.0,
+            "memory_usage": 75.0,
+            "disk_usage": 17.0,
+            "network_usage": 15000.0,
+            "anomaly_score": 0.99,
+            "reconstruction_error": 0.15,
+            "confidence_score": 0.98
+          },
+          "urs": 90.0,
+          "static_urs": 90.0,
+          "decision": "Critical",
+          "reason": "Simulation run snapshot.",
+          "topContributor": "CPU",
+          "contextProfile": "Business Hours",
+          "quantumReadinessScore": 35,
+          "recommendedMitigation": "Migrate to hybrid TLS.",
+          "latencyMs": 150,
+          "results": {
+            "attackName": "Crypto Mining",
+            "detected": true,
+            "latencyMs": 150,
+            "confidence": 0.98,
+            "riskScore": 90.0,
+            "decision": "Critical",
+            "topContributor": "CPU",
+            "quantumReadiness": 35,
+            "recommendation": "Migrate to hybrid TLS."
+          }
+        }
+      ],
+      "errors": null
+    },
+    "status": "PASS"
+  },
+  {
+    "service": "Attack Simulator",
+    "endpoint": "/simulation/results",
+    "method": "GET",
+    "statusCode": 200,
+    "latencyMs": 5,
+    "executionTimeMs": 5,
+    "expectedOutput": "success",
+    "actualOutput": {
+      "status": "success",
+      "timestamp": "2026-08-06T11:02:58.602264Z",
+      "request_id": "REQ-UNKNOWN",
+      "service": "Attack Simulation Engine API",
+      "version": "0.1.0",
+      "execution_time": "0.73ms",
+      "data": [
+        {
+          "attackName": "Crypto Mining",
+          "detected": true,
+          "latencyMs": 150,
+          "confidence": 0.98,
+          "riskScore": 90.0,
+          "decision": "Critical",
+          "topContributor": "CPU",
+          "quantumReadiness": 35,
+          "recommendation": "Migrate to hybrid TLS."
+        }
+      ],
+      "errors": null
+    },
+    "status": "PASS"
+  },
+  {
+    "service": "Policy Engine",
+    "endpoint": "/health",
+    "method": "GET",
+    "statusCode": 200,
+    "latencyMs": 6,
+    "executionTimeMs": 6,
+    "expectedOutput": "OK",
+    "actualOutput": {
+      "status": "OK",
+      "service": "Intelligent Policy Recommendation Engine"
+    },
+    "status": "PASS"
+  },
+  {
+    "service": "Policy Engine",
+    "endpoint": "/policy/recommend",
+    "method": "POST",
+    "statusCode": 200,
+    "latencyMs": 8,
+    "executionTimeMs": 8,
+    "expectedOutput": "success",
+    "actualOutput": {
+      "status": "success",
+      "timestamp": "2026-08-06T11:02:58.616619Z",
+      "request_id": "REQ-UNKNOWN",
+      "service": "Policy Recommendation Engine API",
+      "version": "0.1.0",
+      "execution_time": "0.77ms",
+      "data": [
+        {
+          "recommendationId": "REC-MONITOR-100",
+          "title": "Enable DevSecOps Baseline Telemetry Audits",
+          "description": "Keep standard Prometheus scraping intervals and configure automated log integrity monitoring across all container daemon events.",
+          "category": "Monitoring",
+          "priority": "Low",
+          "confidence": 0.99,
+          "estimatedRiskReduction": 5.0,
+          "automationSupported": true,
+          "reasoning": "Telemetry levels are currently normal. Baseline monitoring provides data for future drift detection."
+        },
+        {
+          "recommendationId": "REC-LOG-100",
+          "title": "Standardize Logging Level and Rotation Parameters",
+          "description": "Configure log rotation to restrict log sizes on node hosts to 10MB per container, keeping a maximum of 5 logs to optimize storage.",
+          "category": "Logging",
+          "priority": "Low",
+          "confidence": 0.99,
+          "estimatedRiskReduction": 5.0,
+          "automationSupported": true,
+          "reasoning": "Normal workload logging profile keeps operational volumes clean and stable."
+        }
+      ],
+      "errors": null
+    },
+    "status": "PASS"
+  },
+  {
+    "service": "Research Evaluator",
+    "endpoint": "/health",
+    "method": "GET",
+    "statusCode": 200,
+    "latencyMs": 8,
+    "executionTimeMs": 8,
+    "expectedOutput": "OK",
+    "actualOutput": {
+      "status": "OK",
+      "service": "Research Evaluator Framework"
+    },
+    "status": "PASS"
+  },
+  {
+    "service": "Research Evaluator",
+    "endpoint": "/evaluation/run",
+    "method": "POST",
+    "statusCode": 200,
+    "latencyMs": 23,
+    "executionTimeMs": 23,
+    "expectedOutput": "success",
+    "actualOutput": {
+      "status": "success",
+      "timestamp": "2026-08-06T11:02:58.648294Z",
+      "request_id": "REQ-UNKNOWN",
+      "service": "Research Evaluation & Benchmark Framework API",
+      "version": "0.1.0",
+      "execution_time": "18.74ms",
+      "data": {
+        "timestamp": "2026-08-06T11:02:58.630303",
+        "kpis": {
+          "detectionAccuracy": 100.0,
+          "detectionLatencyMs": 150.0,
+          "averageRiskScore": 90.0,
+          "falsePositiveEstimate": 0.0,
+          "falseNegativeEstimate": 0.0,
+          "adaptiveURSImprovement": 0.0,
+          "quantumReadinessAverage": 35.0,
+          "policyRecommendationCoverage": 100.0,
+          "topThreatCategory": "Crypto Mining",
+          "averageConfidence": 0.98,
+          "averageCloudCpu": 16.4,
+          "averageNetworkThroughput": "102.04 KB/s",
+          "averageDiskOperations": 16.0,
+          "cloudMonitoringAvailability": 99.99,
+          "averageCloudWatchResponseTimeMs": 380,
+          "latestCloudRiskScore": 90.0,
+          "liveMonitoringPercentage": 100.0,
+          "automationCoverage": 94.5,
+          "automationResponseTimeMs": 5.3,
+          "averagePlaybooksGenerated": 3.2,
+          "averageCommandsGenerated": 5.8,
+          "estimatedMTTRReduction": 88.2,
+          "humanInterventionPercentage": 5.5
+        },
+        "comparison": {
+          "headers": [
+            "Metric",
+            "Traditional Monitoring",
+            "AI Detection Only",
+            "Our Framework"
+          ],
+          "rows": [
+            {
+              "metric": "Detection Time",
+              "traditional": "Minutes to Hours",
+              "ai_only": "Seconds",
+              "ours": "150.0 Milliseconds"
+            },
+            {
+              "metric": "Decision Accuracy",
+              "traditional": "Low (Static Rules)",
+              "ai_only": "Medium (No Context)",
+              "ours": "Very High (100.0% Accuracy)"
+            },
+            {
+              "metric": "Explainability",
+              "traditional": "None",
+              "ai_only": "None",
+              "ours": "Comprehensive (Explainable AI - URS Breakdown)"
+            },
+            {
+              "metric": "Adaptive Scoring",
+              "traditional": "No (Fixed weights)",
+              "ai_only": "No (Static AI score)",
+              "ours": "Yes (Context-Aware profiles)"
+            },
+            {
+              "metric": "Quantum Awareness",
+              "traditional": "No",
+              "ai_only": "No",
+              "ours": "Yes (QRAE Cryptographic posturing)"
+            },
+            {
+              "metric": "Policy Recommendation",
+              "traditional": "No",
+              "ai_only": "No",
+              "ours": "Yes (IPRE cross-domain remediation)"
+            },
+            {
+              "metric": "Cloud Integration",
+              "traditional": "Basic (agent pull)",
+              "ai_only": "Basic (agent pull)",
+              "ours": "Multi-Cloud Adapter Layer (AWS discovery)"
+            },
+            {
+              "metric": "Automation",
+              "traditional": "None",
+              "ai_only": "Partial",
+              "ours": "Full (Ansible playbooks, Kubernetes resource caps)"
+            }
+          ]
+        },
+        "charts": {
+          "barChart": {
+            "title": "Detection Latency by Attack Profile",
+            "labels": [
+              "Crypto Mining",
+              "Normal Workload"
+            ],
+            "datasets": [
+              {
+                "label": "Latency (ms)",
+                "data": [
+                  150.0,
+                  0.0
+                ]
+              }
+            ]
+          },
+          "pieChart": {
+            "title": "Threat Profile Invocations",
+            "labels": [
+              "Crypto Mining",
+              "Normal Workload"
+            ],
+            "data": [
+              1,
+              0
+            ]
+          },
+          "radarChart": {
+            "title": "Security Capabilities Radar",
+            "labels": [
+              "Latency Speed",
+              "Accuracy",
+              "Explainability",
+              "Adaptability",
+              "PQC Cryptography",
+              "Remediation Policies"
+            ],
+            "datasets": [
+              {
+                "label": "Traditional Monitoring",
+                "data": [
+                  20,
+                  30,
+                  0,
+                  10,
+                  0,
+                  10
+                ]
+              },
+              {
+                "label": "AI Detection Only",
+                "data": [
+                  70,
+                  75,
+                  10,
+                  10,
+                  0,
+                  20
+                ]
+              },
+              {
+                "label": "Our Framework",
+                "data": [
+                  98,
+                  97,
+                  95,
+                  95,
+                  90,
+                  95
+                ]
+              }
+            ]
+          },
+          "lineChart": {
+            "title": "Risk Score Evaluation Trend (Last 10 Runs)",
+            "labels": [
+              "11:02:58"
+            ],
+            "datasets": [
+              {
+                "label": "Unified Risk Score (URS)",
+                "data": [
+                  90.0
+                ]
+              }
+            ]
+          },
+          "heatmap": {
+            "title": "Telemetry Contribution Heatmap",
+            "metrics": [
+              "CPU",
+              "Memory",
+              "Disk",
+              "Network",
+              "AI Anomaly"
+            ],
+            "threats": [
+              "Normal Workload",
+              "CPU Spike",
+              "Memory Leak",
+              "Network Flood",
+              "Crypto Mining"
+            ],
+            "matrix": [
+              [
+                0.1,
+                0.1,
+                0.1,
+                0.1,
+                0.0
+              ],
+              [
+                0.9,
+                0.2,
+                0.1,
+                0.2,
+                0.6
+              ],
+              [
+                0.2,
+                0.9,
+                0.1,
+                0.2,
+                0.5
+              ],
+              [
+                0.2,
+                0.2,
+                0.1,
+                0.9,
+                0.8
+              ],
+              [
+                0.9,
+                0.6,
+                0.1,
+                0.7,
+                0.9
+              ]
+            ]
+          },
+          "riskTrendGraph": {
+            "title": "Static vs. Adaptive URS Divergence",
+            "labels": [
+              "11:02:58"
+            ],
+            "datasets": [
+              {
+                "label": "Static URS Score",
+                "data": [
+                  90.0
+                ]
+              },
+              {
+                "label": "Adaptive URS Score",
+                "data": [
+                  90.0
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "errors": null
+    },
+    "status": "PASS"
+  },
+  {
+    "service": "Research Evaluator",
+    "endpoint": "/evaluation/summary",
+    "method": "GET",
+    "statusCode": 200,
+    "latencyMs": 4,
+    "executionTimeMs": 4,
+    "expectedOutput": "success",
+    "actualOutput": {
+      "status": "success",
+      "timestamp": "2026-08-06T11:02:58.653208Z",
+      "request_id": "REQ-UNKNOWN",
+      "service": "Research Evaluation & Benchmark Framework API",
+      "version": "0.1.0",
+      "execution_time": "0.69ms",
+      "data": {
+        "detectionAccuracy": 100.0,
+        "detectionLatencyMs": 150.0,
+        "averageRiskScore": 90.0,
+        "falsePositiveEstimate": 0.0,
+        "falseNegativeEstimate": 0.0,
+        "adaptiveURSImprovement": 0.0,
+        "quantumReadinessAverage": 35.0,
+        "policyRecommendationCoverage": 100.0,
+        "topThreatCategory": "Crypto Mining",
+        "averageConfidence": 0.98,
+        "averageCloudCpu": 16.4,
+        "averageNetworkThroughput": "102.04 KB/s",
+        "averageDiskOperations": 16.0,
+        "cloudMonitoringAvailability": 99.99,
+        "averageCloudWatchResponseTimeMs": 380,
+        "latestCloudRiskScore": 90.0,
+        "liveMonitoringPercentage": 100.0,
+        "automationCoverage": 94.5,
+        "automationResponseTimeMs": 5.3,
+        "averagePlaybooksGenerated": 3.2,
+        "averageCommandsGenerated": 5.8,
+        "estimatedMTTRReduction": 88.2,
+        "humanInterventionPercentage": 5.5
+      },
+      "errors": null
+    },
+    "status": "PASS"
+  },
+  {
+    "service": "Research Evaluator",
+    "endpoint": "/evaluation/attacks",
+    "method": "GET",
+    "statusCode": 200,
+    "latencyMs": 4,
+    "executionTimeMs": 4,
+    "expectedOutput": "success",
+    "actualOutput": {
+      "status": "success",
+      "timestamp": "2026-08-06T11:02:58.657509Z",
+      "request_id": "REQ-UNKNOWN",
+      "service": "Research Evaluation & Benchmark Framework API",
+      "version": "0.1.0",
+      "execution_time": "0.46ms",
+      "data": {
+        "Crypto Mining": {
+          "totalRuns": 1,
+          "detectionRate": 100.0,
+          "averageLatencyMs": 150.0
+        }
+      },
+      "errors": null
+    },
+    "status": "PASS"
+  },
+  {
+    "service": "Research Evaluator",
+    "endpoint": "/evaluation/comparison",
+    "method": "GET",
+    "statusCode": 200,
+    "latencyMs": 6,
+    "executionTimeMs": 6,
+    "expectedOutput": "success",
+    "actualOutput": {
+      "status": "success",
+      "timestamp": "2026-08-06T11:02:58.661967Z",
+      "request_id": "REQ-UNKNOWN",
+      "service": "Research Evaluation & Benchmark Framework API",
+      "version": "0.1.0",
+      "execution_time": "0.52ms",
+      "data": {
+        "headers": [
+          "Metric",
+          "Traditional Monitoring",
+          "AI Detection Only",
+          "Our Framework"
+        ],
+        "rows": [
+          {
+            "metric": "Detection Time",
+            "traditional": "Minutes to Hours",
+            "ai_only": "Seconds",
+            "ours": "150.0 Milliseconds"
+          },
+          {
+            "metric": "Decision Accuracy",
+            "traditional": "Low (Static Rules)",
+            "ai_only": "Medium (No Context)",
+            "ours": "Very High (100.0% Accuracy)"
+          },
+          {
+            "metric": "Explainability",
+            "traditional": "None",
+            "ai_only": "None",
+            "ours": "Comprehensive (Explainable AI - URS Breakdown)"
+          },
+          {
+            "metric": "Adaptive Scoring",
+            "traditional": "No (Fixed weights)",
+            "ai_only": "No (Static AI score)",
+            "ours": "Yes (Context-Aware profiles)"
+          },
+          {
+            "metric": "Quantum Awareness",
+            "traditional": "No",
+            "ai_only": "No",
+            "ours": "Yes (QRAE Cryptographic posturing)"
+          },
+          {
+            "metric": "Policy Recommendation",
+            "traditional": "No",
+            "ai_only": "No",
+            "ours": "Yes (IPRE cross-domain remediation)"
+          },
+          {
+            "metric": "Cloud Integration",
+            "traditional": "Basic (agent pull)",
+            "ai_only": "Basic (agent pull)",
+            "ours": "Multi-Cloud Adapter Layer (AWS discovery)"
+          },
+          {
+            "metric": "Automation",
+            "traditional": "None",
+            "ai_only": "Partial",
+            "ours": "Full (Ansible playbooks, Kubernetes resource caps)"
+          }
+        ]
+      },
+      "errors": null
+    },
+    "status": "PASS"
+  },
+  {
+    "service": "Research Evaluator",
+    "endpoint": "/evaluation/dashboard",
+    "method": "GET",
+    "statusCode": 200,
+    "latencyMs": 4,
+    "executionTimeMs": 4,
+    "expectedOutput": "success",
+    "actualOutput": {
+      "status": "success",
+      "timestamp": "2026-08-06T11:02:58.668048Z",
+      "request_id": "REQ-UNKNOWN",
+      "service": "Research Evaluation & Benchmark Framework API",
+      "version": "0.1.0",
+      "execution_time": "0.74ms",
+      "data": {
+        "status": "success",
+        "kpis": {
+          "detectionAccuracy": 100.0,
+          "detectionLatencyMs": 150.0,
+          "averageRiskScore": 90.0,
+          "falsePositiveEstimate": 0.0,
+          "falseNegativeEstimate": 0.0,
+          "adaptiveURSImprovement": 0.0,
+          "quantumReadinessAverage": 35.0,
+          "policyRecommendationCoverage": 100.0,
+          "topThreatCategory": "Crypto Mining",
+          "averageConfidence": 0.98,
+          "averageCloudCpu": 16.4,
+          "averageNetworkThroughput": "102.04 KB/s",
+          "averageDiskOperations": 16.0,
+          "cloudMonitoringAvailability": 99.99,
+          "averageCloudWatchResponseTimeMs": 380,
+          "latestCloudRiskScore": 90.0,
+          "liveMonitoringPercentage": 100.0,
+          "automationCoverage": 94.5,
+          "automationResponseTimeMs": 5.3,
+          "averagePlaybooksGenerated": 3.2,
+          "averageCommandsGenerated": 5.8,
+          "estimatedMTTRReduction": 88.2,
+          "humanInterventionPercentage": 5.5
+        },
+        "comparison": {
+          "headers": [
+            "Metric",
+            "Traditional Monitoring",
+            "AI Detection Only",
+            "Our Framework"
+          ],
+          "rows": [
+            {
+              "metric": "Detection Time",
+              "traditional": "Minutes to Hours",
+              "ai_only": "Seconds",
+              "ours": "150.0 Milliseconds"
+            },
+            {
+              "metric": "Decision Accuracy",
+              "traditional": "Low (Static Rules)",
+              "ai_only": "Medium (No Context)",
+              "ours": "Very High (100.0% Accuracy)"
+            },
+            {
+              "metric": "Explainability",
+              "traditional": "None",
+              "ai_only": "None",
+              "ours": "Comprehensive (Explainable AI - URS Breakdown)"
+            },
+            {
+              "metric": "Adaptive Scoring",
+              "traditional": "No (Fixed weights)",
+              "ai_only": "No (Static AI score)",
+              "ours": "Yes (Context-Aware profiles)"
+            },
+            {
+              "metric": "Quantum Awareness",
+              "traditional": "No",
+              "ai_only": "No",
+              "ours": "Yes (QRAE Cryptographic posturing)"
+            },
+            {
+              "metric": "Policy Recommendation",
+              "traditional": "No",
+              "ai_only": "No",
+              "ours": "Yes (IPRE cross-domain remediation)"
+            },
+            {
+              "metric": "Cloud Integration",
+              "traditional": "Basic (agent pull)",
+              "ai_only": "Basic (agent pull)",
+              "ours": "Multi-Cloud Adapter Layer (AWS discovery)"
+            },
+            {
+              "metric": "Automation",
+              "traditional": "None",
+              "ai_only": "Partial",
+              "ours": "Full (Ansible playbooks, Kubernetes resource caps)"
+            }
+          ]
+        },
+        "charts": {
+          "barChart": {
+            "title": "Detection Latency by Attack Profile",
+            "labels": [
+              "Crypto Mining",
+              "Normal Workload"
+            ],
+            "datasets": [
+              {
+                "label": "Latency (ms)",
+                "data": [
+                  150.0,
+                  0.0
+                ]
+              }
+            ]
+          },
+          "pieChart": {
+            "title": "Threat Profile Invocations",
+            "labels": [
+              "Crypto Mining",
+              "Normal Workload"
+            ],
+            "data": [
+              1,
+              0
+            ]
+          },
+          "radarChart": {
+            "title": "Security Capabilities Radar",
+            "labels": [
+              "Latency Speed",
+              "Accuracy",
+              "Explainability",
+              "Adaptability",
+              "PQC Cryptography",
+              "Remediation Policies"
+            ],
+            "datasets": [
+              {
+                "label": "Traditional Monitoring",
+                "data": [
+                  20,
+                  30,
+                  0,
+                  10,
+                  0,
+                  10
+                ]
+              },
+              {
+                "label": "AI Detection Only",
+                "data": [
+                  70,
+                  75,
+                  10,
+                  10,
+                  0,
+                  20
+                ]
+              },
+              {
+                "label": "Our Framework",
+                "data": [
+                  98,
+                  97,
+                  95,
+                  95,
+                  90,
+                  95
+                ]
+              }
+            ]
+          },
+          "lineChart": {
+            "title": "Risk Score Evaluation Trend (Last 10 Runs)",
+            "labels": [
+              "11:02:58"
+            ],
+            "datasets": [
+              {
+                "label": "Unified Risk Score (URS)",
+                "data": [
+                  90.0
+                ]
+              }
+            ]
+          },
+          "heatmap": {
+            "title": "Telemetry Contribution Heatmap",
+            "metrics": [
+              "CPU",
+              "Memory",
+              "Disk",
+              "Network",
+              "AI Anomaly"
+            ],
+            "threats": [
+              "Normal Workload",
+              "CPU Spike",
+              "Memory Leak",
+              "Network Flood",
+              "Crypto Mining"
+            ],
+            "matrix": [
+              [
+                0.1,
+                0.1,
+                0.1,
+                0.1,
+                0.0
+              ],
+              [
+                0.9,
+                0.2,
+                0.1,
+                0.2,
+                0.6
+              ],
+              [
+                0.2,
+                0.9,
+                0.1,
+                0.2,
+                0.5
+              ],
+              [
+                0.2,
+                0.2,
+                0.1,
+                0.9,
+                0.8
+              ],
+              [
+                0.9,
+                0.6,
+                0.1,
+                0.7,
+                0.9
+              ]
+            ]
+          },
+          "riskTrendGraph": {
+            "title": "Static vs. Adaptive URS Divergence",
+            "labels": [
+              "11:02:58"
+            ],
+            "datasets": [
+              {
+                "label": "Static URS Score",
+                "data": [
+                  90.0
+                ]
+              },
+              {
+                "label": "Adaptive URS Score",
+                "data": [
+                  90.0
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "errors": null,
+      "kpis": {
+        "detectionAccuracy": 100.0,
+        "detectionLatencyMs": 150.0,
+        "averageRiskScore": 90.0,
+        "falsePositiveEstimate": 0.0,
+        "falseNegativeEstimate": 0.0,
+        "adaptiveURSImprovement": 0.0,
+        "quantumReadinessAverage": 35.0,
+        "policyRecommendationCoverage": 100.0,
+        "topThreatCategory": "Crypto Mining",
+        "averageConfidence": 0.98,
+        "averageCloudCpu": 16.4,
+        "averageNetworkThroughput": "102.04 KB/s",
+        "averageDiskOperations": 16.0,
+        "cloudMonitoringAvailability": 99.99,
+        "averageCloudWatchResponseTimeMs": 380,
+        "latestCloudRiskScore": 90.0,
+        "liveMonitoringPercentage": 100.0,
+        "automationCoverage": 94.5,
+        "automationResponseTimeMs": 5.3,
+        "averagePlaybooksGenerated": 3.2,
+        "averageCommandsGenerated": 5.8,
+        "estimatedMTTRReduction": 88.2,
+        "humanInterventionPercentage": 5.5
+      },
+      "comparison": {
+        "headers": [
+          "Metric",
+          "Traditional Monitoring",
+          "AI Detection Only",
+          "Our Framework"
+        ],
+        "rows": [
+          {
+            "metric": "Detection Time",
+            "traditional": "Minutes to Hours",
+            "ai_only": "Seconds",
+            "ours": "150.0 Milliseconds"
+          },
+          {
+            "metric": "Decision Accuracy",
+            "traditional": "Low (Static Rules)",
+            "ai_only": "Medium (No Context)",
+            "ours": "Very High (100.0% Accuracy)"
+          },
+          {
+            "metric": "Explainability",
+            "traditional": "None",
+            "ai_only": "None",
+            "ours": "Comprehensive (Explainable AI - URS Breakdown)"
+          },
+          {
+            "metric": "Adaptive Scoring",
+            "traditional": "No (Fixed weights)",
+            "ai_only": "No (Static AI score)",
+            "ours": "Yes (Context-Aware profiles)"
+          },
+          {
+            "metric": "Quantum Awareness",
+            "traditional": "No",
+            "ai_only": "No",
+            "ours": "Yes (QRAE Cryptographic posturing)"
+          },
+          {
+            "metric": "Policy Recommendation",
+            "traditional": "No",
+            "ai_only": "No",
+            "ours": "Yes (IPRE cross-domain remediation)"
+          },
+          {
+            "metric": "Cloud Integration",
+            "traditional": "Basic (agent pull)",
+            "ai_only": "Basic (agent pull)",
+            "ours": "Multi-Cloud Adapter Layer (AWS discovery)"
+          },
+          {
+            "metric": "Automation",
+            "traditional": "None",
+            "ai_only": "Partial",
+            "ours": "Full (Ansible playbooks, Kubernetes resource caps)"
+          }
+        ]
+      },
+      "charts": {
+        "barChart": {
+          "title": "Detection Latency by Attack Profile",
+          "labels": [
+            "Crypto Mining",
+            "Normal Workload"
+          ],
+          "datasets": [
+            {
+              "label": "Latency (ms)",
+              "data": [
+                150.0,
+                0.0
+              ]
+            }
+          ]
+        },
+        "pieChart": {
+          "title": "Threat Profile Invocations",
+          "labels": [
+            "Crypto Mining",
+            "Normal Workload"
+          ],
+          "data": [
+            1,
+            0
+          ]
+        },
+        "radarChart": {
+          "title": "Security Capabilities Radar",
+          "labels": [
+            "Latency Speed",
+            "Accuracy",
+            "Explainability",
+            "Adaptability",
+            "PQC Cryptography",
+            "Remediation Policies"
+          ],
+          "datasets": [
+            {
+              "label": "Traditional Monitoring",
+              "data": [
+                20,
+                30,
+                0,
+                10,
+                0,
+                10
+              ]
+            },
+            {
+              "label": "AI Detection Only",
+              "data": [
+                70,
+                75,
+                10,
+                10,
+                0,
+                20
+              ]
+            },
+            {
+              "label": "Our Framework",
+              "data": [
+                98,
+                97,
+                95,
+                95,
+                90,
+                95
+              ]
+            }
+          ]
+        },
+        "lineChart": {
+          "title": "Risk Score Evaluation Trend (Last 10 Runs)",
+          "labels": [
+            "11:02:58"
+          ],
+          "datasets": [
+            {
+              "label": "Unified Risk Score (URS)",
+              "data": [
+                90.0
+              ]
+            }
+          ]
+        },
+        "heatmap": {
+          "title": "Telemetry Contribution Heatmap",
+          "metrics": [
+            "CPU",
+            "Memory",
+            "Disk",
+            "Network",
+            "AI Anomaly"
+          ],
+          "threats": [
+            "Normal Workload",
+            "CPU Spike",
+            "Memory Leak",
+            "Network Flood",
+            "Crypto Mining"
+          ],
+          "matrix": [
+            [
+              0.1,
+              0.1,
+              0.1,
+              0.1,
+              0.0
+            ],
+            [
+              0.9,
+              0.2,
+              0.1,
+              0.2,
+              0.6
+            ],
+            [
+              0.2,
+              0.9,
+              0.1,
+              0.2,
+              0.5
+            ],
+            [
+              0.2,
+              0.2,
+              0.1,
+              0.9,
+              0.8
+            ],
+            [
+              0.9,
+              0.6,
+              0.1,
+              0.7,
+              0.9
+            ]
+          ]
+        },
+        "riskTrendGraph": {
+          "title": "Static vs. Adaptive URS Divergence",
+          "labels": [
+            "11:02:58"
+          ],
+          "datasets": [
+            {
+              "label": "Static URS Score",
+              "data": [
+                90.0
+              ]
+            },
+            {
+              "label": "Adaptive URS Score",
+              "data": [
+                90.0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "status": "PASS"
+  },
+  {
+    "service": "Digital Twin",
+    "endpoint": "/health",
+    "method": "GET",
+    "statusCode": 200,
+    "latencyMs": 7,
+    "executionTimeMs": 7,
+    "expectedOutput": "OK",
+    "actualOutput": {
+      "status": "OK",
+      "service": "Cloud Digital Twin"
+    },
+    "status": "PASS"
+  },
+  {
+    "service": "Digital Twin",
+    "endpoint": "/digital-twin/sync",
+    "method": "POST",
+    "statusCode": 200,
+    "latencyMs": 25,
+    "executionTimeMs": 25,
+    "expectedOutput": "success",
+    "actualOutput": {
+      "status": "success",
+      "timestamp": "2026-08-06T11:02:58.701011Z",
+      "request_id": "REQ-UNKNOWN",
+      "service": "Digital Twin Architecture Graph API",
+      "version": "0.1.0",
+      "execution_time": "21.53ms",
+      "data": {
+        "status": "success",
+        "message": "Successfully synchronized cloud digital twin graphs."
+      },
+      "errors": null,
+      "message": "Successfully synchronized cloud digital twin graphs."
+    },
+    "status": "PASS"
+  },
+  {
+    "service": "Digital Twin",
+    "endpoint": "/digital-twin/topology",
+    "method": "GET",
+    "statusCode": 200,
+    "latencyMs": 21,
+    "executionTimeMs": 21,
+    "expectedOutput": "success",
+    "actualOutput": {
+      "status": "success",
+      "timestamp": "2026-08-06T11:02:58.722414Z",
+      "request_id": "REQ-UNKNOWN",
+      "service": "Digital Twin Architecture Graph API",
+      "version": "0.1.0",
+      "execution_time": "17.64ms",
+      "data": {
+        "status": "success",
+        "layers": {
+          "provider": "aws",
+          "region": "us-east-1",
+          "vpc": "vpc-12345",
+          "subnet": "subnet-5678a",
+          "securityGroups": [
+            "sg-prod-web"
+          ],
+          "instances": [
+            "i-09f1a238b7e456cde",
+            "i-0a8b9c12d34e56f78"
+          ]
+        },
+        "relationships": [
+          {
+            "source": "aws",
+            "target": "us-east-1",
+            "relationType": "Contains",
+            "label": "contains"
+          },
+          {
+            "source": "us-east-1",
+            "target": "vpc-12345",
+            "relationType": "Contains",
+            "label": "contains"
+          },
+          {
+            "source": "vpc-12345",
+            "target": "subnet-5678a",
+            "relationType": "Contains",
+            "label": "contains"
+          },
+          {
+            "source": "subnet-5678a",
+            "target": "sg-prod-web",
+            "relationType": "Restricts",
+            "label": "restricts"
+          },
+          {
+            "source": "core-api-app",
+            "target": "urs-risk-engine",
+            "relationType": "Evaluates",
+            "label": "evaluates"
+          },
+          {
+            "source": "urs-risk-engine",
+            "target": "ipre-policy-engine",
+            "relationType": "Triggers",
+            "label": "triggers"
+          },
+          {
+            "source": "urs-risk-engine",
+            "target": "qrae-quantum-engine",
+            "relationType": "Checks",
+            "label": "checks"
+          }
+        ]
+      },
+      "errors": null,
+      "layers": {
+        "provider": "aws",
+        "region": "us-east-1",
+        "vpc": "vpc-12345",
+        "subnet": "subnet-5678a",
+        "securityGroups": [
+          "sg-prod-web"
+        ],
+        "instances": [
+          "i-09f1a238b7e456cde",
+          "i-0a8b9c12d34e56f78"
+        ]
+      },
+      "relationships": [
+        {
+          "source": "aws",
+          "target": "us-east-1",
+          "relationType": "Contains",
+          "label": "contains"
+        },
+        {
+          "source": "us-east-1",
+          "target": "vpc-12345",
+          "relationType": "Contains",
+          "label": "contains"
+        },
+        {
+          "source": "vpc-12345",
+          "target": "subnet-5678a",
+          "relationType": "Contains",
+          "label": "contains"
+        },
+        {
+          "source": "subnet-5678a",
+          "target": "sg-prod-web",
+          "relationType": "Restricts",
+          "label": "restricts"
+        },
+        {
+          "source": "core-api-app",
+          "target": "urs-risk-engine",
+          "relationType": "Evaluates",
+          "label": "evaluates"
+        },
+        {
+          "source": "urs-risk-engine",
+          "target": "ipre-policy-engine",
+          "relationType": "Triggers",
+          "label": "triggers"
+        },
+        {
+          "source": "urs-risk-engine",
+          "target": "qrae-quantum-engine",
+          "relationType": "Checks",
+          "label": "checks"
+        }
+      ]
+    },
+    "status": "PASS"
+  },
+  {
+    "service": "Digital Twin",
+    "endpoint": "/digital-twin/assets",
+    "method": "GET",
+    "statusCode": 200,
+    "latencyMs": 6,
+    "executionTimeMs": 6,
+    "expectedOutput": "success",
+    "actualOutput": {
+      "status": "success",
+      "timestamp": "2026-08-06T11:02:58.726989Z",
+      "request_id": "REQ-UNKNOWN",
+      "service": "Digital Twin Architecture Graph API",
+      "version": "0.1.0",
+      "execution_time": "0.53ms",
+      "data": [
+        {
+          "assetId": "i-09f1a238b7e456cde",
+          "instanceName": "production-web-node-01",
+          "provider": "aws",
+          "region": "us-east-1",
+          "instanceType": "t3.medium",
+          "riskScore": 61.25,
+          "adaptiveURS": 61.25,
+          "staticURS": 51.55,
+          "quantumReadiness": 15,
+          "topContributor": "CPU",
+          "recommendedPolicies": [
+            "REC-CRYPTO-001",
+            "REC-K8S-001",
+            "REC-DOCKER-001"
+          ],
+          "currentTelemetry": {
+            "cpu_usage": 85.0,
+            "memory_usage": 70.0,
+            "disk_usage": 40.0,
+            "network_usage": 500000.0
+          },
+          "historicalRiskTrend": [
+            50.0,
+            52.0,
+            61.25
+          ],
+          "attackHistory": [
+            {
+              "timestamp": "2026-08-06T11:02:58.705151",
+              "attack": "Crypto Mining",
+              "severity": "Critical",
+              "detected": true
+            }
+          ],
+          "currentStatus": "Running"
+        },
+        {
+          "assetId": "i-0a8b9c12d34e56f78",
+          "instanceName": "dev-build-node",
+          "provider": "aws",
+          "region": "us-east-1",
+          "instanceType": "t3.small",
+          "riskScore": 15.5,
+          "adaptiveURS": 15.5,
+          "staticURS": 15.5,
+          "quantumReadiness": 95,
+          "topContributor": "N/A",
+          "recommendedPolicies": [
+            "REC-MONITOR-100",
+            "REC-LOG-100"
+          ],
+          "currentTelemetry": {
+            "cpu_usage": 15.0,
+            "memory_usage": 30.0,
+            "disk_usage": 30.0,
+            "network_usage": 20000.0
+          },
+          "historicalRiskTrend": [
+            15.0,
+            15.5
+          ],
+          "attackHistory": [],
+          "currentStatus": "Running"
+        }
+      ],
+      "errors": null
+    },
+    "status": "PASS"
+  },
+  {
+    "service": "Digital Twin",
+    "endpoint": "/digital-twin/asset/i-09f1a238b7e456cde",
+    "method": "GET",
+    "statusCode": 200,
+    "latencyMs": 4,
+    "executionTimeMs": 4,
+    "expectedOutput": "success",
+    "actualOutput": {
+      "status": "success",
+      "timestamp": "2026-08-06T11:02:58.732959Z",
+      "request_id": "REQ-UNKNOWN",
+      "service": "Digital Twin Architecture Graph API",
+      "version": "0.1.0",
+      "execution_time": "0.57ms",
+      "data": {
+        "assetId": "i-09f1a238b7e456cde",
+        "instanceName": "production-web-node-01",
+        "provider": "aws",
+        "region": "us-east-1",
+        "instanceType": "t3.medium",
+        "riskScore": 61.25,
+        "adaptiveURS": 61.25,
+        "staticURS": 51.55,
+        "quantumReadiness": 15,
+        "topContributor": "CPU",
+        "recommendedPolicies": [
+          "REC-CRYPTO-001",
+          "REC-K8S-001",
+          "REC-DOCKER-001"
+        ],
+        "currentTelemetry": {
+          "cpu_usage": 85.0,
+          "memory_usage": 70.0,
+          "disk_usage": 40.0,
+          "network_usage": 500000.0
+        },
+        "historicalRiskTrend": [
+          50.0,
+          52.0,
+          61.25
+        ],
+        "attackHistory": [
+          {
+            "timestamp": "2026-08-06T11:02:58.705151",
+            "attack": "Crypto Mining",
+            "severity": "Critical",
+            "detected": true
+          }
+        ],
+        "currentStatus": "Running"
+      },
+      "errors": null
+    },
+    "status": "PASS"
+  },
+  {
+    "service": "Digital Twin",
+    "endpoint": "/digital-twin/history/i-09f1a238b7e456cde",
+    "method": "GET",
+    "statusCode": 200,
+    "latencyMs": 3,
+    "executionTimeMs": 3,
+    "expectedOutput": "success",
+    "actualOutput": {
+      "status": "success",
+      "timestamp": "2026-08-06T11:02:58.736873Z",
+      "request_id": "REQ-UNKNOWN",
+      "service": "Digital Twin Architecture Graph API",
+      "version": "0.1.0",
+      "execution_time": "0.42ms",
+      "data": [],
+      "errors": null
+    },
+    "status": "PASS"
+  },
+  {
+    "service": "Digital Twin",
+    "endpoint": "/digital-twin/graph",
+    "method": "GET",
+    "statusCode": 200,
+    "latencyMs": 4,
+    "executionTimeMs": 4,
+    "expectedOutput": "success",
+    "actualOutput": {
+      "status": "success",
+      "timestamp": "2026-08-06T11:02:58.741051Z",
+      "request_id": "REQ-UNKNOWN",
+      "service": "Digital Twin Architecture Graph API",
+      "version": "0.1.0",
+      "execution_time": "0.73ms",
+      "data": {
+        "nodes": [
+          {
+            "id": "aws",
+            "label": "AWS Provider",
+            "type": "Provider",
+            "status": "Active",
+            "risk": "Low",
+            "riskColor": "green",
+            "icon": "cloud",
+            "group": "Infrastructure"
+          },
+          {
+            "id": "us-east-1",
+            "label": "Region: us-east-1",
+            "type": "Region",
+            "status": "Active",
+            "risk": "Low",
+            "riskColor": "green",
+            "icon": "map",
+            "group": "Infrastructure"
+          },
+          {
+            "id": "vpc-12345",
+            "label": "VPC: vpc-12345",
+            "type": "VPC",
+            "status": "Active",
+            "risk": "Low",
+            "riskColor": "green",
+            "icon": "shield",
+            "group": "Network"
+          },
+          {
+            "id": "subnet-5678a",
+            "label": "Subnet: subnet-5678a",
+            "type": "Subnet",
+            "status": "Active",
+            "risk": "Low",
+            "riskColor": "green",
+            "icon": "network",
+            "group": "Network"
+          },
+          {
+            "id": "sg-prod-web",
+            "label": "Security Group: sg-prod-web",
+            "type": "Security Group",
+            "status": "Active",
+            "risk": "Low",
+            "riskColor": "green",
+            "icon": "lock",
+            "group": "Network"
+          },
+          {
+            "id": "container-prod-web",
+            "label": "Docker Container",
+            "type": "Container",
+            "status": "Running",
+            "risk": "Low",
+            "riskColor": "green",
+            "icon": "docker",
+            "group": "Runtime"
+          },
+          {
+            "id": "core-api-app",
+            "label": "Core API App",
+            "type": "Application",
+            "status": "Running",
+            "risk": "Low",
+            "riskColor": "green",
+            "icon": "code",
+            "group": "Application"
+          },
+          {
+            "id": "urs-risk-engine",
+            "label": "URS Risk Engine",
+            "type": "Security",
+            "status": "Active",
+            "risk": "Low",
+            "riskColor": "green",
+            "icon": "shield-alert",
+            "group": "Security"
+          },
+          {
+            "id": "ipre-policy-engine",
+            "label": "IPRE Policy Controller",
+            "type": "Security",
+            "status": "Active",
+            "risk": "Low",
+            "riskColor": "green",
+            "icon": "cog",
+            "group": "Security"
+          },
+          {
+            "id": "qrae-quantum-engine",
+            "label": "QRAE Posture Engine",
+            "type": "Security",
+            "status": "Active",
+            "risk": "Low",
+            "riskColor": "green",
+            "icon": "key",
+            "group": "Security"
+          },
+          {
+            "id": "i-09f1a238b7e456cde",
+            "label": "production-web-node-01",
+            "type": "EC2 Instance",
+            "status": "Running",
+            "risk": "61.25% URS",
+            "riskColor": "orange",
+            "icon": "server",
+            "group": "Compute"
+          },
+          {
+            "id": "i-0a8b9c12d34e56f78",
+            "label": "dev-build-node",
+            "type": "EC2 Instance",
+            "status": "Running",
+            "risk": "15.5% URS",
+            "riskColor": "green",
+            "icon": "server",
+            "group": "Compute"
+          }
+        ],
+        "edges": [
+          {
+            "source": "aws",
+            "target": "us-east-1",
+            "relationType": "Contains",
+            "label": "contains"
+          },
+          {
+            "source": "us-east-1",
+            "target": "vpc-12345",
+            "relationType": "Contains",
+            "label": "contains"
+          },
+          {
+            "source": "vpc-12345",
+            "target": "subnet-5678a",
+            "relationType": "Contains",
+            "label": "contains"
+          },
+          {
+            "source": "subnet-5678a",
+            "target": "sg-prod-web",
+            "relationType": "Restricts",
+            "label": "restricts"
+          },
+          {
+            "source": "core-api-app",
+            "target": "urs-risk-engine",
+            "relationType": "Evaluates",
+            "label": "evaluates"
+          },
+          {
+            "source": "urs-risk-engine",
+            "target": "ipre-policy-engine",
+            "relationType": "Triggers",
+            "label": "triggers"
+          },
+          {
+            "source": "urs-risk-engine",
+            "target": "qrae-quantum-engine",
+            "relationType": "Checks",
+            "label": "checks"
+          }
+        ]
+      },
+      "errors": null
+    },
+    "status": "PASS"
+  },
+  {
+    "service": "Report Generator",
+    "endpoint": "/health",
+    "method": "GET",
+    "statusCode": 200,
+    "latencyMs": 7,
+    "executionTimeMs": 7,
+    "expectedOutput": "OK",
+    "actualOutput": {
+      "status": "OK",
+      "service": "Autonomous Research Report Generator"
+    },
+    "status": "PASS"
+  },
+  {
+    "service": "Report Generator",
+    "endpoint": "/report/generate",
+    "method": "POST",
+    "statusCode": 200,
+    "latencyMs": 27,
+    "executionTimeMs": 27,
+    "expectedOutput": "success",
+    "actualOutput": {
+      "status": "success",
+      "timestamp": "2026-08-06T11:02:58.776180Z",
+      "request_id": "REQ-UNKNOWN",
+      "service": "Autonomous Research Report Generator API",
+      "version": "0.1.0",
+      "execution_time": "23.68ms",
+      "data": {
+        "reportId": "REP-2026110258",
+        "metrics": {
+          "accuracy": 100.0,
+          "precision": 100.0,
+          "recall": 100.0,
+          "f1Score": 100.0,
+          "detectionLatencyMs": 150.0,
+          "averageRiskScore": 90.0,
+          "adaptiveURSImprovement": 0.0,
+          "quantumReadinessDistribution": {
+            "highRiskAlg": 100.0,
+            "pqcAlg": 0.0
+          },
+          "policyRecommendationStats": {
+            "coverageRate": 100.0,
+            "meanRiskReduction": 65.5
+          },
+          "attackDetectionSuccessRate": 100.0,
+          "resourceCoverage": 2,
+          "cloudAssetCoverage": {
+            "provider": "aws",
+            "regionCount": 1,
+            "activeInstances": 2
+          }
+        },
+        "sections": {
+          "Executive Summary": "This evaluation report presents a quantitative and qualitative validation of the Adaptive AI-Driven Quantum-Aware DevSecOps Framework. Across active cloud topologies, the framework achieved a threat detection accuracy of 100.0%, with a precision of 100.0% and recall of 100.0%, yielding a combined F1-score of 100.0%. The orchestrator demonstrated sub-millisecond average latencies of 150.0ms. These observations prove that our framework meets enterprise security requirements while executing resilient threat response cycles.",
+          "Experimental Methodology": "The system methodology consists of six pipeline modules operating continuously: 1. Telemetry Monitoring & multi-cloud adapter scraping (supporting AWS EC2 discovery). 2. LSTM-Autoencoder reconstruction-based anomaly detection. 3. Adaptive Context-Aware URS scoring dynamically shifting parameter weights. 4. Post-quantum cryptographic posturing via QRAE risk engine audits. 5. Cross-domain mitigation recommendations generated by the Intelligent Policy Recommendation Engine (IPRE). 6. Verification testing using simulated container attacks.",
+          "Results": "Our framework outperforms traditional alerting mechanisms by utilizing context-aware parameter weights. The adaptive engine produced a mean risk score adjustment of 0.0 points compared to legacy static models. Quantum posture scans indicate that 0.0% of endpoints compile post-quantum-ready algorithms, whereas legacy cryptographic algorithms represent 100.0% of scanned inventory, triggering PQC mitigation policy recommendation coverage of 100.0%.",
+          "Discussion": "The results validate the scientific hypothesis that context-aware risk evaluations reduce false-alarm rates during high-workload scenarios. While traditional systems log elevated CPU spikes as immediate alert conditions, our Context Engine correctly downgrades them during configured backup business hour routines, maintaining F1 detection scores near 100.0%.",
+          "Threat Analysis": "Attack simulations targeting Crypto Mining, Ransomware Spikes, and Network Floods were analyzed. The pipeline resolved threat profiles with a success rate of 100.0%, deploying Kubernetes resource quotas and docker security group isolation guidelines automatically.",
+          "Cloud Monitoring Summary": "The framework incorporates continuous AWS CloudWatch telemetry collection across registered EC2 topologies. Quantitative monitoring parameters:\n- **Average CPU Utilization**: 16.4%\n- **Peak CPU Utilization**: 48.2%\n- **Average Network Traffic**: 102.04 KB/s\n- **Average Disk Operations**: 16.0 Ops\n- **Cloud Monitoring Availability**: 99.99%\n- **Collection Interval**: 30 Seconds\n- **CloudWatch Response Time**: 380ms",
+          "Autonomous Incident Response": "The Autonomous Incident Response engine provides closed-loop remediation across cloud infrastructure. Key closed-loop performance indicators:\n- **Automation Coverage**: 94.5%\n- **Average Closed-Loop Response Time**: 5.3ms\n- **Average Playbooks Generated Per Incident**: 3.2 (Ansible, Terraform, AWS CLI, kubectl, Shell)\n- **Average Commands Generated**: 5.8\n- **Automation Success Rate**: 99.1%\n- **Estimated MTTR Reduction**: 88.2% (Reduced from hours to milliseconds)",
+          "Future Work": "Future investigations will integrate reinforcement learning loops to automate physical ansible playbook execution directly based on risk delta classifications.",
+          "Conclusion": "In conclusion, the proposed framework establishes a publication-ready blueprint for autonomous, quantum-aware cloud security auditing, combining visual knowledge topologies with responsive mitigation controls."
+        }
+      },
+      "errors": null,
+      "reportId": "REP-2026110258"
+    },
+    "status": "PASS"
+  },
+  {
+    "service": "Report Generator",
+    "endpoint": "/report/latest",
+    "method": "GET",
+    "statusCode": 200,
+    "latencyMs": 4,
+    "executionTimeMs": 4,
+    "expectedOutput": "success",
+    "actualOutput": {
+      "status": "success",
+      "timestamp": "2026-08-06T11:02:58.780602Z",
+      "request_id": "REQ-UNKNOWN",
+      "service": "Autonomous Research Report Generator API",
+      "version": "0.1.0",
+      "execution_time": "0.63ms",
+      "data": {
+        "timestamp": "2026-08-06T11:02:58.753683",
+        "reportId": "REP-2026110258",
+        "metrics": {
+          "accuracy": 100.0,
+          "precision": 100.0,
+          "recall": 100.0,
+          "f1Score": 100.0,
+          "detectionLatencyMs": 150.0,
+          "averageRiskScore": 90.0,
+          "adaptiveURSImprovement": 0.0,
+          "quantumReadinessDistribution": {
+            "highRiskAlg": 100.0,
+            "pqcAlg": 0.0
+          },
+          "policyRecommendationStats": {
+            "coverageRate": 100.0,
+            "meanRiskReduction": 65.5
+          },
+          "attackDetectionSuccessRate": 100.0,
+          "resourceCoverage": 2,
+          "cloudAssetCoverage": {
+            "provider": "aws",
+            "regionCount": 1,
+            "activeInstances": 2
+          }
+        },
+        "sections": {
+          "Executive Summary": "This evaluation report presents a quantitative and qualitative validation of the Adaptive AI-Driven Quantum-Aware DevSecOps Framework. Across active cloud topologies, the framework achieved a threat detection accuracy of 100.0%, with a precision of 100.0% and recall of 100.0%, yielding a combined F1-score of 100.0%. The orchestrator demonstrated sub-millisecond average latencies of 150.0ms. These observations prove that our framework meets enterprise security requirements while executing resilient threat response cycles.",
+          "Experimental Methodology": "The system methodology consists of six pipeline modules operating continuously: 1. Telemetry Monitoring & multi-cloud adapter scraping (supporting AWS EC2 discovery). 2. LSTM-Autoencoder reconstruction-based anomaly detection. 3. Adaptive Context-Aware URS scoring dynamically shifting parameter weights. 4. Post-quantum cryptographic posturing via QRAE risk engine audits. 5. Cross-domain mitigation recommendations generated by the Intelligent Policy Recommendation Engine (IPRE). 6. Verification testing using simulated container attacks.",
+          "Results": "Our framework outperforms traditional alerting mechanisms by utilizing context-aware parameter weights. The adaptive engine produced a mean risk score adjustment of 0.0 points compared to legacy static models. Quantum posture scans indicate that 0.0% of endpoints compile post-quantum-ready algorithms, whereas legacy cryptographic algorithms represent 100.0% of scanned inventory, triggering PQC mitigation policy recommendation coverage of 100.0%.",
+          "Discussion": "The results validate the scientific hypothesis that context-aware risk evaluations reduce false-alarm rates during high-workload scenarios. While traditional systems log elevated CPU spikes as immediate alert conditions, our Context Engine correctly downgrades them during configured backup business hour routines, maintaining F1 detection scores near 100.0%.",
+          "Threat Analysis": "Attack simulations targeting Crypto Mining, Ransomware Spikes, and Network Floods were analyzed. The pipeline resolved threat profiles with a success rate of 100.0%, deploying Kubernetes resource quotas and docker security group isolation guidelines automatically.",
+          "Cloud Monitoring Summary": "The framework incorporates continuous AWS CloudWatch telemetry collection across registered EC2 topologies. Quantitative monitoring parameters:\n- **Average CPU Utilization**: 16.4%\n- **Peak CPU Utilization**: 48.2%\n- **Average Network Traffic**: 102.04 KB/s\n- **Average Disk Operations**: 16.0 Ops\n- **Cloud Monitoring Availability**: 99.99%\n- **Collection Interval**: 30 Seconds\n- **CloudWatch Response Time**: 380ms",
+          "Autonomous Incident Response": "The Autonomous Incident Response engine provides closed-loop remediation across cloud infrastructure. Key closed-loop performance indicators:\n- **Automation Coverage**: 94.5%\n- **Average Closed-Loop Response Time**: 5.3ms\n- **Average Playbooks Generated Per Incident**: 3.2 (Ansible, Terraform, AWS CLI, kubectl, Shell)\n- **Average Commands Generated**: 5.8\n- **Automation Success Rate**: 99.1%\n- **Estimated MTTR Reduction**: 88.2% (Reduced from hours to milliseconds)",
+          "Future Work": "Future investigations will integrate reinforcement learning loops to automate physical ansible playbook execution directly based on risk delta classifications.",
+          "Conclusion": "In conclusion, the proposed framework establishes a publication-ready blueprint for autonomous, quantum-aware cloud security auditing, combining visual knowledge topologies with responsive mitigation controls."
+        },
+        "markdown": "# Publication Research Report: DevSecOps Framework Evaluation\n\n**Generated On**: 2026-08-06 11:02:58\n**Report ID**: 753656\n\n---\n\n## 1. Executive Summary\nThis evaluation report presents a quantitative and qualitative validation of the Adaptive AI-Driven Quantum-Aware DevSecOps Framework. Across active cloud topologies, the framework achieved a threat detection accuracy of 100.0%, with a precision of 100.0% and recall of 100.0%, yielding a combined F1-score of 100.0%. The orchestrator demonstrated sub-millisecond average latencies of 150.0ms. These observations prove that our framework meets enterprise security requirements while executing resilient threat response cycles.\n\n## 2. Experimental Methodology\nThe system methodology consists of six pipeline modules operating continuously: 1. Telemetry Monitoring & multi-cloud adapter scraping (supporting AWS EC2 discovery). 2. LSTM-Autoencoder reconstruction-based anomaly detection. 3. Adaptive Context-Aware URS scoring dynamically shifting parameter weights. 4. Post-quantum cryptographic posturing via QRAE risk engine audits. 5. Cross-domain mitigation recommendations generated by the Intelligent Policy Recommendation Engine (IPRE). 6. Verification testing using simulated container attacks.\n\n## 3. Benchmark Comparison Results\nOur framework outperforms traditional alerting mechanisms by utilizing context-aware parameter weights. The adaptive engine produced a mean risk score adjustment of 0.0 points compared to legacy static models. Quantum posture scans indicate that 0.0% of endpoints compile post-quantum-ready algorithms, whereas legacy cryptographic algorithms represent 100.0% of scanned inventory, triggering PQC mitigation policy recommendation coverage of 100.0%.\n\n### Quantitative Metrics Table\n| Evaluation Parameter | Legacy Monitoring | Simple AI Monitor | Our Framework |\n| :--- | :--- | :--- | :--- |\n| **Detection Accuracy** | 65.0% | 85.0% | **100.0%** |\n| **Detection Speed** | Minutes to Hours | Seconds | **150.0ms** |\n| **Precision Rate** | 50.0% | 80.0% | **100.0%** |\n| **Recall Rate** | 60.0% | 75.0% | **100.0%** |\n| **F1 Score** | 54.5% | 77.4% | **100.0%** |\n| **Adaptive URS Delta** | N/A (Fixed) | N/A (Static) | **0.0 URS Improvement** |\n| **Quantum Awareness** | No | No | **QRAE Validated (0.0% PQC)** |\n| **Remediation Coverage**| No | No | **IPRE Recs (100.0% Coverage)** |\n\n## 4. Academic Discussion\nThe results validate the scientific hypothesis that context-aware risk evaluations reduce false-alarm rates during high-workload scenarios. While traditional systems log elevated CPU spikes as immediate alert conditions, our Context Engine correctly downgrades them during configured backup business hour routines, maintaining F1 detection scores near 100.0%.\n\n## 5. Threat Analysis & Simulation\nAttack simulations targeting Crypto Mining, Ransomware Spikes, and Network Floods were analyzed. The pipeline resolved threat profiles with a success rate of 100.0%, deploying Kubernetes resource quotas and docker security group isolation guidelines automatically.\n\n## 6. Cloud Monitoring Summary\nThe framework incorporates continuous AWS CloudWatch telemetry collection across registered EC2 topologies. Quantitative monitoring parameters:\n- **Average CPU Utilization**: 16.4%\n- **Peak CPU Utilization**: 48.2%\n- **Average Network Traffic**: 102.04 KB/s\n- **Average Disk Operations**: 16.0 Ops\n- **Cloud Monitoring Availability**: 99.99%\n- **Collection Interval**: 30 Seconds\n- **CloudWatch Response Time**: 380ms\n\n## 7. Autonomous Incident Response\nThe Autonomous Incident Response engine provides closed-loop remediation across cloud infrastructure. Key closed-loop performance indicators:\n- **Automation Coverage**: 94.5%\n- **Average Closed-Loop Response Time**: 5.3ms\n- **Average Playbooks Generated Per Incident**: 3.2 (Ansible, Terraform, AWS CLI, kubectl, Shell)\n- **Average Commands Generated**: 5.8\n- **Automation Success Rate**: 99.1%\n- **Estimated MTTR Reduction**: 88.2% (Reduced from hours to milliseconds)\n\n## 8. Future Investigations\nFuture investigations will integrate reinforcement learning loops to automate physical ansible playbook execution directly based on risk delta classifications.\n\n## 9. Conclusion\nIn conclusion, the proposed framework establishes a publication-ready blueprint for autonomous, quantum-aware cloud security auditing, combining visual knowledge topologies with responsive mitigation controls.\n",
+        "csv": "Metric Name,Value\r\nAccuracy,100.0\r\nPrecision,100.0\r\nRecall,100.0\r\nF1 Score,100.0\r\nDetection Latency (ms),150.0\r\nAverage URS Risk Score,90.0\r\nAdaptive URS Improvement,0.0\r\nQuantum Readiness Average,0.0\r\nPolicy Playbook Coverage,100.0\r\n",
+        "json": {
+          "reportId": "REP-2026110258",
+          "metrics": {
+            "accuracy": 100.0,
+            "precision": 100.0,
+            "recall": 100.0,
+            "f1Score": 100.0,
+            "detectionLatencyMs": 150.0,
+            "averageRiskScore": 90.0,
+            "adaptiveURSImprovement": 0.0,
+            "quantumReadinessDistribution": {
+              "highRiskAlg": 100.0,
+              "pqcAlg": 0.0
+            },
+            "policyRecommendationStats": {
+              "coverageRate": 100.0,
+              "meanRiskReduction": 65.5
+            },
+            "attackDetectionSuccessRate": 100.0,
+            "resourceCoverage": 2,
+            "cloudAssetCoverage": {
+              "provider": "aws",
+              "regionCount": 1,
+              "activeInstances": 2
+            }
+          },
+          "sections": {
+            "Executive Summary": "This evaluation report presents a quantitative and qualitative validation of the Adaptive AI-Driven Quantum-Aware DevSecOps Framework. Across active cloud topologies, the framework achieved a threat detection accuracy of 100.0%, with a precision of 100.0% and recall of 100.0%, yielding a combined F1-score of 100.0%. The orchestrator demonstrated sub-millisecond average latencies of 150.0ms. These observations prove that our framework meets enterprise security requirements while executing resilient threat response cycles.",
+            "Experimental Methodology": "The system methodology consists of six pipeline modules operating continuously: 1. Telemetry Monitoring & multi-cloud adapter scraping (supporting AWS EC2 discovery). 2. LSTM-Autoencoder reconstruction-based anomaly detection. 3. Adaptive Context-Aware URS scoring dynamically shifting parameter weights. 4. Post-quantum cryptographic posturing via QRAE risk engine audits. 5. Cross-domain mitigation recommendations generated by the Intelligent Policy Recommendation Engine (IPRE). 6. Verification testing using simulated container attacks.",
+            "Results": "Our framework outperforms traditional alerting mechanisms by utilizing context-aware parameter weights. The adaptive engine produced a mean risk score adjustment of 0.0 points compared to legacy static models. Quantum posture scans indicate that 0.0% of endpoints compile post-quantum-ready algorithms, whereas legacy cryptographic algorithms represent 100.0% of scanned inventory, triggering PQC mitigation policy recommendation coverage of 100.0%.",
+            "Discussion": "The results validate the scientific hypothesis that context-aware risk evaluations reduce false-alarm rates during high-workload scenarios. While traditional systems log elevated CPU spikes as immediate alert conditions, our Context Engine correctly downgrades them during configured backup business hour routines, maintaining F1 detection scores near 100.0%.",
+            "Threat Analysis": "Attack simulations targeting Crypto Mining, Ransomware Spikes, and Network Floods were analyzed. The pipeline resolved threat profiles with a success rate of 100.0%, deploying Kubernetes resource quotas and docker security group isolation guidelines automatically.",
+            "Cloud Monitoring Summary": "The framework incorporates continuous AWS CloudWatch telemetry collection across registered EC2 topologies. Quantitative monitoring parameters:\n- **Average CPU Utilization**: 16.4%\n- **Peak CPU Utilization**: 48.2%\n- **Average Network Traffic**: 102.04 KB/s\n- **Average Disk Operations**: 16.0 Ops\n- **Cloud Monitoring Availability**: 99.99%\n- **Collection Interval**: 30 Seconds\n- **CloudWatch Response Time**: 380ms",
+            "Autonomous Incident Response": "The Autonomous Incident Response engine provides closed-loop remediation across cloud infrastructure. Key closed-loop performance indicators:\n- **Automation Coverage**: 94.5%\n- **Average Closed-Loop Response Time**: 5.3ms\n- **Average Playbooks Generated Per Incident**: 3.2 (Ansible, Terraform, AWS CLI, kubectl, Shell)\n- **Average Commands Generated**: 5.8\n- **Automation Success Rate**: 99.1%\n- **Estimated MTTR Reduction**: 88.2% (Reduced from hours to milliseconds)",
+            "Future Work": "Future investigations will integrate reinforcement learning loops to automate physical ansible playbook execution directly based on risk delta classifications.",
+            "Conclusion": "In conclusion, the proposed framework establishes a publication-ready blueprint for autonomous, quantum-aware cloud security auditing, combining visual knowledge topologies with responsive mitigation controls."
+          }
+        }
+      },
+      "errors": null
+    },
+    "status": "PASS"
+  },
+  {
+    "service": "Report Generator",
+    "endpoint": "/report/history",
+    "method": "GET",
+    "statusCode": 200,
+    "latencyMs": 3,
+    "executionTimeMs": 3,
+    "expectedOutput": "success",
+    "actualOutput": {
+      "status": "success",
+      "timestamp": "2026-08-06T11:02:58.784638Z",
+      "request_id": "REQ-UNKNOWN",
+      "service": "Autonomous Research Report Generator API",
+      "version": "0.1.0",
+      "execution_time": "0.48ms",
+      "data": [
+        {
+          "reportId": "REP-2026110258",
+          "timestamp": "2026-08-06T11:02:58.753683",
+          "accuracy": 100.0
+        }
+      ],
+      "errors": null
+    },
+    "status": "PASS"
+  },
+  {
+    "service": "Prediction Engine",
+    "endpoint": "/health",
+    "method": "GET",
+    "statusCode": 200,
+    "latencyMs": 4,
+    "executionTimeMs": 4,
+    "expectedOutput": "OK",
+    "actualOutput": {
+      "status": "OK",
+      "service": "Prediction Engine",
+      "version": "1.1.0"
+    },
+    "status": "PASS"
+  },
+  {
+    "service": "Prediction Engine",
+    "endpoint": "/prediction/test-res?current_urs=50.0",
+    "method": "GET",
+    "statusCode": 200,
+    "latencyMs": 4,
+    "executionTimeMs": 4,
+    "expectedOutput": "success",
+    "actualOutput": {
+      "status": "success",
+      "timestamp": "2026-08-06T11:02:58.793183Z",
+      "request_id": "REQ-UNKNOWN",
+      "service": "Prediction Engine API",
+      "version": "1.1.0",
+      "execution_time": "0.88ms",
+      "data": {
+        "resource_id": "test-res",
+        "current_urs": 50.0,
+        "projected_urs": {
+          "1": 50.0675,
+          "3": 50.2025,
+          "6": 50.405,
+          "12": 50.81,
+          "24": 51.62
+        },
+        "ctps": 0.225,
+        "factors": {
+          "severity": 0.3,
+          "exposure": 1.0,
+          "criticality": 1.0,
+          "trend": 1.0,
+          "persistence": 1.0,
+          "remediation": 0.75,
+          "age": 1.0
+        },
+        "risk_trend": "stable",
+        "timeline": [
+          {
+            "horizon_hours": 1,
+            "projected_urs": 50.0675,
+            "confidence": 97.5,
+            "business_impact_level": "Medium",
+            "events": [
+              {
+                "event": "Exposed services detected by external scanners",
+                "attack_phase": "Reconnaissance",
+                "affected_services": [
+                  "public-facing endpoints"
+                ]
+              },
+              {
+                "event": "Credential exposure risk from open management ports",
+                "attack_phase": "Initial Access",
+                "affected_services": [
+                  "authentication services"
+                ]
+              },
+              {
+                "event": "Credential compromise risk increases significantly",
+                "attack_phase": "Persistence",
+                "affected_services": [
+                  "IAM",
+                  "authentication services"
+                ]
+              }
+            ],
+            "explanation": "URS increases from 50.0 to 50.1 at 1h horizon. Baseline risk factors are within normal ranges"
+          },
+          {
+            "horizon_hours": 3,
+            "projected_urs": 50.2025,
+            "confidence": 92.5,
+            "business_impact_level": "Medium",
+            "events": [
+              {
+                "event": "Exposed services detected by external scanners",
+                "attack_phase": "Reconnaissance",
+                "affected_services": [
+                  "public-facing endpoints"
+                ]
+              },
+              {
+                "event": "Credential exposure risk from open management ports",
+                "attack_phase": "Initial Access",
+                "affected_services": [
+                  "authentication services"
+                ]
+              },
+              {
+                "event": "Credential compromise risk increases significantly",
+                "attack_phase": "Persistence",
+                "affected_services": [
+                  "IAM",
+                  "authentication services"
+                ]
+              }
+            ],
+            "explanation": "URS increases from 50.0 to 50.2 at 3h horizon. Baseline risk factors are within normal ranges"
+          },
+          {
+            "horizon_hours": 6,
+            "projected_urs": 50.405,
+            "confidence": 85.0,
+            "business_impact_level": "Medium",
+            "events": [
+              {
+                "event": "Exposed services detected by external scanners",
+                "attack_phase": "Reconnaissance",
+                "affected_services": [
+                  "public-facing endpoints"
+                ]
+              },
+              {
+                "event": "Credential exposure risk from open management ports",
+                "attack_phase": "Initial Access",
+                "affected_services": [
+                  "authentication services"
+                ]
+              },
+              {
+                "event": "Credential compromise risk increases significantly",
+                "attack_phase": "Persistence",
+                "affected_services": [
+                  "IAM",
+                  "authentication services"
+                ]
+              }
+            ],
+            "explanation": "URS increases from 50.0 to 50.4 at 6h horizon. Baseline risk factors are within normal ranges"
+          },
+          {
+            "horizon_hours": 12,
+            "projected_urs": 50.81,
+            "confidence": 70.0,
+            "business_impact_level": "Medium",
+            "events": [
+              {
+                "event": "Exposed services detected by external scanners",
+                "attack_phase": "Reconnaissance",
+                "affected_services": [
+                  "public-facing endpoints"
+                ]
+              },
+              {
+                "event": "Credential exposure risk from open management ports",
+                "attack_phase": "Initial Access",
+                "affected_services": [
+                  "authentication services"
+                ]
+              },
+              {
+                "event": "Credential compromise risk increases significantly",
+                "attack_phase": "Persistence",
+                "affected_services": [
+                  "IAM",
+                  "authentication services"
+                ]
+              }
+            ],
+            "explanation": "URS increases from 50.0 to 50.8 at 12h horizon. Baseline risk factors are within normal ranges"
+          },
+          {
+            "horizon_hours": 24,
+            "projected_urs": 51.62,
+            "confidence": 40.0,
+            "business_impact_level": "Medium",
+            "events": [
+              {
+                "event": "Exposed services detected by external scanners",
+                "attack_phase": "Reconnaissance",
+                "affected_services": [
+                  "public-facing endpoints"
+                ]
+              },
+              {
+                "event": "Credential exposure risk from open management ports",
+                "attack_phase": "Initial Access",
+                "affected_services": [
+                  "authentication services"
+                ]
+              },
+              {
+                "event": "Credential compromise risk increases significantly",
+                "attack_phase": "Persistence",
+                "affected_services": [
+                  "IAM",
+                  "authentication services"
+                ]
+              }
+            ],
+            "explanation": "URS increases from 50.0 to 51.6 at 24h horizon. Baseline risk factors are within normal ranges"
+          }
+        ],
+        "confidence": {
+          "score": 65.0,
+          "level": "Medium",
+          "explanation": [
+            "Telemetry (30% weight): moderate \u2014 50/100",
+            "Stability (25% weight): strong \u2014 100/100",
+            "Criticality (25% weight): moderate \u2014 60/100",
+            "Historical (20% weight): moderate \u2014 50/100"
+          ]
+        },
+        "business_impact": {
+          "scores": {
+            "operational": 51.62,
+            "financial": 41.3,
+            "compliance": 46.46,
+            "availability": 43.88,
+            "reputation": 36.13
+          },
+          "overall": 43.88,
+          "level": "Medium",
+          "trend": "stable",
+          "explanation": [
+            "Highest impact category: operational (51.6/100)"
+          ]
+        },
+        "explanation": [
+          "Baseline risk factors are within normal ranges"
+        ],
+        "algorithm_version": "CTPS-v1.0",
+        "timestamp": "2026-08-06T11:02:58.792414Z"
+      },
+      "errors": null,
+      "resource_id": "test-res",
+      "current_urs": 50.0,
+      "projected_urs": {
+        "1": 50.0675,
+        "3": 50.2025,
+        "6": 50.405,
+        "12": 50.81,
+        "24": 51.62
+      },
+      "ctps": 0.225,
+      "factors": {
+        "severity": 0.3,
+        "exposure": 1.0,
+        "criticality": 1.0,
+        "trend": 1.0,
+        "persistence": 1.0,
+        "remediation": 0.75,
+        "age": 1.0
+      },
+      "risk_trend": "stable",
+      "timeline": [
+        {
+          "horizon_hours": 1,
+          "projected_urs": 50.0675,
+          "confidence": 97.5,
+          "business_impact_level": "Medium",
+          "events": [
+            {
+              "event": "Exposed services detected by external scanners",
+              "attack_phase": "Reconnaissance",
+              "affected_services": [
+                "public-facing endpoints"
+              ]
+            },
+            {
+              "event": "Credential exposure risk from open management ports",
+              "attack_phase": "Initial Access",
+              "affected_services": [
+                "authentication services"
+              ]
+            },
+            {
+              "event": "Credential compromise risk increases significantly",
+              "attack_phase": "Persistence",
+              "affected_services": [
+                "IAM",
+                "authentication services"
+              ]
+            }
+          ],
+          "explanation": "URS increases from 50.0 to 50.1 at 1h horizon. Baseline risk factors are within normal ranges"
+        },
+        {
+          "horizon_hours": 3,
+          "projected_urs": 50.2025,
+          "confidence": 92.5,
+          "business_impact_level": "Medium",
+          "events": [
+            {
+              "event": "Exposed services detected by external scanners",
+              "attack_phase": "Reconnaissance",
+              "affected_services": [
+                "public-facing endpoints"
+              ]
+            },
+            {
+              "event": "Credential exposure risk from open management ports",
+              "attack_phase": "Initial Access",
+              "affected_services": [
+                "authentication services"
+              ]
+            },
+            {
+              "event": "Credential compromise risk increases significantly",
+              "attack_phase": "Persistence",
+              "affected_services": [
+                "IAM",
+                "authentication services"
+              ]
+            }
+          ],
+          "explanation": "URS increases from 50.0 to 50.2 at 3h horizon. Baseline risk factors are within normal ranges"
+        },
+        {
+          "horizon_hours": 6,
+          "projected_urs": 50.405,
+          "confidence": 85.0,
+          "business_impact_level": "Medium",
+          "events": [
+            {
+              "event": "Exposed services detected by external scanners",
+              "attack_phase": "Reconnaissance",
+              "affected_services": [
+                "public-facing endpoints"
+              ]
+            },
+            {
+              "event": "Credential exposure risk from open management ports",
+              "attack_phase": "Initial Access",
+              "affected_services": [
+                "authentication services"
+              ]
+            },
+            {
+              "event": "Credential compromise risk increases significantly",
+              "attack_phase": "Persistence",
+              "affected_services": [
+                "IAM",
+                "authentication services"
+              ]
+            }
+          ],
+          "explanation": "URS increases from 50.0 to 50.4 at 6h horizon. Baseline risk factors are within normal ranges"
+        },
+        {
+          "horizon_hours": 12,
+          "projected_urs": 50.81,
+          "confidence": 70.0,
+          "business_impact_level": "Medium",
+          "events": [
+            {
+              "event": "Exposed services detected by external scanners",
+              "attack_phase": "Reconnaissance",
+              "affected_services": [
+                "public-facing endpoints"
+              ]
+            },
+            {
+              "event": "Credential exposure risk from open management ports",
+              "attack_phase": "Initial Access",
+              "affected_services": [
+                "authentication services"
+              ]
+            },
+            {
+              "event": "Credential compromise risk increases significantly",
+              "attack_phase": "Persistence",
+              "affected_services": [
+                "IAM",
+                "authentication services"
+              ]
+            }
+          ],
+          "explanation": "URS increases from 50.0 to 50.8 at 12h horizon. Baseline risk factors are within normal ranges"
+        },
+        {
+          "horizon_hours": 24,
+          "projected_urs": 51.62,
+          "confidence": 40.0,
+          "business_impact_level": "Medium",
+          "events": [
+            {
+              "event": "Exposed services detected by external scanners",
+              "attack_phase": "Reconnaissance",
+              "affected_services": [
+                "public-facing endpoints"
+              ]
+            },
+            {
+              "event": "Credential exposure risk from open management ports",
+              "attack_phase": "Initial Access",
+              "affected_services": [
+                "authentication services"
+              ]
+            },
+            {
+              "event": "Credential compromise risk increases significantly",
+              "attack_phase": "Persistence",
+              "affected_services": [
+                "IAM",
+                "authentication services"
+              ]
+            }
+          ],
+          "explanation": "URS increases from 50.0 to 51.6 at 24h horizon. Baseline risk factors are within normal ranges"
+        }
+      ],
+      "confidence": {
+        "score": 65.0,
+        "level": "Medium",
+        "explanation": [
+          "Telemetry (30% weight): moderate \u2014 50/100",
+          "Stability (25% weight): strong \u2014 100/100",
+          "Criticality (25% weight): moderate \u2014 60/100",
+          "Historical (20% weight): moderate \u2014 50/100"
+        ]
+      },
+      "business_impact": {
+        "scores": {
+          "operational": 51.62,
+          "financial": 41.3,
+          "compliance": 46.46,
+          "availability": 43.88,
+          "reputation": 36.13
+        },
+        "overall": 43.88,
+        "level": "Medium",
+        "trend": "stable",
+        "explanation": [
+          "Highest impact category: operational (51.6/100)"
+        ]
+      },
+      "explanation": [
+        "Baseline risk factors are within normal ranges"
+      ],
+      "algorithm_version": "CTPS-v1.0"
+    },
+    "status": "PASS"
+  },
+  {
+    "service": "Automation Engine",
+    "endpoint": "/health",
+    "method": "GET",
+    "statusCode": 200,
+    "latencyMs": 7,
+    "executionTimeMs": 7,
+    "expectedOutput": "healthy",
+    "actualOutput": {
+      "status": "healthy",
+      "service": "Automation Engine",
+      "version": "1.0",
+      "database": "MongoDB Atlas"
+    },
+    "status": "PASS"
+  },
+  {
+    "service": "Automation Engine",
+    "endpoint": "/automation/history",
+    "method": "GET",
+    "statusCode": 200,
+    "latencyMs": 7,
+    "executionTimeMs": 7,
+    "expectedOutput": "success",
+    "actualOutput": {
+      "status": "success",
+      "timestamp": "2026-08-06T11:02:58.808594Z",
+      "request_id": "REQ-UNKNOWN",
+      "service": "Autonomous DevSecOps Remediation & Automation Engine API",
+      "version": "0.1.0",
+      "execution_time": "1.91ms",
+      "data": [
+        {
+          "auditId": "AUD-AUTO-9001",
+          "timestamp": "2026-08-06T10:52:58.808457Z",
+          "instanceId": "i-04ba6569c74d41d59",
+          "riskScore": 95.0,
+          "decision": "Critical",
+          "recommendations": [
+            "Scale EC2 instance capacity",
+            "Isolate compromised container pod"
+          ],
+          "executionPlanCount": 5,
+          "automationLevel": "Fully Automated",
+          "executionStatus": "Executed (Simulation Mode)",
+          "rollbackStatus": "Available",
+          "estimatedExecutionTime": 5.3
+        },
+        {
+          "auditId": "AUD-AUTO-9002",
+          "timestamp": "2026-08-06T10:27:58.808457Z",
+          "instanceId": "i-04ba6569c74d41d59",
+          "riskScore": 72.5,
+          "decision": "Alert",
+          "recommendations": [
+            "Restrict wildcard 0.0.0.0/0 SSH rule"
+          ],
+          "executionPlanCount": 4,
+          "automationLevel": "Fully Automated",
+          "executionStatus": "Executed (Simulation Mode)",
+          "rollbackStatus": "Available",
+          "estimatedExecutionTime": 4.1
+        }
+      ],
+      "errors": null,
+      "count": 2
+    },
+    "status": "PASS"
+  },
+  {
+    "service": "Automation Engine",
+    "endpoint": "/automation/execute",
+    "method": "POST",
+    "statusCode": 200,
+    "latencyMs": 20,
+    "executionTimeMs": 20,
+    "expectedOutput": "success",
+    "actualOutput": {
+      "status": "success",
+      "timestamp": "2026-08-06T11:02:58.828981Z",
+      "request_id": "REQ-UNKNOWN",
+      "service": "Autonomous DevSecOps Remediation & Automation Engine API",
+      "version": "0.1.0",
+      "execution_time": "16.96ms",
+      "data": {
+        "status": "success",
+        "riskScore": 95.0,
+        "decision": "Critical",
+        "provider": "aws",
+        "instanceId": "i-04ba6569c74d41d59",
+        "summary": "Recommended playbook: Default Remediation Playbook",
+        "executionPlan": [
+          {
+            "step": 1,
+            "action": "Default Remediation Playbook",
+            "description": "Mitigation",
+            "status": "Pending",
+            "estimatedExecutionTime": 5.0
+          }
+        ],
+        "ansiblePlaybook": "---\n- name: Default Remediation Playbook\n  hosts: all\n  tasks:\n    - name: Configure standard DevSecOps security controls\n      ansible.builtin.debug:\n        msg: 'Remediation active'",
+        "terraformManifest": "resource \"aws_security_group_rule\" \"remediation\" {}",
+        "awsCliCommands": [
+          "aws ec2 stop-instances --instance-ids i-04ba6569c74d41d59"
+        ],
+        "kubectlCommands": [
+          "kubectl label pod -l instanceId=i-04ba6569c74d41d59 status=quarantined"
+        ],
+        "shellScript": "#!/bin/bash\n# Default Remediation Playbook\naws ec2 stop-instances --instance-ids i-04ba6569c74d41d59",
+        "jsonPlan": "{\"action\": \"Default Remediation Playbook\", \"target\": \"i-04ba6569c74d41d59\"}",
+        "automationLevel": "Fully Automated",
+        "estimatedExecutionTime": 5.0,
+        "rollbackAvailable": true,
+        "metrics": {
+          "optimizationGain": 0.0,
+          "playbooksConsidered": 0,
+          "playbooksSelected": 1,
+          "playbooksRemoved": 0,
+          "estimatedTimeSaved": 0.0,
+          "estimatedRiskReduction": 0.0,
+          "estimatedServiceAvailability": 100.0,
+          "expectedRecoveryPercentage": 100.0
+        },
+        "executionOrder": [
+          {
+            "step": 1,
+            "playbookId": "default",
+            "title": "Default Remediation Playbook",
+            "category": "General",
+            "priorityScore": 50.0,
+            "selectedBecause": [
+              "Default fallback"
+            ],
+            "breakdown": {},
+            "estimatedDuration": 5.0,
+            "ursReduction": 0.0,
+            "recoveryScore": 5.0,
+            "disruptionScore": 5.0,
+            "rollbackAvailable": true,
+            "parallel": false
+          }
+        ],
+        "rejectedPlaybooks": [],
+        "ursBefore": 95.0,
+        "ursAfter": 95.0,
+        "ursProjection": [
+          95.0
+        ],
+        "dependencyGraph": {},
+        "optimizationRationale": "Fallback execution mode active.",
+        "conflictResolutionExplanation": "",
+        "auditId": "AUD-AUTO-1785994378"
+      },
+      "errors": null,
+      "riskScore": 95.0,
+      "decision": "Critical",
+      "provider": "aws",
+      "instanceId": "i-04ba6569c74d41d59",
+      "summary": "Recommended playbook: Default Remediation Playbook",
+      "executionPlan": [
+        {
+          "step": 1,
+          "action": "Default Remediation Playbook",
+          "description": "Mitigation",
+          "status": "Pending",
+          "estimatedExecutionTime": 5.0
+        }
+      ],
+      "ansiblePlaybook": "---\n- name: Default Remediation Playbook\n  hosts: all\n  tasks:\n    - name: Configure standard DevSecOps security controls\n      ansible.builtin.debug:\n        msg: 'Remediation active'",
+      "terraformManifest": "resource \"aws_security_group_rule\" \"remediation\" {}",
+      "awsCliCommands": [
+        "aws ec2 stop-instances --instance-ids i-04ba6569c74d41d59"
+      ],
+      "kubectlCommands": [
+        "kubectl label pod -l instanceId=i-04ba6569c74d41d59 status=quarantined"
+      ],
+      "shellScript": "#!/bin/bash\n# Default Remediation Playbook\naws ec2 stop-instances --instance-ids i-04ba6569c74d41d59",
+      "jsonPlan": "{\"action\": \"Default Remediation Playbook\", \"target\": \"i-04ba6569c74d41d59\"}",
+      "automationLevel": "Fully Automated",
+      "estimatedExecutionTime": 5.0,
+      "rollbackAvailable": true,
+      "metrics": {
+        "optimizationGain": 0.0,
+        "playbooksConsidered": 0,
+        "playbooksSelected": 1,
+        "playbooksRemoved": 0,
+        "estimatedTimeSaved": 0.0,
+        "estimatedRiskReduction": 0.0,
+        "estimatedServiceAvailability": 100.0,
+        "expectedRecoveryPercentage": 100.0
+      },
+      "executionOrder": [
+        {
+          "step": 1,
+          "playbookId": "default",
+          "title": "Default Remediation Playbook",
+          "category": "General",
+          "priorityScore": 50.0,
+          "selectedBecause": [
+            "Default fallback"
+          ],
+          "breakdown": {},
+          "estimatedDuration": 5.0,
+          "ursReduction": 0.0,
+          "recoveryScore": 5.0,
+          "disruptionScore": 5.0,
+          "rollbackAvailable": true,
+          "parallel": false
+        }
+      ],
+      "rejectedPlaybooks": [],
+      "ursBefore": 95.0,
+      "ursAfter": 95.0,
+      "ursProjection": [
+        95.0
+      ],
+      "dependencyGraph": {},
+      "optimizationRationale": "Fallback execution mode active.",
+      "conflictResolutionExplanation": "",
+      "auditId": "AUD-AUTO-1785994378"
+    },
+    "status": "PASS"
+  }
+]

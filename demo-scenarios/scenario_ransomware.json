@@ -1,0 +1,42 @@
+{
+  "scenario_id": "ransomware",
+  "name": "Ransomware / Volume Encryption",
+  "workload_profile": "Production",
+  "telemetry": {
+    "cpu_utilization": 78.5,
+    "memory_usage_percent": 84.1,
+    "disk_usage_percent": 98.9,
+    "packet_rate_in": 1200,
+    "packet_rate_out": 9500
+  },
+  "anomaly_score": 0.96,
+  "findings": [
+    {
+      "id": "FIND-RANS-01",
+      "title": "Abnormal volume queries exfiltrating customer DB dumps to external IP",
+      "severity": "critical",
+      "resource": "EC2 Production",
+      "ursPenalty": 40.0
+    }
+  ],
+  "URS": 95.0,
+  "prediction_expectations": {
+    "risk_trend": "increasing",
+    "projected_urs_24h": 100.0,
+    "confidence_score": 82.0,
+    "business_impact_level": "Critical"
+  },
+  "policy_expectations": {
+    "decision": "Critical",
+    "recommendations": ["Snapshot VM, Detach Volume, Isolate Host"]
+  },
+  "automation_expectations": {
+    "automation_level": "Fully Automated",
+    "playbook_id": "isolate_ec2",
+    "rollback_available": true
+  },
+  "dashboard_expectations": {
+    "risk_color": "red",
+    "timeline_event": "Malicious payload encrypting system volume and staging extortion."
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "scenario_id": "ddos",
+  "name": "DDoS SYN Flood Saturation",
+  "workload_profile": "Production",
+  "telemetry": {
+    "cpu_utilization": 85.0,
+    "memory_usage_percent": 62.4,
+    "disk_usage_percent": 35.0,
+    "packet_rate_in": 15000,
+    "packet_rate_out": 300
+  },
+  "anomaly_score": 0.92,
+  "findings": [
+    {
+      "id": "FIND-DDOS-01",
+      "title": "SYN Flood flooding gateway interfaces to disrupt availability",
+      "severity": "high",
+      "resource": "Gateway",
+      "ursPenalty": 30.0
+    }
+  ],
+  "URS": 85.0,
+  "prediction_expectations": {
+    "risk_trend": "increasing",
+    "projected_urs_24h": 95.0,
+    "confidence_score": 85.0,
+    "business_impact_level": "High"
+  },
+  "policy_expectations": {
+    "decision": "Critical",
+    "recommendations": ["WAF Rules, Scale Target Group, Enable Rate Limit"]
+  },
+  "automation_expectations": {
+    "automation_level": "Fully Automated",
+    "playbook_id": "attach_waf",
+    "rollback_available": true
+  },
+  "dashboard_expectations": {
+    "risk_color": "red",
+    "timeline_event": "SYN Flood flooding gateway interfaces to disrupt availability."
+  }
+}

@@ -1,0 +1,14 @@
+25786:MongoDB Memory Server
+25793:Backend Gateway
+25794:Monitoring Service
+25795:Cloud Adapter
+25796:AI Engine
+25797:Risk Engine
+25798:Attack Simulator
+25799:Policy Engine
+25800:Research Evaluator
+25801:Digital Twin
+25802:Report Generator
+25803:Prediction Engine
+25804:Automation Engine
+25805:Dashboard UI

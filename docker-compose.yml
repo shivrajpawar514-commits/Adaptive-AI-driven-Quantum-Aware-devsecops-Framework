@@ -1,0 +1,294 @@
+services:
+  mongodb:
+    image: mongo:6.0
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - secops_network
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "disableTelemetry(); db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 10s
+      retries: 5
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.dev
+    container_name: backend_app
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./backend:/usr/src/app
+      - /usr/src/app/node_modules
+    environment:
+      - PORT=5000
+      - NODE_ENV=development
+      - MONGO_URI=${MONGO_URI}
+      - JWT_SECRET=${JWT_SECRET}
+      - JWT_EXPIRE=1d
+      - LOG_LEVEL=info
+      - MONITORING_SERVICE_URL=http://monitoring-service:6001
+      - AI_ENGINE_URL=http://ai-engine:8000
+      - RISK_ENGINE_URL=http://risk-engine:8500
+      - PROMETHEUS_URL=http://prometheus:9090
+      - NODE_EXPORTER_URL=http://node-exporter:9100
+      - CLOUD_ADAPTER_URL=http://cloud-adapter:7000
+      - ATTACK_SIMULATOR_URL=http://attack-simulator:8600
+      - POLICY_ENGINE_URL=http://policy-engine:8700
+      - RESEARCH_EVALUATOR_URL=http://research-evaluator:8800
+      - DIGITAL_TWIN_URL=http://digital-twin:8900
+      - REPORT_GENERATOR_URL=http://report-generator:9000
+      - AUTOMATION_ENGINE_URL=http://automation-engine:9100
+    depends_on:
+      - mongodb
+    networks:
+      - secops_network
+
+  monitoring-service:
+    build:
+      context: ./monitoring-service
+      dockerfile: Dockerfile.dev
+    container_name: monitoring_service
+    ports:
+      - "6001:6001"
+    volumes:
+      - ./monitoring-service:/usr/src/app
+      - /usr/src/app/node_modules
+    environment:
+      - PORT=6001
+      - NODE_ENV=development
+      - MONGO_URI=${MONGO_URI}
+      - LOG_LEVEL=info
+      - CLOUD_ADAPTER_URL=http://cloud-adapter:7000
+    depends_on:
+      - mongodb
+    networks:
+      - secops_network
+
+  ai-engine:
+    build:
+      context: ./ai-engine
+      dockerfile: Dockerfile
+    container_name: ai_engine
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./ai-engine:/app
+    environment:
+      - PORT=8000
+      - MONGO_URI=${MONGO_URI}
+    depends_on:
+      - mongodb
+    networks:
+      - secops_network
+
+  risk-engine:
+    build:
+      context: ./risk-engine
+      dockerfile: Dockerfile
+    container_name: risk_engine
+    ports:
+      - "8500:8500"
+    volumes:
+      - ./risk-engine:/app
+    environment:
+      - PORT=8500
+      - MONGO_URI=${MONGO_URI}
+      - POLICY_ENGINE_URL=http://policy-engine:8700
+      - PREDICTION_ENGINE_URL=http://prediction-engine:8005
+    depends_on:
+      - mongodb
+    networks:
+      - secops_network
+
+  attack-simulator:
+    build:
+      context: ./attack-simulator
+      dockerfile: Dockerfile
+    container_name: attack_simulator
+    ports:
+      - "8600:8600"
+    volumes:
+      - ./attack-simulator:/app
+    environment:
+      - PORT=8600
+      - MONGO_URI=${MONGO_URI}
+      - AI_ENGINE_URL=http://ai-engine:8000
+      - RISK_ENGINE_URL=http://risk-engine:8500
+      - POLICY_ENGINE_URL=http://policy-engine:8700
+      - DIGITAL_TWIN_URL=http://digital-twin:8900
+    depends_on:
+      - mongodb
+      - risk-engine
+      - policy-engine
+      - digital-twin
+    networks:
+      - secops_network
+
+  policy-engine:
+    build:
+      context: ./policy-engine
+      dockerfile: Dockerfile
+    container_name: policy_engine
+    ports:
+      - "8700:8700"
+    volumes:
+      - ./policy-engine:/app
+    environment:
+      - PORT=8700
+      - MONGO_URI=${MONGO_URI}
+    depends_on:
+      - mongodb
+    networks:
+      - secops_network
+
+  cloud-adapter:
+    build:
+      context: ./cloud-adapter
+      dockerfile: Dockerfile
+    container_name: cloud_adapter
+    ports:
+      - "7000:7000"
+    volumes:
+      - ./cloud-adapter:/app
+    environment:
+      - PORT=7000
+      - MONGO_URI=${MONGO_URI}
+    depends_on:
+      - mongodb
+    networks:
+      - secops_network
+
+  research-evaluator:
+    build:
+      context: ./research-evaluator
+      dockerfile: Dockerfile
+    container_name: research_evaluator
+    ports:
+      - "8800:8800"
+    volumes:
+      - ./research-evaluator:/app
+    environment:
+      - PORT=8800
+      - MONGO_URI=${MONGO_URI}
+    depends_on:
+      - mongodb
+    networks:
+      - secops_network
+
+  digital-twin:
+    build:
+      context: ./digital-twin
+      dockerfile: Dockerfile
+    container_name: digital_twin
+    ports:
+      - "8900:8900"
+    volumes:
+      - ./digital-twin:/app
+    environment:
+      - PORT=8900
+      - MONGO_URI=${MONGO_URI}
+    depends_on:
+      - mongodb
+    networks:
+      - secops_network
+
+  report-generator:
+    build:
+      context: ./report-generator
+      dockerfile: Dockerfile
+    container_name: report_generator
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./report-generator:/app
+    environment:
+      - PORT=9000
+      - MONGO_URI=${MONGO_URI}
+    depends_on:
+      - mongodb
+    networks:
+      - secops_network
+
+  dashboard:
+    build:
+      context: ./dashboard
+      dockerfile: Dockerfile
+    container_name: devsecops_dashboard
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+      - monitoring-service
+    networks:
+      - secops_network
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./infrastructure/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    networks:
+      - secops_network
+    depends_on:
+      - monitoring-service
+
+  node-exporter:
+    image: prom/node-exporter:latest
+    container_name: node-exporter
+    ports:
+      - "9101:9100"
+    networks:
+      - secops_network
+
+  prediction-engine:
+    build:
+      context: ./prediction-engine
+      dockerfile: Dockerfile.dev
+    container_name: prediction_engine
+    ports:
+      - "8005:8005"
+    volumes:
+      - ./prediction-engine:/app
+    environment:
+      - PORT=8005
+      - MONGO_URI=${MONGO_URI}
+    depends_on:
+      - mongodb
+    networks:
+      - secops_network
+
+  automation-engine:
+    build:
+      context: ./automation-engine
+      dockerfile: Dockerfile
+    container_name: automation_engine
+    ports:
+      - "9100:9100"
+    volumes:
+      - ./automation-engine:/app
+    environment:
+      - PORT=9100
+      - MONGO_URI=${MONGO_URI}
+      - CLOUD_ADAPTER_URL=http://cloud-adapter:7000
+      - RISK_ENGINE_URL=http://risk-engine:8500
+      - DIGITAL_TWIN_URL=http://digital-twin:8900
+      - AI_ENGINE_URL=http://ai-engine:8000
+    depends_on:
+      - mongodb
+    networks:
+      - secops_network
+
+
+volumes:
+  mongo_data:
+
+networks:
+  secops_network:
+    driver: bridge

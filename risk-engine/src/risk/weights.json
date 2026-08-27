@@ -1,0 +1,19 @@
+{
+  "weights": {
+    "anomaly_score": 0.3,
+    "reconstruction_error": 0.2,
+    "cpu_utilization": 0.1,
+    "memory_utilization": 0.1,
+    "network_utilization": 0.1,
+    "historical_anomaly_frequency": 0.1,
+    "confidence_score": 0.1,
+    "disk_utilization": 0.0
+  },
+  "asset_criticality": 1.0,
+  "thresholds": {
+    "normal": 30,
+    "monitor": 60,
+    "alert": 80,
+    "high_risk": 90
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "profiles": {
+    "Business Hours": {
+      "weights": {
+        "cpu_utilization": 0.15,
+        "memory_utilization": 0.15,
+        "network_utilization": 0.35,
+        "anomaly_score": 0.20,
+        "confidence_score": 0.10,
+        "historical_anomaly_frequency": 0.05,
+        "reconstruction_error": 0.0,
+        "disk_utilization": 0.0
+      },
+      "thresholds": {
+        "normal": 35,
+        "monitor": 65,
+        "alert": 85,
+        "high_risk": 95
+      },
+      "contextConfidence": 0.95,
+      "adaptationReason": "Network activity receives higher importance during business hours because lateral movement attacks are more probable."
+    },
+    "Night": {
+      "weights": {
+        "cpu_utilization": 0.25,
+        "memory_utilization": 0.20,
+        "network_utilization": 0.20,
+        "anomaly_score": 0.20,
+        "confidence_score": 0.10,
+        "historical_anomaly_frequency": 0.05,
+        "reconstruction_error": 0.0,
+        "disk_utilization": 0.0
+      },
+      "thresholds": {
+        "normal": 30,
+        "monitor": 60,
+        "alert": 80,
+        "high_risk": 90
+      },
+      "contextConfidence": 0.90,
+      "adaptationReason": "System metrics like CPU and Memory are prioritized at night due to batch job runs and offline updates."
+    },
+    "Weekend": {
+      "weights": {
+        "cpu_utilization": 0.10,
+        "memory_utilization": 0.15,
+        "network_utilization": 0.20,
+        "anomaly_score": 0.35,
+        "confidence_score": 0.10,
+        "historical_anomaly_frequency": 0.10,
+        "reconstruction_error": 0.0,
+        "disk_utilization": 0.0
+      },
+      "thresholds": {
+        "normal": 25,
+        "monitor": 55,
+        "alert": 75,
+        "high_risk": 85
+      },
+      "contextConfidence": 0.85,
+      "adaptationReason": "AI engine anomalies are weighted higher during weekends since manual monitoring is reduced."
+    },
+    "Standard": {
+      "weights": {
+        "anomaly_score": 0.3,
+        "reconstruction_error": 0.2,
+        "cpu_utilization": 0.1,
+        "memory_utilization": 0.1,
+        "network_utilization": 0.1,
+        "historical_anomaly_frequency": 0.1,
+        "confidence_score": 0.1,
+        "disk_utilization": 0.0
+      },
+      "thresholds": {
+        "normal": 30,
+        "monitor": 60,
+        "alert": 80,
+        "high_risk": 90
+      },
+      "contextConfidence": 0.80,
+      "adaptationReason": "Standard baseline parameters applied."
+    }
+  },
+  "version": "1.0.0"
+}

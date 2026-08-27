@@ -1,0 +1,31 @@
+{
+  "timestamp": "2026-07-25T13:45:18.852022Z",
+  "optimizerVersion": "1.0.0",
+  "evaluationVersion": "1.0",
+  "pythonVersion": "3.11.9",
+  "os": "Windows",
+  "platform": "Windows-10-10.0.19045-SP0",
+  "configurationHash": "6ac9340c96a605d9296b0877a1da07a449b1c3c14baf97b5671f119c20a64071",
+  "scenarioHash": "14027ad49861ece74a4ecb418cc749ac9f27cbb09bbd3c4f460230b88246f66c",
+  "weightsHash": "e495a5175fbd96193cde106167082d5f8e3dbcdb3015412b4f2fe07e5a05e1b2",
+  "generatedFiles": [
+    "evaluation_results.json",
+    "evaluation_results.csv",
+    "evaluation_summary.md",
+    "determinism_report.md",
+    "scalability_report.md",
+    "benchmark_tables.md",
+    "evaluation_manifest.json",
+    "benchmark_figures/runtime.png",
+    "benchmark_figures/runtime.svg",
+    "benchmark_figures/urs.png",
+    "benchmark_figures/urs.svg",
+    "benchmark_figures/recovery.png",
+    "benchmark_figures/recovery.svg",
+    "benchmark_figures/latency.png",
+    "benchmark_figures/latency.svg",
+    "benchmark_data/latency.csv",
+    "benchmark_data/urs.csv",
+    "benchmark_data/recovery.csv"
+  ]
+}

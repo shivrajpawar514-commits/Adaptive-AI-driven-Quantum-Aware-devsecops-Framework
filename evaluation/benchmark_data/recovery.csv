@@ -1,0 +1,16 @@
+Scenario,Strategy,Expected Recovery %
+low_risk,optimizer,90.0
+low_risk,fifo,90.0
+low_risk,severity,90.0
+low_risk,urs,90.0
+low_risk,recovery,90.0
+medium_risk,optimizer,100.0
+medium_risk,fifo,100.0
+medium_risk,severity,100.0
+medium_risk,urs,100.0
+medium_risk,recovery,100.0
+high_risk,optimizer,100.0
+high_risk,fifo,100.0
+high_risk,severity,100.0
+high_risk,urs,100.0
+high_risk,recovery,100.0

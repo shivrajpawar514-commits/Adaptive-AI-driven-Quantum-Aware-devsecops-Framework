@@ -1,0 +1,563 @@
+{
+  "benchmarks": {
+    "low_risk": {
+      "optimizer": {
+        "ursBefore": 25.0,
+        "ursAfter": 15.0,
+        "reductionPct": 40.0,
+        "selectedPlaybooks": 1,
+        "removedPlaybooks": 0,
+        "recoveryScore": 90.0,
+        "serviceAvailability": 95.0,
+        "businessImpact": 14.0,
+        "latencyMs": 2.47,
+        "peakMemoryMB": 0.0035,
+        "explainability": 100.0,
+        "sequence": [
+          "restrict_ssh_sg"
+        ],
+        "planHash": "0c0c4397f60e44092b7e6f4c4782e1a7c0e95839759d84393163337a50e4c565"
+      },
+      "fifo": {
+        "ursBefore": 25.0,
+        "ursAfter": 15.0,
+        "reductionPct": 40.0,
+        "selectedPlaybooks": 1,
+        "removedPlaybooks": 0,
+        "recoveryScore": 90.0,
+        "serviceAvailability": 95.0,
+        "businessImpact": 14.0,
+        "latencyMs": 0.43,
+        "peakMemoryMB": 0.0018,
+        "explainability": 100.0,
+        "sequence": [
+          "restrict_ssh_sg"
+        ],
+        "planHash": "0c0c4397f60e44092b7e6f4c4782e1a7c0e95839759d84393163337a50e4c565"
+      },
+      "severity": {
+        "ursBefore": 25.0,
+        "ursAfter": 15.0,
+        "reductionPct": 40.0,
+        "selectedPlaybooks": 1,
+        "removedPlaybooks": 0,
+        "recoveryScore": 90.0,
+        "serviceAvailability": 95.0,
+        "businessImpact": 14.0,
+        "latencyMs": 0.41,
+        "peakMemoryMB": 0.0018,
+        "explainability": 100.0,
+        "sequence": [
+          "restrict_ssh_sg"
+        ],
+        "planHash": "0c0c4397f60e44092b7e6f4c4782e1a7c0e95839759d84393163337a50e4c565"
+      },
+      "urs": {
+        "ursBefore": 25.0,
+        "ursAfter": 15.0,
+        "reductionPct": 40.0,
+        "selectedPlaybooks": 1,
+        "removedPlaybooks": 0,
+        "recoveryScore": 90.0,
+        "serviceAvailability": 95.0,
+        "businessImpact": 14.0,
+        "latencyMs": 0.41,
+        "peakMemoryMB": 0.0018,
+        "explainability": 100.0,
+        "sequence": [
+          "restrict_ssh_sg"
+        ],
+        "planHash": "0c0c4397f60e44092b7e6f4c4782e1a7c0e95839759d84393163337a50e4c565"
+      },
+      "recovery": {
+        "ursBefore": 25.0,
+        "ursAfter": 15.0,
+        "reductionPct": 40.0,
+        "selectedPlaybooks": 1,
+        "removedPlaybooks": 0,
+        "recoveryScore": 90.0,
+        "serviceAvailability": 95.0,
+        "businessImpact": 14.0,
+        "latencyMs": 0.43,
+        "peakMemoryMB": 0.0019,
+        "explainability": 100.0,
+        "sequence": [
+          "restrict_ssh_sg"
+        ],
+        "planHash": "0c0c4397f60e44092b7e6f4c4782e1a7c0e95839759d84393163337a50e4c565"
+      }
+    },
+    "medium_risk": {
+      "optimizer": {
+        "ursBefore": 60.0,
+        "ursAfter": 42.0,
+        "reductionPct": 30.0,
+        "selectedPlaybooks": 2,
+        "removedPlaybooks": 0,
+        "recoveryScore": 100.0,
+        "serviceAvailability": 80.0,
+        "businessImpact": 23.0,
+        "latencyMs": 2.17,
+        "peakMemoryMB": 0.0053,
+        "explainability": 100.0,
+        "sequence": [
+          "restrict_ssh_sg",
+          "scale_ec2"
+        ],
+        "planHash": "53186733993877638f8bbc7d93fd2904fecf59f3f45fd7209b1bacd06dae448f"
+      },
+      "fifo": {
+        "ursBefore": 60.0,
+        "ursAfter": 42.0,
+        "reductionPct": 30.0,
+        "selectedPlaybooks": 2,
+        "removedPlaybooks": 0,
+        "recoveryScore": 100.0,
+        "serviceAvailability": 80.0,
+        "businessImpact": 23.0,
+        "latencyMs": 0.45,
+        "peakMemoryMB": 0.0024,
+        "explainability": 100.0,
+        "sequence": [
+          "scale_ec2",
+          "restrict_ssh_sg"
+        ],
+        "planHash": "1b498d1aed37e0546a61f9b353673612d27ba0c56ffc24645a21302d7b58bdb9"
+      },
+      "severity": {
+        "ursBefore": 60.0,
+        "ursAfter": 42.0,
+        "reductionPct": 30.0,
+        "selectedPlaybooks": 2,
+        "removedPlaybooks": 0,
+        "recoveryScore": 100.0,
+        "serviceAvailability": 80.0,
+        "businessImpact": 23.0,
+        "latencyMs": 0.49,
+        "peakMemoryMB": 0.0025,
+        "explainability": 100.0,
+        "sequence": [
+          "scale_ec2",
+          "restrict_ssh_sg"
+        ],
+        "planHash": "1b498d1aed37e0546a61f9b353673612d27ba0c56ffc24645a21302d7b58bdb9"
+      },
+      "urs": {
+        "ursBefore": 60.0,
+        "ursAfter": 42.0,
+        "reductionPct": 30.0,
+        "selectedPlaybooks": 2,
+        "removedPlaybooks": 0,
+        "recoveryScore": 100.0,
+        "serviceAvailability": 80.0,
+        "businessImpact": 23.0,
+        "latencyMs": 0.5,
+        "peakMemoryMB": 0.0026,
+        "explainability": 100.0,
+        "sequence": [
+          "restrict_ssh_sg",
+          "scale_ec2"
+        ],
+        "planHash": "53186733993877638f8bbc7d93fd2904fecf59f3f45fd7209b1bacd06dae448f"
+      },
+      "recovery": {
+        "ursBefore": 60.0,
+        "ursAfter": 42.0,
+        "reductionPct": 30.0,
+        "selectedPlaybooks": 2,
+        "removedPlaybooks": 0,
+        "recoveryScore": 100.0,
+        "serviceAvailability": 80.0,
+        "businessImpact": 23.0,
+        "latencyMs": 0.49,
+        "peakMemoryMB": 0.0026,
+        "explainability": 100.0,
+        "sequence": [
+          "restrict_ssh_sg",
+          "scale_ec2"
+        ],
+        "planHash": "53186733993877638f8bbc7d93fd2904fecf59f3f45fd7209b1bacd06dae448f"
+      }
+    },
+    "high_risk": {
+      "optimizer": {
+        "ursBefore": 95.0,
+        "ursAfter": 70.0,
+        "reductionPct": 26.32,
+        "selectedPlaybooks": 2,
+        "removedPlaybooks": 1,
+        "recoveryScore": 100.0,
+        "serviceAvailability": 60.0,
+        "businessImpact": 29.5,
+        "latencyMs": 2.53,
+        "peakMemoryMB": 0.0066,
+        "explainability": 100.0,
+        "sequence": [
+          "restrict_ssh_sg",
+          "isolate_ec2"
+        ],
+        "planHash": "b0d2e0102eaa391f82c287176c3c78b015d363d35f675d97736204edeb0095d2"
+      },
+      "fifo": {
+        "ursBefore": 95.0,
+        "ursAfter": 70.0,
+        "reductionPct": 26.32,
+        "selectedPlaybooks": 2,
+        "removedPlaybooks": 1,
+        "recoveryScore": 100.0,
+        "serviceAvailability": 60.0,
+        "businessImpact": 29.5,
+        "latencyMs": 0.47,
+        "peakMemoryMB": 0.0024,
+        "explainability": 100.0,
+        "sequence": [
+          "isolate_ec2",
+          "restrict_ssh_sg"
+        ],
+        "planHash": "5b3c05b214a174502ec869ebfc853897bc05adad0ceb235be3bbcbb57292b21b"
+      },
+      "severity": {
+        "ursBefore": 95.0,
+        "ursAfter": 70.0,
+        "reductionPct": 26.32,
+        "selectedPlaybooks": 2,
+        "removedPlaybooks": 1,
+        "recoveryScore": 100.0,
+        "serviceAvailability": 60.0,
+        "businessImpact": 29.5,
+        "latencyMs": 1.62,
+        "peakMemoryMB": 0.0024,
+        "explainability": 100.0,
+        "sequence": [
+          "isolate_ec2",
+          "restrict_ssh_sg"
+        ],
+        "planHash": "5b3c05b214a174502ec869ebfc853897bc05adad0ceb235be3bbcbb57292b21b"
+      },
+      "urs": {
+        "ursBefore": 95.0,
+        "ursAfter": 68.0,
+        "reductionPct": 28.42,
+        "selectedPlaybooks": 2,
+        "removedPlaybooks": 1,
+        "recoveryScore": 100.0,
+        "serviceAvailability": 55.0,
+        "businessImpact": 31.5,
+        "latencyMs": 0.51,
+        "peakMemoryMB": 0.0024,
+        "explainability": 100.0,
+        "sequence": [
+          "isolate_ec2",
+          "attach_waf"
+        ],
+        "planHash": "57b50e29a74259d822583aad4c7d4af5f6935b28ae8d2251301ff7a5940ce128"
+      },
+      "recovery": {
+        "ursBefore": 95.0,
+        "ursAfter": 70.0,
+        "reductionPct": 26.32,
+        "selectedPlaybooks": 2,
+        "removedPlaybooks": 1,
+        "recoveryScore": 100.0,
+        "serviceAvailability": 60.0,
+        "businessImpact": 29.5,
+        "latencyMs": 0.5,
+        "peakMemoryMB": 0.0025,
+        "explainability": 100.0,
+        "sequence": [
+          "restrict_ssh_sg",
+          "isolate_ec2"
+        ],
+        "planHash": "b0d2e0102eaa391f82c287176c3c78b015d363d35f675d97736204edeb0095d2"
+      }
+    }
+  },
+  "scalability": [
+    {
+      "playbooksCount": 10,
+      "totalTimeMs": 7.26,
+      "rankingTimeMs": 2.9,
+      "deduplicationTimeMs": 1.09,
+      "conflictResolutionTimeMs": 1.45,
+      "topologicalSortTimeMs": 1.82,
+      "peakMemoryMB": 0.0206,
+      "nodes": 10,
+      "edges": 8
+    },
+    {
+      "playbooksCount": 25,
+      "totalTimeMs": 10.73,
+      "rankingTimeMs": 4.29,
+      "deduplicationTimeMs": 1.61,
+      "conflictResolutionTimeMs": 2.15,
+      "topologicalSortTimeMs": 2.68,
+      "peakMemoryMB": 0.0317,
+      "nodes": 25,
+      "edges": 20
+    },
+    {
+      "playbooksCount": 50,
+      "totalTimeMs": 31.63,
+      "rankingTimeMs": 12.65,
+      "deduplicationTimeMs": 4.74,
+      "conflictResolutionTimeMs": 6.33,
+      "topologicalSortTimeMs": 7.91,
+      "peakMemoryMB": 0.0701,
+      "nodes": 50,
+      "edges": 40
+    },
+    {
+      "playbooksCount": 100,
+      "totalTimeMs": 96.81,
+      "rankingTimeMs": 38.72,
+      "deduplicationTimeMs": 14.52,
+      "conflictResolutionTimeMs": 19.36,
+      "topologicalSortTimeMs": 24.2,
+      "peakMemoryMB": 0.1331,
+      "nodes": 100,
+      "edges": 80
+    },
+    {
+      "playbooksCount": 250,
+      "totalTimeMs": 441.59,
+      "rankingTimeMs": 176.63,
+      "deduplicationTimeMs": 66.24,
+      "conflictResolutionTimeMs": 88.32,
+      "topologicalSortTimeMs": 110.4,
+      "peakMemoryMB": 0.3474,
+      "nodes": 250,
+      "edges": 200
+    },
+    {
+      "playbooksCount": 500,
+      "totalTimeMs": 2850.57,
+      "rankingTimeMs": 1140.23,
+      "deduplicationTimeMs": 427.58,
+      "conflictResolutionTimeMs": 570.11,
+      "topologicalSortTimeMs": 712.64,
+      "peakMemoryMB": 0.7525,
+      "nodes": 500,
+      "edges": 400
+    }
+  ],
+  "determinism": [
+    {
+      "iteration": 1,
+      "ursBefore": 95.0,
+      "ursAfter": 70.0,
+      "selectedCount": 2,
+      "priorityScores": [
+        67.8,
+        56.95
+      ],
+      "rankings": [
+        "restrict_ssh_sg",
+        "isolate_ec2"
+      ],
+      "latencyMs": 0.39
+    },
+    {
+      "iteration": 2,
+      "ursBefore": 95.0,
+      "ursAfter": 70.0,
+      "selectedCount": 2,
+      "priorityScores": [
+        67.8,
+        56.95
+      ],
+      "rankings": [
+        "restrict_ssh_sg",
+        "isolate_ec2"
+      ],
+      "latencyMs": 0.27
+    },
+    {
+      "iteration": 3,
+      "ursBefore": 95.0,
+      "ursAfter": 70.0,
+      "selectedCount": 2,
+      "priorityScores": [
+        67.8,
+        56.95
+      ],
+      "rankings": [
+        "restrict_ssh_sg",
+        "isolate_ec2"
+      ],
+      "latencyMs": 0.26
+    },
+    {
+      "iteration": 4,
+      "ursBefore": 95.0,
+      "ursAfter": 70.0,
+      "selectedCount": 2,
+      "priorityScores": [
+        67.8,
+        56.95
+      ],
+      "rankings": [
+        "restrict_ssh_sg",
+        "isolate_ec2"
+      ],
+      "latencyMs": 0.23
+    },
+    {
+      "iteration": 5,
+      "ursBefore": 95.0,
+      "ursAfter": 70.0,
+      "selectedCount": 2,
+      "priorityScores": [
+        67.8,
+        56.95
+      ],
+      "rankings": [
+        "restrict_ssh_sg",
+        "isolate_ec2"
+      ],
+      "latencyMs": 0.23
+    },
+    {
+      "iteration": 6,
+      "ursBefore": 95.0,
+      "ursAfter": 70.0,
+      "selectedCount": 2,
+      "priorityScores": [
+        67.8,
+        56.95
+      ],
+      "rankings": [
+        "restrict_ssh_sg",
+        "isolate_ec2"
+      ],
+      "latencyMs": 0.23
+    },
+    {
+      "iteration": 7,
+      "ursBefore": 95.0,
+      "ursAfter": 70.0,
+      "selectedCount": 2,
+      "priorityScores": [
+        67.8,
+        56.95
+      ],
+      "rankings": [
+        "restrict_ssh_sg",
+        "isolate_ec2"
+      ],
+      "latencyMs": 0.24
+    },
+    {
+      "iteration": 8,
+      "ursBefore": 95.0,
+      "ursAfter": 70.0,
+      "selectedCount": 2,
+      "priorityScores": [
+        67.8,
+        56.95
+      ],
+      "rankings": [
+        "restrict_ssh_sg",
+        "isolate_ec2"
+      ],
+      "latencyMs": 0.24
+    },
+    {
+      "iteration": 9,
+      "ursBefore": 95.0,
+      "ursAfter": 70.0,
+      "selectedCount": 2,
+      "priorityScores": [
+        67.8,
+        56.95
+      ],
+      "rankings": [
+        "restrict_ssh_sg",
+        "isolate_ec2"
+      ],
+      "latencyMs": 0.24
+    },
+    {
+      "iteration": 10,
+      "ursBefore": 95.0,
+      "ursAfter": 70.0,
+      "selectedCount": 2,
+      "priorityScores": [
+        67.8,
+        56.95
+      ],
+      "rankings": [
+        "restrict_ssh_sg",
+        "isolate_ec2"
+      ],
+      "latencyMs": 0.24
+    }
+  ],
+  "sensitivity": [
+    {
+      "configuration": "Base Config",
+      "ursBefore": 95.0,
+      "ursAfter": 70.0,
+      "recoveryRate": 100.0,
+      "totalDuration": 11.0,
+      "priorityScores": [
+        67.8,
+        56.95
+      ],
+      "playbooksSequence": [
+        "restrict_ssh_sg",
+        "isolate_ec2"
+      ],
+      "weightsHash": "e495a5175fbd96193cde106167082d5f8e3dbcdb3015412b4f2fe07e5a05e1b2"
+    },
+    {
+      "configuration": "High Recovery Preference",
+      "ursBefore": 95.0,
+      "ursAfter": 70.0,
+      "recoveryRate": 100.0,
+      "totalDuration": 11.0,
+      "priorityScores": [
+        81.61,
+        72.3
+      ],
+      "playbooksSequence": [
+        "restrict_ssh_sg",
+        "isolate_ec2"
+      ],
+      "weightsHash": "2064a55677950826b3cd0e79a0cf045f7b34f16c9237ecd8e68ae5f45a0893e2"
+    },
+    {
+      "configuration": "High Disruption Penalty",
+      "ursBefore": 95.0,
+      "ursAfter": 70.0,
+      "recoveryRate": 100.0,
+      "totalDuration": 11.0,
+      "priorityScores": [
+        52.08,
+        20.75
+      ],
+      "playbooksSequence": [
+        "restrict_ssh_sg",
+        "isolate_ec2"
+      ],
+      "weightsHash": "1a0cdbc30d32e64bef6aca0ac415f99ca3dcaf4b6be2f504d8661462cb104efa"
+    }
+  ],
+  "statistics": {
+    "optimizer_latency": {
+      "mean": 2.3916,
+      "median": 2.4655,
+      "min": 2.1747,
+      "max": 2.5345,
+      "std": 0.1559,
+      "var": 0.0243
+    },
+    "optimizer_urs_reduction": {
+      "mean": 32.1067,
+      "median": 30.0,
+      "min": 26.32,
+      "max": 40.0,
+      "std": 5.7801,
+      "var": 33.4094
+    }
+  }
+}
