@@ -1,0 +1,155 @@
+{
+  "benchmarkTimestamp": "2026-10-31T18:44:38Z",
+  "iterations": 1000,
+  "metrics": {
+    "baseline": {
+      "name": "Naive Greedy Baseline Optimizer",
+      "avgLatencyMs": 0.0041,
+      "p95LatencyMs": 0.0043,
+      "playbooksSelected": 4,
+      "dependencyViolations": 1,
+      "conflictCollisions": 1,
+      "totalEstimatedDuration": 34.0,
+      "totalDisruptionScore": 11.5,
+      "serviceAvailability": 42.5
+    },
+    "deterministicOptimizer": {
+      "name": "Deterministic Playbook Optimization Engine",
+      "avgLatencyMs": 0.0201,
+      "p95LatencyMs": 0.0215,
+      "playbooksSelected": 2,
+      "dependencyViolations": 0,
+      "conflictCollisions": 0,
+      "totalEstimatedDuration": 7.0,
+      "totalDisruptionScore": 3.5,
+      "serviceAvailability": 82.5,
+      "uniqueOrdersObserved": 1,
+      "scoreVariance": 0.0,
+      "reproducibilityRate": 100.0
+    },
+    "comparativeGains": {
+      "dependencyOrderCorrectness": "100.0% vs 0.0% (Dependency violation completely eliminated)",
+      "conflictElimination": "100.0% (0 collisions vs 1 active collision in baseline)",
+      "durationReductionSeconds": 27.0,
+      "durationReductionPercent": 79.41,
+      "disruptionReductionPercent": 69.57,
+      "algorithmLatencyOverheadMs": 0.016
+    }
+  },
+  "baselineExecutionPlan": [
+    {
+      "step": 1,
+      "playbookId": "pb_kill_miner_process",
+      "title": "Terminate Miner Process",
+      "category": "Process",
+      "priorityScore": 90.0,
+      "dependencies": [
+        "pb_quarantine_net"
+      ],
+      "conflicts": [
+        "pb_snapshot_live"
+      ],
+      "estimatedDuration": 4.0,
+      "ursReduction": 0.0,
+      "disruptionScore": 2.0
+    },
+    {
+      "step": 2,
+      "playbookId": "pb_quarantine_net",
+      "title": "Quarantine Network Namespace",
+      "category": "Network",
+      "priorityScore": 70.0,
+      "dependencies": [],
+      "conflicts": [],
+      "estimatedDuration": 3.0,
+      "ursReduction": 0.0,
+      "disruptionScore": 1.5
+    },
+    {
+      "step": 3,
+      "playbookId": "pb_snapshot_live",
+      "title": "Forensic Live Memory Snapshot",
+      "category": "Forensics",
+      "priorityScore": 40.0,
+      "dependencies": [],
+      "conflicts": [
+        "pb_kill_miner_process"
+      ],
+      "estimatedDuration": 25.0,
+      "ursReduction": 0.0,
+      "disruptionScore": 7.0
+    },
+    {
+      "step": 4,
+      "playbookId": "pb_block_port_only",
+      "title": "Block Single Port",
+      "category": "Network",
+      "priorityScore": 30.0,
+      "dependencies": [],
+      "conflicts": [],
+      "estimatedDuration": 2.0,
+      "ursReduction": 0.0,
+      "disruptionScore": 1.0
+    }
+  ],
+  "optimizerExecutionPlan": [
+    {
+      "step": 1,
+      "playbookId": "pb_quarantine_net",
+      "title": "Quarantine Network Namespace",
+      "category": "Network",
+      "priorityScore": 51.05,
+      "selectedBecause": [
+        "Low disruption"
+      ],
+      "scoreBreakdown": {
+        "severity": 0.0,
+        "urs": 27.6,
+        "recovery": 17.5,
+        "policy": 6.0,
+        "confidence": 2.5,
+        "disruptionPenalty": -2.25,
+        "executionPenalty": -0.3,
+        "finalScore": 51.05
+      },
+      "dependencies": [],
+      "estimatedDuration": 3.0,
+      "ursReduction": 0.0,
+      "recoveryScore": 7.0,
+      "disruptionScore": 1.5,
+      "rollbackAvailable": false,
+      "parallel": false
+    },
+    {
+      "step": 2,
+      "playbookId": "pb_kill_miner_process",
+      "title": "Terminate Miner Process",
+      "category": "Process",
+      "priorityScore": 57.2,
+      "selectedBecause": [
+        "Highest recovery score",
+        "Critical severity",
+        "Low disruption"
+      ],
+      "scoreBreakdown": {
+        "severity": 0.0,
+        "urs": 27.6,
+        "recovery": 22.5,
+        "policy": 8.0,
+        "confidence": 2.5,
+        "disruptionPenalty": -3.0,
+        "executionPenalty": -0.4,
+        "finalScore": 57.2
+      },
+      "dependencies": [
+        "pb_quarantine_net"
+      ],
+      "estimatedDuration": 4.0,
+      "ursReduction": 0.0,
+      "recoveryScore": 9.0,
+      "disruptionScore": 2.0,
+      "rollbackAvailable": false,
+      "parallel": false
+    }
+  ]
+}

@@ -20,6 +20,14 @@ class DeterministicPlaybookOptimizer(BaseOptimizer):
         }
 
     def score_playbook(self, playbook: Playbook, current_urs: float, max_finding_severity: str) -> Dict[str, Any]:
+        # Validate policy parameters
+        if not isinstance(current_urs, (int, float)) or current_urs < 0.0 or current_urs > 100.0:
+            raise ValueError(f"Invalid policy parameter: URS score must be between 0.0 and 100.0, received {current_urs}")
+        
+        pol_priority = (playbook.execution_priority or "").lower()
+        if pol_priority not in POLICY_PRIORITY_WEIGHTS:
+            raise ValueError(f"Invalid policy priority '{playbook.execution_priority}'. Expected one of {list(POLICY_PRIORITY_WEIGHTS.keys())}")
+
         # Resolve weights from config
         w_sev = SCORING_WEIGHTS.get("severity", 2.0)
         w_urs = SCORING_WEIGHTS.get("urs", 0.3)
@@ -31,7 +39,7 @@ class DeterministicPlaybookOptimizer(BaseOptimizer):
 
         # Get weights values
         sev_val = max((SEVERITY_WEIGHTS.get(s.lower(), 0) for s in playbook.severity), default=0)
-        pol_val = POLICY_PRIORITY_WEIGHTS.get(playbook.execution_priority.lower(), 2)
+        pol_val = POLICY_PRIORITY_WEIGHTS.get(pol_priority, 2)
 
         # Calculate factors
         f_sev = w_sev * sev_val
@@ -88,6 +96,8 @@ class DeterministicPlaybookOptimizer(BaseOptimizer):
         return False
 
     def optimize(self, playbooks: List[Playbook], findings: List[Dict[str, Any]], current_urs: float) -> Dict[str, Any]:
+        if not isinstance(current_urs, (int, float)) or current_urs < 0.0 or current_urs > 100.0:
+            raise ValueError(f"Invalid policy parameter: URS score must be between 0.0 and 100.0, received {current_urs}")
         playbook_lookup = {pb.id: pb for pb in playbooks}
 
         # 1. Filter compatible playbooks matching the active findings
@@ -115,8 +125,8 @@ class DeterministicPlaybookOptimizer(BaseOptimizer):
                 "score_data": score_data
             })
 
-        # 3. Sort candidates by Priority Score descending
-        scored_candidates.sort(key=lambda x: x["score_data"]["priorityScore"], reverse=True)
+        # 3. Sort candidates by Priority Score descending (deterministic tie-breaking by playbook id)
+        scored_candidates.sort(key=lambda x: (-x["score_data"]["priorityScore"], x["playbook"].id))
 
         # 4. Deduplicate playbooks addressing same findings/categories and resolve conflicts
         selected_candidates = []
@@ -209,7 +219,7 @@ class DeterministicPlaybookOptimizer(BaseOptimizer):
             zero_items = [items_by_id[n] for n, deg in indegree.items() if deg == 0]
             if not zero_items:
                 break
-            zero_items.sort(key=lambda x: x["score_data"]["priorityScore"], reverse=True)
+            zero_items.sort(key=lambda x: (-x["score_data"]["priorityScore"], x["playbook"].id))
             layers.append(zero_items)
             for item in zero_items:
                 node_id = item["playbook"].id
@@ -219,6 +229,11 @@ class DeterministicPlaybookOptimizer(BaseOptimizer):
 
         # Flatten layers to ordered execution plan list
         ordered_items = list(itertools.chain.from_iterable(layers))
+
+        # Cycle detection
+        if len(ordered_items) != len(unique_selected):
+            cycle_nodes = [n for n, deg in indegree.items() if deg > 0]
+            raise ValueError(f"Cyclic dependency detected among playbooks: {sorted(cycle_nodes)}")
 
         # 6. Calculate Metrics
         playbooks_selected = len(ordered_items)

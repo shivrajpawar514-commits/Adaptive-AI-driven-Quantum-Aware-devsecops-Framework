@@ -89,12 +89,36 @@ class ActionGenerator:
             {
                 "step": item["step"],
                 "action": item["title"],
+                "playbookId": item["playbookId"],
                 "description": get_playbook_by_id(item["playbookId"]).description if get_playbook_by_id(item["playbookId"]) else "Mitigation",
                 "status": "Pending",
                 "estimatedExecutionTime": item["estimatedDuration"]
             }
             for item in opt_result["executionOrder"]
         ]
+
+        # Generate structured Rollback Plan in reverse order of execution
+        rollback_plan = []
+        rollback_cli_cmds = []
+        for idx, item in enumerate(reversed(opt_result["executionOrder"])):
+            pb_obj = get_playbook_by_id(item["playbookId"])
+            rb_cmd = pb_obj.rollback if (pb_obj and pb_obj.rollback) else f"echo 'No automated rollback script for {item['title']}'"
+            if "{instance_id}" in rb_cmd:
+                rb_cmd = rb_cmd.format(instance_id=instance_id or "target-ec2")
+            verification_cmd = pb_obj.verification if (pb_obj and pb_obj.verification) else None
+            if verification_cmd and "{instance_id}" in verification_cmd:
+                verification_cmd = verification_cmd.format(instance_id=instance_id or "target-ec2")
+            
+            rollback_cli_cmds.append(rb_cmd)
+            rollback_plan.append({
+                "step": idx + 1,
+                "revertsStep": item["step"],
+                "playbookId": item["playbookId"],
+                "action": f"Revert {item['title']}",
+                "rollbackCommand": rb_cmd,
+                "verificationCommand": verification_cmd,
+                "estimatedDuration": round(item.get("estimatedDuration", 5.0) * 0.75, 2)
+            })
 
         # Return full plan object
         return {
@@ -105,11 +129,15 @@ class ActionGenerator:
             "instanceId": instance_id or "target-ec2",
             "summary": f"Recommended playbook: {pb_name}",
             "executionPlan": exec_plan,
+            "rollbackPlan": rollback_plan,
             "ansiblePlaybook": f"---\n- name: {pb_name}\n  hosts: all\n  tasks:\n    - name: {pb_desc}\n      ansible.builtin.debug:\n        msg: 'Remediation active'",
+            "ansibleRollbackPlaybook": f"---\n- name: Rollback {pb_name}\n  hosts: all\n  tasks:\n    - name: Inverse remediation\n      ansible.builtin.debug:\n        msg: 'Rollback initiated'",
             "terraformManifest": tf_snippet,
             "awsCliCommands": [aws_cmd],
+            "rollbackCliCommands": rollback_cli_cmds,
             "kubectlCommands": [f"kubectl label pod -l instanceId={instance_id or 'target'} status=quarantined"],
             "shellScript": f"#!/bin/bash\n# {pb_name}\n{aws_cmd}",
+            "rollbackShellScript": f"#!/bin/bash\n# Rollback Plan\n" + "\n".join(rollback_cli_cmds),
             "jsonPlan": f'{{"action": "{pb_name}", "target": "{instance_id or "target"}"}}',
             "automationLevel": "Fully Automated",
             "estimatedExecutionTime": opt_result["totalEstimatedDuration"],
